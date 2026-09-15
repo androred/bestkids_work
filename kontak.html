@@ -14,82 +14,89 @@
 <body>
   <div id="header"></div>
 
-  <main>
-    <section class="contact-hero">
-      <div class="container">
-        <!-- HEADER DENGAN GAMBAR ASET BARU -->
-        <div class="contact-header-text text-center">
-          <h1 class="page-title">Hubungi <span class="navy-title">Kami</span></h1>
-          <p class="page-lead">Ada pertanyaan tentang program BEST KIDS?<br>Kami siap membantu Anda!</p>
-          <div style="margin-top: 20px;">
-            <img src="assets/header_hubungikami.png" alt="Hubungi Kami BEST KIDS" style="max-width: 480px; margin: 0 auto; border-radius: 20px;">
-          </div>
+ <main class="contact-page-wrapper">
+    <!-- HERO TITLE & BACKGROUND BANNER SECTION -->
+    <section class="contact-hero-section">
+      <div class="container relative-container">
+        <div class="contact-hero-text text-left">
+          <h1 class="page-title main-contact-title">
+            <span class="navy">Hubungi</span> <span class="navy">Kami</span>
+          </h1>
+          <p class="page-lead contact-lead-desc">
+            Ada pertanyaan tentang program BEST KIDS?<br>Kami siap membantu Anda!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT SECTION (2 COLUMN GRID: INFO & FORM) -->
+    <section class="container contact-content-section">
+      <div class="contact-grid">
+        
+        <!-- KOLOM KIRI: INFO KONTAK (WITH ASSET LOGOS) -->
+        <div class="contact-info-col">
+          <!-- WhatsApp Link -->
+          <a href="https://wa.me/6281383001823" target="_blank" rel="noopener noreferrer" class="contact-info-card contact-card-link">
+            <div class="contact-icon-box bg-wa">
+              <img src="assets/whatsapp.png" alt="WhatsApp BEST KIDS" class="contact-asset-icon" onerror="this.src='assets/wa.png'">
+            </div>
+            <div class="contact-info-text">
+              <h3>+62 813-8300-1823</h3>
+              <p>Chat langsung dengan kami</p>
+            </div>
+          </a>
+
+          <!-- Instagram Link -->
+          <a href="https://instagram.com/bestkidsgalaxy.id" target="_blank" rel="noopener noreferrer" class="contact-info-card contact-card-link">
+            <div class="contact-icon-box bg-ig">
+              <img src="assets/instagram.png" alt="Instagram BEST KIDS" class="contact-asset-icon" onerror="this.src='assets/ig.png'">
+            </div>
+            <div class="contact-info-text">
+              <h3>@bestkidsgalaxy.id</h3>
+              <p>Ikuti aktivitas kami di instagram</p>
+            </div>
+          </a>
+
+          <!-- Google Maps Link -->
+          <a href="https://maps.google.com/?q=BEST+KIDS+Learning+Center" target="_blank" rel="noopener noreferrer" class="contact-info-card contact-card-link">
+            <div class="contact-icon-box bg-location">
+              <span class="info-icon">📍</span>
+            </div>
+            <div class="contact-info-text">
+              <h3>[PERLU DATA ALAMAT]</h3>
+              <p>Alamat lengkap akan segera diperbarui</p>
+            </div>
+          </a>
         </div>
 
-        <div class="contact-grid">
-          <!-- SISI KIRI: KARTU KONTAK -->
-          <div class="contact-info-cards">
-            <!-- WhatsApp -->
-            <a href="https://wa.me/6281383001823" target="_blank" rel="noopener noreferrer" class="contact-card bg-green-light">
-              <div class="contact-icon-circle bg-green">
-                <img src="assets/whatsaap.png" alt="WhatsApp" style="width: 26px; height: 26px; object-fit: contain;">
-              </div>
-              <div class="contact-card-body">
-                <strong>+62 813-8300-1823</strong>
-                <p>Chat langsung dengan kami</p>
-              </div>
-            </a>
-
-            <!-- Instagram -->
-            <a href="https://instagram.com/bestkidsgalaxy.id" target="_blank" rel="noopener noreferrer" class="contact-card bg-pink-light">
-              <div class="contact-icon-circle bg-pink">
-                <img src="assets/instagram.png" alt="Instagram" style="width: 26px; height: 26px; object-fit: contain;">
-              </div>
-              <div class="contact-card-body">
-                <strong>@bestkidsgalaxy.id</strong>
-                <p>Ikuti aktivitas kami di instagram</p>
-              </div>
-            </a>
-
-            <!-- Alamat -->
-            <a href="https://maps.app.goo.gl/THsLnFZ322qc8w6r8" target="_blank" rel="noopener noreferrer" class="contact-card bg-blue-light">
-              <div class="contact-icon-circle bg-blue">
-                <span>📍</span>
-              </div>
-              <div class="contact-card-body">
-                <strong>Bestkids Galaxy Learning Center</strong>
-                <p>Grand Galaxy Ruko Sentra Komersil 1 No.38 Galaxy Jaka Setia Bekasi Selatan, Bekasi 17147</p>
-              </div>
-            </a>
+        <!-- KOLOM KANAN: FORMULIR PESAN -->
+        <form class="contact-form-card" action="https://formspree.io/f/xwlpeoag" method="POST">
+  
+          <div class="form-group">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" name="name" placeholder="Masukkan nama lengkap" required>
           </div>
 
-          <!-- SISI KANAN: FORMULIR -->
-          <div class="contact-form-card">
-            <form action="#" method="POST">
-              <div class="field-group">
-                <label>Nama Lengkap</label>
-                <input type="text" placeholder="Masukkan nama lengkap" required>
-              </div>
-
-              <div class="field-group">
-                <label>Nomor WhatsApp</label>
-                <input type="tel" placeholder="Masukkan nomor WhatsApp" required>
-              </div>
-
-              <div class="field-group">
-                <label>Email</label>
-                <input type="email" placeholder="Masukkan email">
-              </div>
-
-              <div class="field-group">
-                <label>Pesan</label>
-                <textarea rows="4" placeholder="Tulis pesan Anda di sini..." required></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-pink btn-block">Kirim Pesan →</button>
-            </form>
+          <div class="form-group">
+            <label for="whatsapp">Nomor WhatsApp</label>
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="Masukkan nomor WhatsApp" required>
           </div>
-        </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="_replyto" placeholder="Masukkan email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="pesan">Pesan</label>
+            <textarea id="pesan" name="message" rows="4" placeholder="Tulis pesan Anda di sini..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-pink btn-send-message">
+            <span>Kirim Pesan →</span>
+          </button>
+        </form>
+
       </div>
     </section>
   </main>

@@ -15,16 +15,28 @@
   <div id="header"></div>
 
   <main>
-    <!-- HERO GALERI -->
+    <!-- HERO GALERI (BREADCRUMB LEFT, BANNER MAX 1600PX) -->
     <section class="page-hero gallery-hero">
-      <div class="container relative-container text-center">
-        <div class="breadcrumb-pills" style="justify-content: center; display: inline-flex; margin-bottom: 8px;">
-          <span class="pill-item">Beranda</span> › 
+      <div class="container relative-container" style="position: relative; z-index: 2; width: 100%;">
+        
+        <!-- Breadcrumb Kembali di Kiri -->
+        <div class="breadcrumb-pills hero-breadcrumb-left">
+          <a href="index.html" class="pill-item">
+            <span class="pill-home-icon">🏠</span> Beranda
+          </a> › 
           <span class="pill-item active">Galeri</span>
         </div>
         
-        <h1 class="page-title"> Galeri <span class="pink">Kegiatan</span> </h1>
-        <p class="page-lead">Momen-momen keceriaan dan semangat belajar si kecil di BEST KIDS Learning Center.</p>
+        <!-- Title & Description di Tengah -->
+        <div class="hero-content-center">
+          <h1 class="page-title hero-title-lg text-center">
+            <span class="blue">Galeri</span> <span class="pink">Kegiatan</span>
+          </h1>
+          <p class="page-lead hero-desc-center">
+            Momen-momen keceriaan dan semangat belajar si kecil di BEST KIDS Learning Center.
+          </p>
+        </div>
+
       </div>
     </section>
 
@@ -118,18 +130,33 @@
       </div>
     </section>
 
-    <!-- BANNER CTA BOTTOM -->
-    <section class="container section">
-      <div class="cta-banner">
-        <div class="cta-avatar">
-          <img src="assets/cta-anak-perempuan.png" alt="Anak Senang" loading="lazy">
+    <!-- BANNER CTA PROGRAM (REFERENSI ROKET + TOMBOL KUNING) -->
+    <section class="container section-sm">
+      <div class="cta-banner-program">
+        <!-- Foto Anak Sisi Kiri -->
+        <div class="cta-program-avatar">
+          <img src="assets/poster_Calistung.png" alt="Anak Belajar BEST KIDS" loading="lazy">
         </div>
-        <div class="cta-text">
-          <h2>Ingin si kecil merasakan keseruan belajar di BEST KIDS?</h2>
-          <p>Konsultasikan kebutuhan belajar dan rasakan suasana kelasnya sekarang!</p>
+        
+        <!-- Konten Teks & Tombol Kuning -->
+        <div class="cta-program-content">
+          <h2>Yuk, mulai perjalanan belajar terbaik<br>untuk si kecil sekarang!</h2>
+          <p>Daftar sekarang dan dapatkan pengalaman belajar berkualitas di BEST KIDS Learning Center.</p>
+          
+          <div class="cta-program-action">
+            <a class="btn btn-yellow btn-round" href="kontak.html">Daftar Sekarang →</a>
+          </div>
         </div>
-        <div class="cta-action">
-          <a class="btn btn-yellow" href="kontak.html">Hubungi Kami →</a>
+
+        <!-- Ornamen Roket Sisi Kanan -->
+        <div class="cta-rocket-wrapper">
+          <svg class="rocket-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 8C32 8 44 16 44 32C44 40 38 48 38 48L32 44L26 48C26 48 20 40 20 32C20 16 32 8 32 8Z" stroke="#3BA7E8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="32" cy="26" r="4" stroke="#3BA7E8" stroke-width="3"/>
+            <path d="M20 36L12 42L16 30" stroke="#3BA7E8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M44 36L52 42L48 30" stroke="#3BA7E8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M26 52C22 56 16 58 12 56" stroke="#3BA7E8" stroke-width="2.5" stroke-dasharray="3 3" stroke-linecap="round"/>
+          </svg>
         </div>
       </div>
     </section>
