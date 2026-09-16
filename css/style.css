@@ -8,8 +8,7 @@
   --pink: #D74675;
   --orange: #E89743;
   --green: #71AB53;
-  --purple: #6D4BD8;
-  --bg-main: #e7e7b8;
+  --bg-main: #fffde0;
   
   /* Latar Soft Pastel Turunan */
   --bg-pink-light: #FDF0F4;
@@ -191,7 +190,7 @@ img {
   right: 0;
   width: 100%;
   z-index: 9999; /* Memastikan header berada di atas seluruh elemen */
-  background-color: #EFEDD6;
+  background-color: #fffde0;
   backdrop-filter: blur(8px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
   transition: all 0.3s ease;
@@ -211,7 +210,7 @@ body {
 }
 
 .logo {
-  width: 72px;
+  width: 76px;
   height: auto;
 }
 
@@ -692,6 +691,25 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
+}
+
+/* Responsif Layar Tablet dan HP */
+@media (max-width: 992px) {
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-header-flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
 }
 
 .testimonial {
@@ -1302,7 +1320,7 @@ body {
    HERO TENTANG KAMI (FULL IMAGE STYLE)
    ========================================== */
 .hero-about {
-  background-color: #FFFFFF;
+  background-color: none;
   padding: 40px 0 60px 0;
 }
 
@@ -1314,8 +1332,8 @@ body {
 }
 
 /* Typography & Titles */
-.hero-title-lg .navy {
-  color: var(--navy), #2B59C3;
+.hero-title-lg .navy { 
+  color: var(--navy), #FF2A85; 
 }
 .hero-title-lg .navy {
   color: var(--navy), #FF2A85;
@@ -2210,7 +2228,7 @@ body {
    PAGE KONTAK (EXACT MOCKUP DESIGN)
    ========================================== */
 .contact-page-wrapper {
-  background-color: #FFFFFF;
+  background-color: none;
   position: relative;
   overflow: hidden;
   padding-bottom: 80px;
@@ -2837,6 +2855,7 @@ body {
   .pricing-cards-grid, .info-list { grid-template-columns: 1fr; }
   .level-title-row { justify-content: center; }
   .speech-bubble { position: static; margin: 0 auto 15px; }
+  .hero-bubble { display: none; }
   .checklist-pink li { text-align: left; }
   .section { padding: 55px 0; }
 }
@@ -3339,26 +3358,6 @@ body {
   margin-top: 10px !important;
 }
 
-/* ==========================================
-   OVERRIDE COLOR SYSTEM (DITAMBAHKAN)
-   ========================================== */
-:root {
-  --blue: #4DB1D3;
-  --pink: #D74675;
-  --orange: #E89743;
-  --green: #71AB53;
-  --bg-main: #F6F5E4;
-
-  /* Latar Soft Pastel Turunan */
-  --bg-pink-light: #FDF0F4;
-  --bg-blue-light: #F0F9FC;
-  --bg-orange-light: #FDF5ED;
-  --bg-green-light: #F2F7F0;
-
-  --text-dark: #2D3748;
-  --text-muted: #64748B;
-}
-
 /* Background Utama Halaman */
 body {
   background-color: var(--bg-main);
@@ -3413,7 +3412,7 @@ body {
 .bg-blue-light { background-color: var(--bg-blue-light); }
 .bg-yellow-light, .bg-orange-light { background-color: var(--bg-orange-light); }
 .bg-green-light { background-color: var(--bg-green-light); }
-.bg-purple-light { background-color: #F7F0FA; }
+/* .bg-purple-light sengaja TIDAK di-override agar warna purple asli tetap dipertahankan */
 
 /* ==========================================
    SECTION OWNER & FOUNDER

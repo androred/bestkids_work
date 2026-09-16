@@ -1,8 +1,16 @@
 document.addEventListener('DOMContentLoaded',()=>{
-  const toggle=document.querySelector('.menu-toggle');
-  const links=document.querySelector('.nav-links');
-  if(toggle&&links) toggle.addEventListener('click',()=>links.classList.toggle('open'));
-  document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>links?.classList.remove('open')));
+  document.addEventListener('click',(e)=>{
+    const toggle=e.target.closest('.menu-toggle');
+    const links=document.querySelector('.nav-links');
+    if(toggle&&links){
+      links.classList.toggle('open');
+      return;
+    }
+    const navLink=e.target.closest('.nav-links a');
+    if(navLink&&links){
+      links.classList.remove('open');
+    }
+  });
   document.querySelectorAll('[data-filter]').forEach(btn=>btn.addEventListener('click',()=>{
     document.querySelectorAll('[data-filter]').forEach(x=>x.classList.remove('active'));btn.classList.add('active');
     const val=btn.dataset.filter;
