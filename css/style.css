@@ -4,18 +4,44 @@
    1. GLOBAL VARIABLES & BASE STYLES
    ========================================================================== */
 :root {
-  --navy: #2B3A7A;
-  --pink: #F4437F;
-  --yellow: #F7A51B;
-  --green: #5FBF5F;
-  --blue: #3BA7E8;
+  --blue: #4DB1D3;
+  --pink: #D74675;
+  --orange: #E89743;
+  --green: #71AB53;
   --purple: #6D4BD8;
-  --ink: #4A5273;
-  --muted: #7A809E;
-  --soft: #FBFCFF;
-  --line: #E8EBF4;
-  --footer: #0A2A5C;
-  --shadow: 0 12px 35px rgba(43, 58, 122, 0.10);
+  --bg-main: #e7e7b8;
+  
+  /* Latar Soft Pastel Turunan */
+  --bg-pink-light: #FDF0F4;
+  --bg-blue-light: #F0F9FC;
+  --bg-orange-light: #FDF5ED;
+  --bg-green-light: #F2F7F0;
+  
+  --text-dark: #2D3748;
+  --text-muted: #64748B;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+}
+
+/* ==========================================
+   UTILITY COLOR CLASSES (TEKS & BADGE)
+   ========================================== */
+.blue { color: var(--blue) !important; }
+.pink { color: var(--pink) !important; }
+.orange { color: var(--orange) !important; }
+.green { color: var(--green) !important; }
+
+/* Navigation Active Link */
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--pink) !important;
+}
+
+.nav-links a.active::after {
+  background: var(--pink) !important;
 }
 
 * {
@@ -156,15 +182,24 @@ img {
 .tag-purple { background: #EBE5FF; color: var(--purple); }
 
 /* ==========================================================================
-   2. HEADER & NAVIGATION
+   2. HEADER & NAVIGATION (FIXED FREEZE HEADER)
    ========================================================================== */
 .site-header {
-  position: sticky;
+  position: fixed; /* Menggunakan fixed agar pasti mengunci di atas layar */
   top: 0;
-  z-index: 50;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(232, 235, 244, 0.8);
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9999; /* Memastikan header berada di atas seluruh elemen */
+  background-color: #EFEDD6;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+/* Berikan kompensasi padding-top pada body agar konten paling atas tidak tertutup header */
+body {
+  padding-top: 82px; /* Disesuaikan persis dengan tinggi .nav (82px) */
 }
 
 .nav {
@@ -176,7 +211,7 @@ img {
 }
 
 .logo {
-  width: 92px;
+  width: 72px;
   height: auto;
 }
 
@@ -192,6 +227,7 @@ img {
 .nav-links a {
   padding: 8px 0;
   position: relative;
+  text-decoration: none;
 }
 
 .nav-links a:hover,
@@ -3301,4 +3337,154 @@ img {
 /* Penyesuaian margin atas footer agar rapat dengan banner */
 #footer {
   margin-top: 10px !important;
+}
+
+/* ==========================================
+   OVERRIDE COLOR SYSTEM (DITAMBAHKAN)
+   ========================================== */
+:root {
+  --blue: #4DB1D3;
+  --pink: #D74675;
+  --orange: #E89743;
+  --green: #71AB53;
+  --bg-main: #F6F5E4;
+
+  /* Latar Soft Pastel Turunan */
+  --bg-pink-light: #FDF0F4;
+  --bg-blue-light: #F0F9FC;
+  --bg-orange-light: #FDF5ED;
+  --bg-green-light: #F2F7F0;
+
+  --text-dark: #2D3748;
+  --text-muted: #64748B;
+}
+
+/* Background Utama Halaman */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+}
+
+/* ==========================================
+   UTILITY COLOR CLASSES (TEKS & BADGE)
+   ========================================== */
+.blue { color: var(--blue) !important; }
+.pink { color: var(--pink) !important; }
+.orange { color: var(--orange) !important; }
+.green { color: var(--green) !important; }
+
+/* Navigation Active Link */
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--pink) !important;
+}
+
+.nav-links a.active::after {
+  background: var(--pink) !important;
+}
+
+/* ==========================================
+   TOMBOL (BUTTONS)
+   ========================================== */
+.btn-pink {
+  background-color: var(--pink) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 6px 18px rgba(215, 70, 117, 0.25);
+}
+
+.btn-pink:hover {
+  background-color: #c23864 !important;
+}
+
+.btn-yellow, .btn-orange {
+  background-color: var(--orange) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 6px 18px rgba(232, 151, 67, 0.25);
+}
+
+.btn-yellow:hover, .btn-orange:hover {
+  background-color: #d48332 !important;
+}
+
+/* ==========================================
+   KARTU 6-GRID "KENAPA HARUS BEST KIDS"
+   ========================================== */
+.bg-pink-light { background-color: var(--bg-pink-light); }
+.bg-blue-light { background-color: var(--bg-blue-light); }
+.bg-yellow-light, .bg-orange-light { background-color: var(--bg-orange-light); }
+.bg-green-light { background-color: var(--bg-green-light); }
+.bg-purple-light { background-color: #F7F0FA; }
+
+/* ==========================================
+   SECTION OWNER & FOUNDER
+   ========================================== */
+.owner-card-wrapper {
+  background-color: var(--bg-pink-light) !important;
+  box-shadow: 0 10px 30px rgba(215, 70, 117, 0.05);
+}
+
+.owner-role-badge {
+  background-color: #FCE8EF !important;
+  color: var(--pink) !important;
+}
+
+.owner-quote-card {
+  background-color: var(--bg-orange-light) !important;
+  border: 1px solid #FBE6D2 !important;
+}
+
+.quote-mark {
+  color: var(--pink) !important;
+}
+
+.quote-text {
+  color: var(--blue) !important;
+}
+
+/* ==========================================
+   CTA BANNER PROGRAM
+   ========================================== */
+.cta-banner-program {
+  background: var(--bg-pink-light) !important;
+  border: 1px solid #FCE8EF !important;
+}
+
+.cta-program-content h2 {
+  color: var(--pink) !important;
+}
+
+/* ==========================================
+   HALAMAN KONTAK & FORMULIR
+   ========================================== */
+.main-contact-title .navy {
+  color: var(--blue) !important;
+}
+
+.contact-info-card {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0;
+}
+
+.contact-card-link:hover {
+  border-color: var(--blue) !important;
+  box-shadow: 0 12px 30px rgba(77, 177, 211, 0.15) !important;
+}
+
+.bg-wa { background-color: var(--green) !important; }
+.bg-ig { background-color: var(--pink) !important; }
+.bg-location { background-color: var(--blue) !important; }
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--blue) !important;
+  box-shadow: 0 0 0 3px rgba(77, 177, 211, 0.15) !important;
+}
+
+.btn-send-message {
+  background-color: var(--pink) !important;
+  box-shadow: 0 8px 20px rgba(215, 70, 117, 0.25) !important;
+}
+
+.btn-send-message:hover {
+  background-color: #c23864 !important;
 }
