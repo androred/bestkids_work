@@ -7,6 +7,7 @@
   --blue: #4DB1D3;
   --pink: #D74675;
   --orange: #E89743;
+  --purple : #6D4BD8;
   --green: #71AB53;
   --bg-main: #fffde0;
   
@@ -1320,7 +1321,7 @@ body {
    HERO TENTANG KAMI (FULL IMAGE STYLE)
    ========================================== */
 .hero-about {
-  background-color: none;
+  background-color: #FFFFFF;
   padding: 40px 0 60px 0;
 }
 
@@ -2228,7 +2229,7 @@ body {
    PAGE KONTAK (EXACT MOCKUP DESIGN)
    ========================================== */
 .contact-page-wrapper {
-  background-color: none;
+  background-color: #FFFFFF;
   position: relative;
   overflow: hidden;
   padding-bottom: 80px;
@@ -3356,6 +3357,28 @@ body {
 /* Penyesuaian margin atas footer agar rapat dengan banner */
 #footer {
   margin-top: 10px !important;
+}
+
+/* ==========================================
+   OVERRIDE COLOR SYSTEM (DITAMBAHKAN)
+   ========================================== */
+:root {
+  --blue: #4DB1D3;
+  --pink: #D74675;
+  --orange: #E89743;
+  --green: #71AB53;
+  --bg-main: #F6F5E4;
+
+  /* Latar Soft Pastel Turunan */
+  --bg-pink-light: #FDF0F4;
+  --bg-blue-light: #F0F9FC;
+  --bg-orange-light: #FDF5ED;
+  --bg-green-light: #F2F7F0;
+
+  --text-dark: #2D3748;
+  --text-muted: #64748B;
+  --navy: #0A244E;
+  --yellow: #F7B81B;
 }
 
 /* Background Utama Halaman */
