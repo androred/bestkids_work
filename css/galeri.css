@@ -1,0 +1,175 @@
+/* ==========================================================================
+   HALAMAN GALERI (galeri.html)
+   ========================================================================== */
+/* ==========================================================================
+   PERLEBAR CONTAINER & RUANG HALAMAN (MORE WIDESCREEN & FILLING)
+   ========================================================================== */
+.gallery-grid {
+  gap: 30px; /* Jarak antar kartu lebih proporsional */
+}
+
+/* ==========================================================================
+   5. DETAIL KELAS (`detail-kelas.html`)
+   ========================================================================== */
+.level-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.tab-btn {
+  padding: 10px 32px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  font-family: "Baloo 2", cursive, sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.tab-btn.active {
+  background: var(--pink);
+  color: #fff;
+  border-color: var(--pink);
+  box-shadow: 0 6px 16px rgba(244, 67, 127, 0.24);
+}
+
+/* ==========================================
+   HERO GALERI WITH BACKGROUND BANNER
+   ========================================== */
+.gallery-hero {
+  background-image: url("../assets/header_galerikegiatan.png"), url("assets/header_galerikegiatan.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto 40px auto;
+  padding: 30px 20px 50px 20px;
+  min-height: 260px;
+  
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Breadcrumb Rata Kiri di Atas */
+.hero-breadcrumb-left {
+  display: inline-flex !important;
+  justify-content: flex-start !important;
+  margin-bottom: 20px !important;
+}
+
+/* Pembungkus Judul & Deskripsi di Tengah */
+.hero-content-center {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.gallery-hero .hero-title-lg {
+  margin-bottom: 12px;
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.hero-desc-center {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #4B5563;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  /* Responsive Fixes */
+  .gallery-hero {
+    padding: 24px 16px 36px 16px;
+    background-size: cover;
+  }
+  .gallery-hero .hero-title-lg {
+    font-size: 1.8rem;
+  }
+}
+
+.gallery-tabs {
+  flex-wrap: wrap;
+  margin: 10px 0 32px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.gallery-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(43, 58, 122, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.gallery-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: #F7F9FD;
+}
+
+.gallery-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-card:hover .gallery-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.gallery-info {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.gallery-info h3 {
+  font-family: "Baloo 2", cursive, sans-serif;
+  font-size: 19px;
+  color: var(--navy);
+  margin: 0 0 6px;
+  line-height: 1.25;
+}
+
+.gallery-info p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+
+@media (max-width: 980px) {
+  /* Responsif Mobile Galeri */
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 576px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-tabs { gap: 8px; }
+  .gallery-tabs .tab-btn { padding: 8px 16px; font-size: 14px; }
+}

@@ -3,13 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BEST KIDS — Belajar Seru, Prestasi Maju</title>
+  <title>BESTKIDS — Belajar Seru, Prestasi Maju</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="css/style.css">
+  <!-- CSS: urutan jangan diubah -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/beranda.css">
+  <link rel="stylesheet" href="css/overrides.css">
 </head>
 <body>
   <div id="header"></div>
@@ -20,16 +25,16 @@
       <div class="container hero-grid">
         <div class="hero-text-side">
           <div class="eyebrow">⭐ Tempat Les Terbaik untuk Anak</div>
-          <h1><span class="blue">Belajar</span> <span class="pink">Seru,</span><br><span class="yellow">Prestasi</span> <span class="green">Maju</span><br>bersama <span class="navy-title">BEST KIDS</span></h1>
-          <p>Kami membantu anak-anak mengembangkan kemampuan membaca, menulis, berhitung, Bahasa Indonesia, dan Bahasa Inggris melalui pembelajaran yang menyenangkan, interaktif, dan didampingi guru profesional.</p>
+          <h1><span class="blue">Belajar</span> <span class="pink">Seru,</span><br><span class="yellow">Prestasi</span> <span class="green">Maju</span><br>bersama <span class="navy-title">BESTKIDS</span></h1>
+          <p>Kami membantu anak anak mengembangkan kemampuan membaca, menulis dan berhitung dalam bahasa Inggris dan bahasa Indonesia melalui pembelajaran yang menyenangkan, interaktif dan di dampingi guru profesional.</p>
           <div class="actions">
             <a class="btn btn-pink" href="kontak.html">Konsultasi Gratis →</a>
             <a class="btn btn-outline" href="program.html">Lihat Program</a>
           </div>
         </div>
         <div class="hero-art-side">
-          <div class="speech-bubble hero-bubble">Setiap anak punya potensi untuk bersinar! ♡</div>
-          <img class="hero-kids" src="assets/background_beranda.png" alt="Best Kids Learning Center" loading="lazy">
+          <div class="speech-bubble hero-bubble">The best start for every kid's journey ♡</div>
+          <img class="hero-kids" src="assets\hero_beranda.png" alt="BESTKIDS Learning Center" loading="lazy">
         </div>
       </div>
     </section>
@@ -39,7 +44,7 @@
       <div class="home-stats-grid">
         <div class="home-stat-card bg-blue">
           <img src="assets/students.png" alt="Students Icon" class="stat-icon-img" style="height: 32px; margin: 0 auto 6px;">
-          <strong>150+</strong>
+          <strong>300+</strong>
           <span>Students</span>
         </div>
         <div class="home-stat-card bg-pink">
@@ -74,7 +79,7 @@
             <img src="assets/program_sensory_phonics.png" alt="Sensory Phonics" loading="lazy">
             <h3>Sensory Phonics</h3>
             <span class="age-tag tag-pink">Usia 3 – 4 tahun</span>
-            <p>Pengenalan phonics dengan pendekatan multisensory untuk membangun kesiapan membaca sejak dini.</p>
+            <p>Program pre-reading dan pre-writing berbasis phonics dengan pendekatan multi-sensory untuk usia dini..</p>
             <a class="btn btn-pink btn-sm btn-block" href="detail-sensory-phonics.html">Lihat Detail →</a>
           </article>
 
@@ -83,7 +88,7 @@
             <img src="assets/program_phonics.png" alt="Phonics" loading="lazy">
             <h3>Phonics</h3>
             <span class="age-tag tag-blue">Usia 4 – 8 tahun</span>
-            <p>Program phonics bertahap untuk membangun kemampuan membaca dengan percaya diri.</p>
+            <p>Program reading dan writing berbasis phonics untuk membangun kesiapan anak memasuki jenjang SD.</p>
             <a class="btn btn-blue btn-sm btn-block" href="detail-phonics.html">Lihat Detail →</a>
           </article>
 
@@ -92,7 +97,7 @@
             <img src="assets/program_calistung.png" alt="Calistung" loading="lazy">
             <h3>Calistung</h3>
             <span class="age-tag tag-yellow">Usia 5 – 8 tahun</span>
-            <p>Program membaca, menulis, dan berhitung dengan level Pintar 1–4.</p>
+            <p>Program belajar membaca, menulis dan berhitung dalam bahasa Indonesia untuk membangun kesiapan anak memasuki jenjang SD.</p>
             <a class="btn btn-yellow btn-sm btn-block" href="detail-calistung.html">Lihat Detail →</a>
           </article>
 
@@ -101,7 +106,7 @@
             <img src="assets/program_pre_math.png" alt="Pre-Math" loading="lazy">
             <h3>Pre-Math</h3>
             <span class="age-tag tag-green">Usia 4 – 6 tahun</span>
-            <p>Dasar matematika melalui pendekatan menyenangkan.</p>
+            <p>Program basic math skills untuk membangun kesiapan anak memasuki jenjang SD.</p>
             <a class="btn btn-green btn-sm btn-block" href="detail-pre-math.html">Lihat Detail →</a>
           </article>
 
@@ -110,7 +115,7 @@
             <img src="assets/program_math_class.png" alt="Math Class" loading="lazy">
             <h3>Math Class</h3>
             <span class="age-tag tag-purple">Primary 1 – 6</span>
-            <p>Review materi sekolah dan bantuan homework dengan pendekatan yang mudah dipahami.</p>
+            <p>Program bimbingan belajar matematika dengan pendekatan yang mudah dipahami.</p>
             <a class="btn btn-purple btn-sm btn-block" href="detail-math-class.html">Lihat Detail →</a>
           </article>
 
@@ -119,36 +124,36 @@
             <img src="assets/program_eanglish.png" alt="English for Young Learners" loading="lazy">
             <h3>English for Young Learners</h3>
             <span class="age-tag tag-pink">Kids – Teens</span>
-            <p>Mengembangkan kemampuan Bahasa Inggris: Speaking, Listening, Reading, Writing, Grammar, dan Vocabulary.</p>
+            <p>Program bahasa Inggris berbasis kurikulum Cambridge.</p>
             <a class="btn btn-pink btn-sm btn-block" href="detail-english.html">Lihat Detail →</a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- SECTION KENAPA MEMILIH BEST KIDS -->
+    <!-- SECTION KENAPA MEMILIH BESTKIDS -->
     <section class="container section-sm">
       <div class="section-header text-center" style="margin-bottom: 36px;">
-        <h2 style="font-size: 32px;">Kenapa Orang Tua Memilih <span class="pink">BEST KIDS?</span> ✨</h2>
+        <h2 style="font-size: 32px;">Kenapa Orang Tua Memilih <span class="pink">BESTKIDS?</span> ✨</h2>
       </div>
 
       <div class="why-choose-grid">
         <!-- Card 1 -->
         <div class="why-choose-card card-blue">
           <div class="why-icon-wrapper">
-            <img src="assets/teacher.png" alt="Guru Berpengalaman" style="width: 32px; height: 32px; object-fit: contain;">
+            <img src="assets\Unlimited Free Extra Class.png" alt="Unlimited Free Extra Class" style="width: 32px; height: 32px; object-fit: contain;">
           </div>
-          <h3>Guru Berpengalaman</h3>
-          <p>Guru profesional dan berpengalaman dalam mendidik anak.</p>
+          <h3>Unlimited Free Extra Class</h3>
+          <p>Jika anak membutuhkan waktu lebih untuk memahami materi kami menyediakan extra class yang dapat diikuti tanpa batas dan tanpa biaya tambahan</p>
         </div>
 
         <!-- Card 2 -->
         <div class="why-choose-card card-pink">
           <div class="why-icon-wrapper">
-            <img src="assets/idea.png" alt="Metode Fun Learning" style="width: 32px; height: 32px; object-fit: contain;">
+            <img src="assets\Semi-Private Class.png" alt="Metode Fun Learning" style="width: 32px; height: 32px; object-fit: contain;">
           </div>
-          <h3>Metode Fun Learning</h3>
-          <p>Belajar jadi menyenangkan dengan metode yang interaktif dan kreatif.</p>
+          <h3>Semi-Private Class</h3>
+          <p>Hanya 3 sampai 5 anak per kelas agar pembelajaran lebih fokus, efektif, nyaman dan kondusif.</p>
         </div>
 
         <!-- Card 3 -->
@@ -156,17 +161,25 @@
           <div class="why-icon-wrapper">
             <img src="assets/resault_oriented.png" alt="Banyak Prestasi" style="width: 32px; height: 32px; object-fit: contain;">
           </div>
-          <h3>Banyak Prestasi</h3>
-          <p>Siswa kami telah meraih berbagai prestasi di tingkat sekolah maupun lomba.</p>
+          <h3>Result-Oriented</h3>
+          <p>Setiap kelas memiliki target pembelajaran yang jelas, sehingga orang tua dapat melihat perkembangan belajar anak secara berkala.</p>
         </div>
 
         <!-- Card 4 -->
         <div class="why-choose-card card-green">
           <div class="why-icon-wrapper">
-            <img src="assets/hati.png" alt="Aman & Nyaman" style="width: 32px; height: 32px; object-fit: contain;">
+            <img src="assets\Personal Approach.png" alt="Personal Approach" style="width: 32px; height: 32px; object-fit: contain;">
           </div>
-          <h3>Aman & Nyaman</h3>
-          <p>Lingkungan belajar yang aman, nyaman, dan ramah untuk anak-anak.</p>
+          <h3>Personal Approach</h3>
+          <p>Anak didampingi dengan pendekatan personal dan observasi intensif untuk memenuhi kebutuhan belajarnya secara optimal.</p>
+        </div>
+      <!-- Card 5 -->
+        <div class="why-choose-card card-purple">
+          <div class="why-icon-wrapper">
+            <img src="assets\Brain Boosting Activity.png" alt="Brain Boosting Activity" style="width: 32px; height: 32px; object-fit: contain;">
+          </div>
+          <h3>Brain Boosting Activity</h3>
+          <p>Kelas selalu diawali dengan fun games untuk membangun fokus, konsentrasi, kemampuan kognitif dan kesiapan belajar anak.</p>
         </div>
       </div>
     </section>
@@ -176,7 +189,7 @@
       <div class="container">
         <div class="section-header-flex">
           <div>
-            <h2> Cerita Mereka di <span class="pink">BEST KIDS</span> </h2>
+            <h2> Cerita Mereka di <span class="pink">BESTKIDS</span> </h2>
             <p>Pengalaman nyata dari orang tua yang telah merasakan perubahan positif pada anak mereka.</p>
           </div>
           <a class="btn btn-pink" href="#testimoni">Lihat Semua Testimoni →</a>
@@ -185,7 +198,7 @@
         <div class="testimonial-grid" style="margin-top:30px">
           <article class="testimonial">
             <div class="quote-mark">“</div>
-            <p>Anak saya jadi lebih percaya diri setelah bergabung di BEST KIDS. Guru-gurunya sangat sabar dan cara mengajarnya menyenangkan.</p>
+            <p>Anak saya jadi lebih percaya diri setelah bergabung di BESTKIDS. Guru-gurunya sangat sabar dan cara mengajarnya menyenangkan.</p>
             <div class="stars">★★★★★</div>
             <div class="testimonial-head">
               <img src="assets/testimoni_1.png" alt="Ibu Rani" loading="lazy">
@@ -211,7 +224,7 @@
 
           <article class="testimonial">
             <div class="quote-mark">“</div>
-            <p>Anak saya selalu antusias setiap kali jadwal belajar di BEST KIDS. Lingkungannya positif, gurunya ramah, dan komunikatif dengan orang tua.</p>
+            <p>Anak saya selalu antusias setiap kali jadwal belajar di BESTKIDS. Lingkungannya positif, gurunya ramah, dan komunikatif dengan orang tua.</p>
             <div class="stars">★★★★★</div>
             <div class="testimonial-head">
               <img src="assets/testimoni_3.png" alt="Ibu Sari" loading="lazy">
@@ -230,13 +243,13 @@
       <div class="container">
         <div class="section-header text-center">
           <h2> <span class="pink">FAQ</span> </h2>
-          <p>Pertanyaan yang sering diajukan oleh orang tua.<br>Temukan jawaban untuk membantu Anda mengenal BEST KIDS lebih dekat.</p>
+          <p>Pertanyaan yang sering diajukan oleh orang tua.<br>Temukan jawaban untuk membantu Anda mengenal BESTKIDS lebih dekat.</p>
         </div>
 
         <div class="faq-wrapper">
           <!-- Sisi Kiri: Gambar Art FAQ -->
           <div class="faq-side-art">
-            <img src="assets/background_beranda(option).png" alt="FAQ Best Kids" loading="lazy">
+            <img src="assets/background_beranda(option).png" alt="FAQ BESTKIDS" loading="lazy">
           </div>
 
           <!-- Sisi Kanan: Accordion List (Total 7 FAQ) -->
@@ -317,13 +330,14 @@
             <details class="faq-item faq-more-item">
               <summary>
                 <span class="faq-num num-pink">07</span>
-                <strong>Apa perbedaan program Phonics, Calistung dan Pre-Math untuk usia 4-8 tahun?</strong>
+                <strong>Apa perbedaan program Phonics, Calistung dan Pre-Math untuk persiapan masuk SD?</strong>
                 <span class="arrow">▾</span>
               </summary>
               <div class="faq-answer">
-                <strong>Phonics:</strong> Berfokus membaca & menulis B. Inggris.<br>
-                <strong>Calistung:</strong> Berfokus membaca, menulis & berhitung B. Indonesia.<br>
-                <strong>Pre-Math:</strong> Berhitung pengantar B. Inggris persiapan SD.
+                <strong>Phonics:</strong> Program membaca dan menulis dalam Bahasa Inggris, mulai dari mengenal bunyi huruf, blending, membaca kata, menulis kalimat, hingga membaca buku cerita.<br>
+                <strong>Calistung:</strong> Program membaca, menulis, dan berhitung dalam Bahasa Indonesia, dari mengenal huruf dan angka hingga membaca, menulis kalimat, dan berhitung.<br>
+                <strong>Pre-Math:</strong> Program berhitung dengan Bahasa Inggris untuk mempersiapkan anak masuk SD, mulai dari mengenal angka hingga penjumlahan dan konsep matematika dasar lainnya.<br>
+                <p>Ketiganya menggunakan metode pembelajaran yang sama, dengan perbedaan utama pada bahasa pengantar dan fokus pembelajarannya.</p>
               </div>
             </details>
 
@@ -340,13 +354,13 @@
       <div class="cta-banner">
         <!-- Frame Foto Kotak Tumpul -->
         <div class="cta-avatar-square">
-          <img src="assets/poster_Calistung.png" alt="Anak Belajar Best Kids">
+          <img src="assets\anak 1.png" alt="Anak Belajar BESTKIDS">
         </div>
         
         <!-- Konten Teks CTA -->
         <div class="cta-text">
           <h2>Yuk, mulai perjalanan belajar terbaik untuk si kecil sekarang!</h2>
-          <p>Daftarkan sekarang dan dapatkan pengalaman belajar berkualitas di BEST KIDS Learning Center.</p>
+          <p>Daftarkan sekarang dan dapatkan pengalaman belajar berkualitas di <strong>Bestkids Galaxy Learning Center.</strong></p>
         </div>
 
         <!-- Tombol Aksinya & Ornamen Pesawat Kertas -->

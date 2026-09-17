@@ -1,0 +1,318 @@
+/* ==========================================================================
+   BASE — variabel warna, reset, tipografi, utilitas & tombol (dipakai semua halaman)
+   ========================================================================== */
+/* ==========================================================================
+   1. GLOBAL VARIABLES & BASE STYLES
+   ========================================================================== */
+:root {
+  --blue: #4DB1D3;
+  --pink: #D74675;
+  --orange: #E89743;
+  --purple : #6D4BD8;
+  --green: #71AB53;
+  --bg-main: #fffde0;
+  
+  /* Latar Soft Pastel Turunan */
+  --bg-pink-light: #FDF0F4;
+  --bg-blue-light: #F0F9FC;
+  --bg-orange-light: #FDF5ED;
+  --bg-green-light: #F2F7F0;
+  
+  --text-dark: #2D3748;
+  --text-muted: #64748B;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+}
+
+/* ==========================================
+   UTILITY COLOR CLASSES (TEKS & BADGE)
+   ========================================== */
+.blue { color: var(--blue) !important; }
+.pink { color: var(--pink) !important; }
+.orange { color: var(--orange) !important; }
+.green { color: var(--green) !important; }
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #fff;
+  font-family: "Nunito", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ==========================================================================
+   PERLEBAR CONTAINER & RUANG HALAMAN (MORE WIDESCREEN & FILLING)
+   ========================================================================== */
+/* 1. Melebarkan batas Container menjadi 92% dari lebar layar pengguna, agar konten lebih mengisi layar */
+.container {
+  width: min(1600px, 92%); /* Mengikuti 92% lebar layar pengguna */
+  margin: 0 auto;
+}
+
+/* 2. Optimasi Padding Section agar Konten Lebih Mengisi Layar Vertikal & Horizontal */
+.section {
+  padding: 80px 0;
+}
+
+.section-sm {
+  padding: 40px 0;
+}
+
+/* 3. Menyesuaikan Grid 2, 3, dan 4 Kolom agar Menyebar Rapi di Layar Lebar */
+.grid-2-col,
+.comp-box-wrapper {
+  gap: 48px; /* Memberi ruang napas antar kolom lebar */
+}
+
+.grid-3-col,
+.home-program-grid {
+  gap: 30px; /* Jarak antar kartu lebih proporsional */
+}
+
+.section.soft {
+  background: var(--soft);
+}
+
+.text-navy { color: var(--navy); }
+.navy-title { color: var(--navy); }
+.link-pink { color: var(--pink); font-weight: 700; font-size: 14px; }
+
+.section-title {
+  text-align: center;
+  margin: 0 auto 12px;
+  font-family: "Baloo 2", cursive, sans-serif;
+  font-size: 39px;
+  line-height: 1.05;
+  color: var(--navy);
+}
+
+.section-title .pink { color: var(--pink); }
+.section-title .blue { color: var(--blue); }
+.section-title .green { color: var(--green); }
+
+.section-lead {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 35px;
+  color: #7A809E;
+}
+
+/* Color Background Helpers */
+.bg-blue { background-color: #EEF4FF; }
+.bg-pink { background-color: #FFF0F6; }
+.bg-yellow { background-color: #FFF8E9; }
+.bg-green { background-color: #F3F8EA; }
+.bg-purple { background-color: #EBE5FF; }
+.bg-green-light { background: #E2F6E2; }
+.bg-pink-light { background: #FFF0F6; }
+.bg-blue-light { background: #EEF4FF; }
+.tag-pink { background: #FFE2EC; color: var(--pink); }
+.tag-blue { background: #E1F3FE; color: var(--blue); }
+.tag-yellow { background: #FFF3D6; color: #B78103; }
+.tag-green { background: #E2F6E2; color: #2E7D32; }
+.tag-purple { background: #EBE5FF; color: var(--purple); }
+
+/* ==========================================================================
+   2. HEADER & NAVIGATION (FIXED FREEZE HEADER)
+   ========================================================================== */
+/* Berikan kompensasi padding-top pada body agar konten paling atas tidak tertutup header */
+body {
+  padding-top: 82px; /* Disesuaikan persis dengan tinggi .nav (82px) */
+}
+
+/* ==========================================================================
+   3. BUTTONS & UTILITIES
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 20px;
+  font-family: "Baloo 2", cursive, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-pink {
+  background: var(--pink);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(244, 67, 127, 0.24);
+}
+
+.btn-outline {
+  background: #fff;
+  color: var(--navy);
+  border: 1px solid var(--navy);
+}
+
+.btn-yellow {
+  background: #F7B81B;
+  color: #7A4A00;
+}
+
+.btn-blue {
+  background: var(--blue);
+  color: #fff;
+}
+
+.btn-green {
+  background: var(--green);
+  color: #fff;
+}
+
+.btn-purple {
+  background: var(--purple);
+  color: #fff;
+}
+
+.btn-sm {
+  padding: 8px 18px;
+  font-size: 13px;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* ==========================================================================
+   REBUILD BANNER CTA (BOX FRAME & PAPER PLANE ORNAMENT)
+   ========================================================================== */
+.btn-round {
+  border-radius: 30px;
+  padding: 12px 28px;
+  font-size: 14.5px;
+  box-shadow: 0 6px 18px rgba(244, 67, 127, 0.28);
+}
+
+/* ==========================================================================
+   BREAKPOINTS RESPONSIF
+   ========================================================================== */
+.relative-container {
+  position: relative;
+}
+
+/* ==========================================================================
+   10. MEDIA QUERIES (RESPONSIVE DISATUKAN)
+   ========================================================================== */
+
+@media (max-width: 980px) {
+  .home-program-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 760px) {
+  .container { width: min(100% - 28px, 1120px); }
+  .section { padding: 55px 0; }
+}
+
+@media (max-width: 576px) {
+  .home-program-grid { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   SECTION FOKUS & METODOLOGI (4 KARTU HORIZONTAL)
+   ========================================================================== */
+.badge-bg-pink { background: var(--pink); }
+.badge-bg-blue { background: var(--blue); }
+.badge-bg-yellow { background: var(--yellow); }
+.badge-bg-purple { background: #9B51E0; }
+.badge-bg-green { background: #4CAF50 ; }
+
+/* ==========================================================================
+   SECTION METODE BELAJAR KAMI (4 PILAR CARDS)
+   ========================================================================== */
+.margin-top-12 {
+  margin-top: 16px;
+}
+
+.tag-yellow { background: #FFF4D9; color: #D9822B; }
+.tag-purple { background: #F3E8FF; color: #7E22CE; }
+.tag-blue { background: #E0F2FE; color: #0369A1; }
+
+/* ==========================================
+   OVERRIDE COLOR SYSTEM (DITAMBAHKAN)
+   ========================================== */
+:root {
+  --blue: #4DB1D3;
+  --pink: #D74675;
+  --orange: #E89743;
+  --green: #71AB53;
+  --bg-main: #F6F5E4;
+
+  /* Latar Soft Pastel Turunan */
+  --bg-pink-light: #FDF0F4;
+  --bg-blue-light: #F0F9FC;
+  --bg-orange-light: #FDF5ED;
+  --bg-green-light: #F2F7F0;
+
+  --text-dark: #2D3748;
+  --text-muted: #64748B;
+  --navy: #0A244E;
+  --yellow: #F7B81B;
+}
+
+/* Background Utama Halaman */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+}
+
+/* ==========================================
+   UTILITY COLOR CLASSES (TEKS & BADGE)
+   ========================================== */
+.blue { color: var(--blue) !important; }
+.pink { color: var(--pink) !important; }
+.orange { color: var(--orange) !important; }
+.green { color: var(--green) !important; }
+
+/* ==========================================
+   TOMBOL (BUTTONS)
+   ========================================== */
+.btn-pink:hover {
+  background-color: #c23864 !important;
+}
+
+.btn-yellow, .btn-orange {
+  background-color: var(--orange) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 6px 18px rgba(232, 151, 67, 0.25);
+}
+
+.btn-yellow:hover, .btn-orange:hover {
+  background-color: #d48332 !important;
+}
+
+/* ==========================================
+   KARTU 6-GRID "KENAPA HARUS BEST KIDS"
+   ========================================== */
+.bg-orange-light { background-color: var(--bg-orange-light); }

@@ -1,0 +1,70 @@
+/* ==========================================================================
+   OVERRIDES — dimuat PALING AKHIR di setiap halaman.
+
+   Di style.css asli, aturan-aturan ini ditulis di bagian bawah sehingga MENIMPA
+   style halaman (misalnya warna .bg-pink-light menimpa border kartu). Supaya
+   tampilan tetap sama persis, aturan tsb. dikumpulkan di sini dan file ini
+   harus dipanggil setelah file CSS halaman.
+   ========================================================================== */
+/* ==========================================================================
+   PROGRAM CATALOG CARDS (REFERENSI DESAIN PRESISI)
+   ========================================================================== */
+.badge-pink { background: #FFE0EC; color: #F4437F; }
+.badge-blue { background: #DDF1FF; color: #1E88E5; }
+.badge-yellow { background: #FFF0C9; color: #D97706; }
+.badge-green { background: #D1F5D3; color: #16A34A; }
+.badge-purple { background: #E9E1FF; color: #6D4BD8; }
+
+/* ==========================================================================
+   SECTION FOKUS & METODOLOGI (4 KARTU HORIZONTAL)
+   ========================================================================== */
+/* Warna Latar Belakang Kartu Pastel */
+.bg-blue-light { background: #EEF7FF; border: 1px solid #DDF0FF; }
+.bg-pink-light { background: #FFF0F5; border: 1px solid #FFE4EC; }
+.bg-yellow-light { background: #FFFBF0; border: 1px solid #FFF3D6; }
+.bg-purple-light { background: #F6F2FF; border: 1px solid #ECE3FF; }
+
+/* ==========================================================================
+   SECTION METODE BELAJAR KAMI (4 PILAR CARDS)
+   ========================================================================== */
+.method-card {
+  border-radius: 24px;
+  padding: 32px 20px 28px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 6px 20px rgba(43, 58, 122, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Background Color Variants (Pastel) */
+.bg-blue-light { background: #EEF7FF; border: 1px solid #DDF0FF; }
+.bg-pink-light { background: #FFF0F5; border: 1px solid #FFE4EC; }
+.bg-yellow-light { background: #FFFBF0; border: 1px solid #FFF3D6; }
+.bg-green-light { background: #F0FDF4; border: 1px solid #DCFCE7; }
+
+/* ==========================================
+   TOMBOL (BUTTONS)
+   ========================================== */
+.btn-pink {
+  background-color: var(--pink) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 6px 18px rgba(215, 70, 117, 0.25);
+}
+
+/* ==========================================
+   KARTU 6-GRID "KENAPA HARUS BEST KIDS"
+   ========================================== */
+.bg-pink-light { background-color: var(--bg-pink-light); }
+.bg-blue-light { background-color: var(--bg-blue-light); }
+.bg-yellow-light { background-color: var(--bg-orange-light); }
+.bg-green-light { background-color: var(--bg-green-light); }
+
+/* ==========================================
+   HALAMAN KONTAK & FORMULIR
+   ========================================== */
+.btn-send-message {
+  background-color: var(--pink) !important;
+  box-shadow: 0 8px 20px rgba(215, 70, 117, 0.25) !important;
+}

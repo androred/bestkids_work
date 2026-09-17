@@ -1,0 +1,411 @@
+/* ==========================================================================
+   LAYOUT — header/navbar & footer (dipakai semua halaman)
+   ========================================================================== */
+/* ==========================================
+   UTILITY COLOR CLASSES (TEKS & BADGE)
+   ========================================== */
+/* Navigation Active Link */
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--pink) !important;
+}
+
+.nav-links a.active::after {
+  background: var(--pink) !important;
+}
+
+/* ==========================================================================
+   2. HEADER & NAVIGATION (FIXED FREEZE HEADER)
+   ========================================================================== */
+.site-header {
+  position: fixed; /* Menggunakan fixed agar pasti mengunci di atas layar */
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9999; /* Memastikan header berada di atas seluruh elemen */
+  background-color: #fffde0;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.nav {
+  height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo {
+  width: 76px;
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #59617e;
+}
+
+.nav-links a {
+  padding: 8px 0;
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--navy);
+}
+
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--navy);
+  border-radius: 10px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 38px;
+  left: -14px;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  border-radius: 14px;
+  padding: 8px;
+  min-width: 180px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 9px 12px;
+  border-radius: 9px;
+}
+
+.dropdown-menu a:hover {
+  background: #f6f8ff;
+}
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  font-size: 26px;
+  color: var(--navy);
+}
+
+/* ==========================================================================
+   HEADER ACTIONS — SLOGAN DI KIRI TOMBOL "HUBUNGI KAMI"
+   ========================================================================== */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;               /* jarak slogan ke tombol */
+  flex-shrink: 0;
+}
+
+.header-slogan {
+  font-family: 'Baloo 2', cursive, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;     /* slogan tetap 1 baris */
+}
+
+/* Laptop kecil & tablet: slogan disembunyikan agar menu tidak berdesakan */
+@media (max-width: 1200px) {
+  .header-slogan {
+    display: none;
+  }
+}
+
+/* HP: slogan & tombol disembunyikan, diganti ikon menu ☰ */
+@media (max-width: 760px) {
+  .header-actions {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   8. FOOTER STYLING (COMPACT SECTION, BIGGER TEXT & LARGER SOCIAL ICONS)
+   ========================================================================== */
+#footer {
+  position: relative;
+  z-index: 10;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.site-footer {
+  position: relative;
+  width: 100%;
+  margin-top: 0 !important;
+  background: transparent;
+}
+
+/* Wave Header Compact */
+.footer-wave-container {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  margin-bottom: -1px;
+}
+
+.footer-wave-svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 45px; /* Ketinggian wave dikecilkan agar hemat ruang */
+}
+
+/* Container Body Footer Ringkas */
+.footer-body {
+  background-color: #0A244E;
+  color: #c0caf5;
+  padding: 24px 0 18px; /* Padding dipangkas agar section tidak terlalu besar */
+}
+
+.footer-grid-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1.3fr 0.9fr;
+  gap: 32px;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+/* Brand & Logo */
+.footer-logo-img {
+  height: 52px; /* Logo sedikit dinaikkan ukurannya */
+  width: auto;
+  margin-bottom: 10px;
+}
+
+.footer-brand-text {
+  font-size: 14px; /* Ukuran font naik */
+  color: #cbd5e1;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 270px;
+}
+
+/* Menu & Navigasi */
+.footer-col-menu {
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  padding-left: 28px;
+}
+
+.footer-heading {
+  font-family: "Baloo 2", cursive, sans-serif;
+  font-size: 17.5px; /* Judul kolom lebih jelas */
+  color: #ffffff;
+  margin: 0 0 10px;
+}
+
+.footer-menu-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-menu-links li {
+  margin-bottom: 6px;
+}
+
+.footer-menu-links a {
+  font-size: 14px; /* Ukuran font menu naik */
+  color: #e2e8f0;
+  transition: color 0.2s ease;
+}
+
+.footer-menu-links a:hover {
+  color: var(--pink);
+}
+
+/* Kontak Detail */
+.footer-contact-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-contact-details li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px; /* Ukuran font detail kontak naik */
+  color: #e2e8f0;
+  margin-bottom: 8px;
+}
+
+.footer-contact-details .icon {
+  font-size: 15px;
+}
+
+/* Sosial Media Icon BISA DIPERBESAR */
+.footer-col-social {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.social-btn-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-circle {
+  width: 48px; /* Lingkaran diperbesar dari 42px */
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-circle img {
+  width: 28px !important; /* Gambar ikon sosmed diperbesar dari 24px */
+  height: 28px !important;
+  object-fit: contain;
+}
+
+.social-circle:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.social-circle.ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.social-circle.fb { background: #1877f2; }
+.social-circle.yt { background: #ff0000; }
+.social-circle.tt { background: #000000; border: 1px solid rgba(255, 255, 255, 0.25); }
+/* Bottom Copyright Bar */
+.footer-copyright-row {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px; /* Ukuran font copyright dinaikkan */
+  color: #94a3b8;
+}
+
+@media (max-width: 768px) {
+  /* Responsif Mobile (<768px) */
+  .footer-body {
+    padding: 20px 0 16px;
+  }
+  .footer-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-bottom: 16px;
+  }
+  .footer-col-menu {
+    border-left: none;
+    padding-left: 0;
+  }
+  .footer-col-social {
+    justify-content: flex-start;
+  }
+  .footer-copyright-row {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
+
+/* ==========================================================================
+   FORCE ENLARGE SOCIAL MEDIA ICONS (WA & INSTAGRAM)
+   ========================================================================== */
+/* 1. Perbesar Lingkaran Pembungkus Sosmed (dari 48px ke 56px) */
+.footer-col-social .social-circle {
+  width: 56px !important;
+  height: 56px !important;
+  min-width: 56px !important;
+  min-height: 56px !important;
+  padding: 0 !important; /* Hapus inner padding agar gambar maksimal */
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* 2. Paksa Ukuran Gambar Logo WA & IG Menjadi Jauh Lebih Besar (36px) */
+.footer-col-social .social-circle img {
+  width: 40px !important;
+  height: 40px !important;
+  max-width: 40px !important;
+  max-height: 40px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* ==========================================================================
+   10. MEDIA QUERIES (RESPONSIVE DISATUKAN)
+   ========================================================================== */
+
+@media (max-width: 980px) {
+  .nav-links { gap: 17px; }
+}
+
+@media (max-width: 760px) {
+  .nav { height: 70px; }
+  .menu-toggle { display: block; }
+  .nav-links, .nav > .btn { display: none; }
+  .nav-links.open {
+    display: flex;
+    position: absolute;
+    top: 70px;
+    left: 14px;
+    right: 14px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 12px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 3px;
+    box-shadow: var(--shadow);
+  }
+  .nav-links.open a { padding: 11px 12px; }
+  .dropdown-menu { position: static; display: block; box-shadow: none; border: 0; padding: 0 0 0 12px; }
+}
+
+/* ==========================================================================
+   PERBAIKAN SPACING CTA BANNER & FOOTER (MENGURANGI GAP LEBIH)
+   ========================================================================== */
+/* Penyesuaian margin atas footer agar rapat dengan banner */
+#footer {
+  margin-top: 10px !important;
+}
+
+/* ==========================================
+   UTILITY COLOR CLASSES (TEKS & BADGE)
+   ========================================== */
+/* Navigation Active Link */
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--pink) !important;
+}
+
+.nav-links a.active::after {
+  background: var(--pink) !important;
+}

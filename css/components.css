@@ -1,0 +1,364 @@
+/* ==========================================================================
+   COMPONENTS — komponen yang dipakai di lebih dari satu halaman
+   ========================================================================== */
+/* ==========================================================================
+   PERLEBAR CONTAINER & RUANG HALAMAN (MORE WIDESCREEN & FILLING)
+   ========================================================================== */
+.section-header.text-center {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  font-family: "Baloo 2", cursive, sans-serif;
+  font-size: 32px;
+  color: var(--navy);
+  margin: 0 0 6px;
+}
+
+.section-header p {
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIF MOBILE (<1024px & <768px)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .cta-section-wrapper {
+    margin-bottom: 0 !important;
+    padding: 16px 0 !important;
+  }
+  .cta-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 16px;
+    gap: 16px;
+  }
+}
+
+/* ==========================================================================
+   SECTION KENAPA MEMILIH BEST KIDS (4-CARD PASTEL GRID)
+   ========================================================================== */
+.quote-mark {
+  font-family: "Baloo 2", cursive, sans-serif;
+  font-size: 40px;
+  color: var(--pink);
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   REBUILD BANNER CTA (BOX FRAME & PAPER PLANE ORNAMENT)
+   ========================================================================== */
+.cta-section-wrapper {
+  position: relative;
+  z-index: 25;
+  margin-bottom: -45px !important; /* Overlap di atas wave footer */
+  padding: 0 !important;
+}
+
+.cta-banner {
+  background: #FFF0F5;
+  border: 1px solid #FFE4EC;
+  border-radius: 24px;
+  padding: 24px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  box-shadow: 0 10px 30px rgba(10, 36, 78, 0.08);
+}
+
+/* Teks Utama CTA */
+.cta-text {
+  flex-grow: 1;
+}
+
+.cta-text h2 {
+  font-family: "Baloo 2", cursive, sans-serif;
+  font-size: 22px;
+  color: #F4437F;
+  margin: 0 0 4px;
+  line-height: 1.25;
+}
+
+.cta-text p {
+  font-size: 13.5px;
+  color: #4A5273;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  /* Responsif Mobile (<768px) */
+  .cta-section-wrapper {
+    margin-bottom: 0 !important;
+    padding: 16px 0 !important;
+  }
+  .cta-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 16px;
+    gap: 16px;
+  }
+}
+
+/* ==========================================================================
+   5. DETAIL KELAS (`detail-kelas.html`)
+   ========================================================================== */
+.breadcrumb-pills {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.pill-item.active {
+  color: var(--pink);
+  font-weight: 700;
+  background: #FFF0F6;
+  padding: 3px 12px;
+  border-radius: 12px;
+}
+
+/* ==========================================
+   OWNER & FOUNDER SECTION STYLES
+   ========================================== */
+.quote-mark {
+  font-family: "Baloo 2", cursive, sans-serif;
+  font-size: 2.2rem;
+  color: #FF2A85;
+  line-height: 1;
+  position: absolute;
+}
+
+/* ==========================================================================
+   BREAKPOINTS RESPONSIF
+   ========================================================================== */
+.page-title {
+  font-family: "Baloo 2", cursive, sans-serif;
+  font-size: 46px;
+  color: var(--navy);
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.page-lead {
+  font-size: 15px;
+  color: var(--muted);
+  text-align: center;
+  margin: 0;
+}
+
+/* ==========================================================================
+   CTA BANNER PROGRAM (COMPACT GAP & LEFT ALIGNED)
+   ========================================================================== */
+.cta-banner-program {
+  background: #FFF0F5;
+  border: 1px solid #FFE4EC;
+  border-radius: 28px;
+  padding: 20px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Rata kiri agar gambar dan teks merapat */
+  gap: 28px; /* Jarak pas antara foto anak dan teks */
+  position: relative;
+  box-shadow: 0 10px 30px rgba(10, 36, 78, 0.06);
+  overflow: hidden;
+}
+
+/* Foto Anak Sisi Kiri */
+.cta-program-avatar {
+  width: 130px;
+  height: 120px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.cta-program-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+/* Konten Teks (Menempel di Samping Gambar) */
+.cta-program-content {
+  flex-grow: 1;
+  max-width: 650px;
+  text-align: left;
+}
+
+.cta-program-content h2 {
+  font-family: "Baloo 2", cursive, sans-serif;
+  font-size: 23px;
+  color: #F4437F;
+  margin: 0 0 6px;
+  line-height: 1.25;
+}
+
+.cta-program-content p {
+  font-size: 13.5px;
+  color: #4A5273;
+  margin: 0 0 14px;
+}
+
+.cta-program-action .btn-yellow {
+  background: #F7A51B;
+  color: #ffffff;
+  border: none;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(247, 165, 27, 0.3);
+}
+
+.cta-program-action .btn-yellow:hover {
+  background: #e09212;
+}
+
+/* Ornaments Roket di Ujung Kanan */
+.cta-rocket-wrapper {
+  margin-left: auto; /* Memaksa roket tetap di pojok kanan */
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rocket-icon {
+  width: 64px;
+  height: 64px;
+  transform: rotate(25deg);
+}
+
+@media (max-width: 768px) {
+  /* Responsif Mobile (<768px) */
+  .cta-banner-program {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px 20px;
+    gap: 16px;
+  }
+  .cta-program-content {
+    text-align: center;
+  }
+  .cta-program-avatar {
+    width: 100px;
+    height: 90px;
+    margin: 0 auto;
+  }
+  .cta-rocket-wrapper {
+    display: none;
+  }
+  .cta-program-action .btn {
+    width: 100%;
+  }
+}
+
+/* ==========================================
+   HERO GALERI WITH BACKGROUND BANNER
+   ========================================== */
+.gallery-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================================================
+   10. MEDIA QUERIES (RESPONSIVE DISATUKAN)
+   ========================================================================== */
+
+@media (max-width: 760px) {
+  .cta-banner { grid-template-columns: 1fr; text-align: center; }
+}
+
+/* ==========================================================================
+   HERO DETAIL KELAS REDESIGN (PROFESIONAL & MODERN)
+   ========================================================================== */
+.hero-title-lg {
+  font-size: 42px;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.hero-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+  margin-bottom: 28px;
+  text-align: left;
+}
+
+.btn-hero-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px 28px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(244, 67, 127, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-hero-cta span {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.btn-hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(244, 67, 127, 0.35);
+}
+
+@media (max-width: 900px) {
+  .hero-title-lg, .hero-desc {
+    text-align: center;
+  }
+  .btn-hero-cta {
+    width: 100%;
+    align-items: center;
+  }
+}
+
+/* ==========================================================================
+   PERBAIKAN SPACING CTA BANNER & FOOTER (MENGURANGI GAP LEBIH)
+   ========================================================================== */
+/* Seksi pembungkus CTA Banner */
+.cta-section-wrapper {
+  padding-top: 10px !important;
+  padding-bottom: 30px !important;
+  margin-bottom: 0 !important;
+}
+
+/* Banner CTA Utama */
+.cta-banner {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  box-shadow: 0 8px 24px rgba(10, 36, 78, 0.06);
+}
+
+/* ==========================================
+   SECTION OWNER & FOUNDER
+   ========================================== */
+.quote-mark {
+  color: var(--pink) !important;
+}
+
+/* ==========================================
+   CTA BANNER PROGRAM
+   ========================================== */
+.cta-banner-program {
+  background: var(--bg-pink-light) !important;
+  border: 1px solid #FCE8EF !important;
+}
+
+.cta-program-content h2 {
+  color: var(--pink) !important;
+}
