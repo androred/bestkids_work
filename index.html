@@ -22,9 +22,19 @@
   <main>
     <!-- HERO SECTION -->
     <section class="hero">
+        <!-- ORNAMEN MENGAMBANG -->
+      <div class="hero-decorations">
+          <img src="assets/ornamen/cat_spill_pink.png" class="decor-item decor-cat-spill" alt="">
+          <img src="assets/ornamen/blink_stars_blue.png" class="decor-item decor-blink-star" alt="">
+          <img src="assets/ornamen/5star_orange.png" class="decor-item decor-5star" alt="">
+          <img src="assets/ornamen/wavy_line_green.png" class="decor-item decor-wavy" alt="">
+          <img src="assets/ornamen/half_circle_line_pink.png" class="decor-item decor-half-circle" alt="">
+          <img src="assets/ornamen/heart_orange.png" class="decor-item decor-heart" alt="">
+          <img src="assets/ornamen/star_blue.png" class="decor-item decor-star" alt="">
+        </div>
       <div class="container hero-grid">
         <div class="hero-text-side">
-          <div class="eyebrow">⭐ Tempat Les Terbaik untuk Anak</div>
+          <div class="eyebrow">🏆 Tempat Les Terbaik untuk Anak</div>
           <h1><span class="blue">Belajar</span> <span class="pink">Seru,</span><br><span class="yellow">Prestasi</span> <span class="green">Maju</span><br>bersama <span class="navy-title">BESTKIDS</span></h1>
           <p>Kami membantu anak anak mengembangkan kemampuan membaca, menulis dan berhitung dalam bahasa Inggris dan bahasa Indonesia melalui pembelajaran yang menyenangkan, interaktif dan di dampingi guru profesional.</p>
           <div class="actions">
@@ -33,11 +43,13 @@
           </div>
         </div>
         <div class="hero-art-side">
-          <div class="speech-bubble hero-bubble">The best start for every kid's journey ♡</div>
+          <div class="speech-bubble hero-bubble">The best start for every kid's journey</div>
           <img class="hero-kids" src="assets\hero_beranda.png" alt="BESTKIDS Learning Center" loading="lazy">
         </div>
       </div>
     </section>
+
+    
 
     <!-- STATS / KPI BAR -->
     <section class="container section-sm">
@@ -52,15 +64,15 @@
           <strong>5.0</strong>
           <span>Parents Review</span>
         </div>
-        <div class="home-stat-card bg-green">
-          <img src="assets/success.png" alt="Success Icon" class="stat-icon-img" style="height: 32px; margin: 0 auto 6px;">
-          <strong>99.9%</strong>
-          <span>Student Success</span>
-        </div>
         <div class="home-stat-card bg-yellow">
           <img src="assets/kalender.png" alt="History Icon" class="stat-icon-img" style="height: 32px; margin: 0 auto 6px;">
           <strong>7 Tahun</strong>
           <span>Berdiri sejak 2019</span>
+        </div>
+        <div class="home-stat-card bg-green">
+          <img src="assets/success.png" alt="Success Icon" class="stat-icon-img" style="height: 32px; margin: 0 auto 6px;">
+          <strong>99.9%</strong>
+          <span>Student Success</span>
         </div>
       </div>
     </section>
@@ -185,58 +197,190 @@
     </section>
 
     <!-- TESTIMONI -->
-    <section class="section soft" id="testimoni">
+    <section class="section testi-section" id="testimoni">
       <div class="container">
         <div class="section-header-flex">
           <div>
-            <h2> Cerita Mereka di <span class="pink">BESTKIDS</span> </h2>
+            <h2>Cerita Mereka di <span class="pink">BESTKIDS</span></h2>
             <p>Pengalaman nyata dari orang tua yang telah merasakan perubahan positif pada anak mereka.</p>
           </div>
-          <a class="btn btn-pink" href="#testimoni">Lihat Semua Testimoni →</a>
+          <div class="testi-nav">
+            <button class="testi-arrow" data-dir="-1" aria-label="Testimoni sebelumnya">‹</button>
+            <button class="testi-arrow" data-dir="1" aria-label="Testimoni berikutnya">›</button>
+          </div>
         </div>
 
-        <div class="testimonial-grid" style="margin-top:30px">
-          <article class="testimonial">
-            <div class="quote-mark">“</div>
-            <p>Anak saya jadi lebih percaya diri setelah bergabung di BESTKIDS. Guru-gurunya sangat sabar dan cara mengajarnya menyenangkan.</p>
-            <div class="stars">★★★★★</div>
-            <div class="testimonial-head">
-              <img src="assets/testimoni_1.png" alt="Ibu Rani" loading="lazy">
+        <div class="testi-track" tabindex="0" aria-label="Daftar testimoni orang tua">
+
+          <!-- Testimoni 1 -->
+          <article class="testi-card">
+            <div class="testi-top">
+              <span class="testi-stars" aria-label="Rating 5 dari 5">★★★★★</span>
+            </div>
+            <p class="testi-text">Akhirnya kami menemukan bimbel yang concern belajar math dan phonics dalam materi bahasa Inggris. Suka dengan cara mengajar gurunya yang detail dan personal approach, serta memastikan setiap anak tidak tertinggal teman sekelasnya.</p>
+            <div class="testi-person">
+              <img class="testi-avatar" src="assets\testimoni-bestkids\Angeli Gavriel.png" alt="Angeli Gavriel" loading="lazy">
               <div>
-                <strong>Ibu Rani</strong>
-                <small>Orang tua dari Alesha (Kelas Calistung)</small>
+                <strong>Angeli Gavriel</strong>
+                <small>Ulasan Google</small>
+              </div>
+              <span class="age-tag tag-purple testi-program">Math & Phonics</span>
+            </div>
+          </article>
+
+          <!-- Testimoni 2 -->
+          <article class="testi-card">
+            <div class="testi-top"> 
+              <span class="testi-stars" aria-label="Rating 5 dari 5">★★★★★</span>
+            </div>
+            <p class="testi-text">Anak saya sebelumnya sempat ditolak di beberapa tempat les lain dengan alasan terlalu aktif. Hanya Best Kids yang berani menerima tantangan dan memberikan solusi. Hasilnya di luar ekspektasi, anak saya berkembang dengan sangat cepat.</p>
+            <div class="testi-person">
+              <img class="testi-avatar" src="assets\testimoni-bestkids\Christy Travis.png" alt="Christy Travis" loading="lazy">
+              <div>
+                <strong>Christy Travis</strong>
+                <small>Ulasan Google</small>
               </div>
             </div>
           </article>
 
-          <article class="testimonial">
-            <div class="quote-mark">“</div>
-            <p>Programnya sangat terstruktur dan sesuai dengan kebutuhan anak. Kami melihat perkembangan yang signifikan, terutama dalam kemampuan membaca.</p>
-            <div class="stars">★★★★★</div>
-            <div class="testimonial-head">
-              <img src="assets/testimoni_2.png" alt="Bapak Andi" loading="lazy">
+          <!-- Testimoni 3 -->
+          <article class="testi-card">
+            <div class="testi-top">
+              <span class="testi-stars" aria-label="Rating 5 dari 5">★★★★★</span>
+            </div>
+            <p class="testi-text">Anakku les Phonics di sini. Sudah berjalan lebih dari 3 bulan dan progressnya sudah terlihat. Miss-nya juga mengajar dengan sabar dan penjelasannya mudah dimengerti. Yang paling penting, anaknya happy belajar di sini.</p>
+            <div class="testi-person">
+              <img class="testi-avatar" src="assets\testimoni-bestkids\Ayu Indriani.png" alt="Ayu Indriani" loading="lazy">
               <div>
-                <strong>Bapak Andi</strong>
-                <small>Orang tua dari Daffa (Kelas Phonics)</small>
+                <strong>Ayu Indriani</strong>
+                <small>Ulasan Google</small>
+              </div>
+              <span class="age-tag tag-blue testi-program">Phonics</span>
+            </div>
+          </article>
+
+          <!-- Testimoni 4 -->
+          <article class="testi-card">
+            <div class="testi-top">
+              <span class="testi-stars" aria-label="Rating 5 dari 5">★★★★★</span>
+            </div>
+            <p class="testi-text">Anak ku les phonics disini setelah mencari cari dan cocok disini. Saat trial class anak ku merasa happy , dengan miss miss yang berpengalaman serta ramah dan sabar saat mengajar. Tempatnya juga bersih mendukung banget dalam kegiatan mengajar dikelas dan lokasi nya juga strategis ! Sukses selalu bestkids !</p>
+            <div class="testi-person">
+              <img class="testi-avatar" src="assets\testimoni-bestkids\nylla allyn.png" alt="Nylla Allyn" loading="lazy">
+              <div>
+                <strong>Nylla Allyn</strong>
+                <small>Ulasan Google</small>
+              </div>
+              <span class="age-tag tag-blue testi-program">Phonics</span>
+            </div>
+            
+          </article>
+
+          <!-- Testimoni 5 -->
+          <article class="testi-card">
+            <div class="testi-top">
+              <span class="testi-stars" aria-label="Rating 5 dari 5">★★★★★</span>
+            </div>
+            <p class="testi-text">The instructors are not only highly qualified but also incredibly patient and engaging, which really helps in building children's confidence in speaking English. The classes are tailored according to age and skill level, so every child can progress at their own pace.</p>
+            <div class="testi-person">
+              <img class="testi-avatar" src="assets\testimoni-bestkids\Achmad Faizal Reza.png" alt="Achmad Faizal Reza" loading="lazy">
+              <div>
+                <strong>Achmad Faizal Reza</strong>
+                <small>Ulasan Google</small>
+              </div>
+              <span class="age-tag tag-pink testi-program">English</span>
+            </div>
+          </article>
+
+          <!-- Testimoni 6 -->
+          <article class="testi-card">
+            <div class="testi-top">
+              <span class="testi-stars" aria-label="Rating 5 dari 5">★★★★★</span>
+            </div>
+            <p class="testi-text">Tempat les rasa sekolah, karena sangat terstruktur dan terorganisir dengan baik. Ada aplikasi khusus yang menghubungkan orang tua dengan tempat les, dan ada pertemuan private antara orang tua dan teacher untuk membahas perkembangan akademis anak.</p>
+            <div class="testi-person">
+              <img class="testi-avatar" src="assets\testimoni-bestkids\Lilian Daniella.png" alt="Lilian Daniella" loading="lazy">
+              <div>
+                <strong>Lilian Daniella</strong>
+                <small>Ulasan Google</small>
               </div>
             </div>
           </article>
 
-          <article class="testimonial">
-            <div class="quote-mark">“</div>
-            <p>Anak saya selalu antusias setiap kali jadwal belajar di BESTKIDS. Lingkungannya positif, gurunya ramah, dan komunikatif dengan orang tua.</p>
-            <div class="stars">★★★★★</div>
-            <div class="testimonial-head">
-              <img src="assets/testimoni_3.png" alt="Ibu Sari" loading="lazy">
+          <!-- Testimoni 7 -->
+          <article class="testi-card">
+            <div class="testi-top">
+              <span class="testi-stars" aria-label="Rating 5 dari 5">★★★★★</span>
+            </div>
+            <p class="testi-text">Program phonics-nya sangat membantu anak saya dalam meningkatkan kemampuan membaca dan mengenal bunyi huruf. Teachers di sini sangat kreatif dan membuat pembelajaran jadi menyenangkan.</p>
+            <div class="testi-person">
+              <img class="testi-avatar" src="assets\testimoni-bestkids\Melvina Karina.png" alt="Melvina Karina" loading="lazy">
               <div>
-                <strong>Ibu Sari</strong>
-                <small>Orang tua dari Keisha (Kelas Math)</small>
+                <strong>Melvina Karina</strong>
+                <small>Ulasan Google</small>
+              </div>
+              <span class="age-tag tag-blue testi-program">Phonics</span>
+            </div>
+          </article>
+
+          <!-- Testimoni 8 -->
+          <article class="testi-card">
+            <div class="testi-top">
+              <span class="testi-stars" aria-label="Rating 5 dari 5">★★★★★</span>
+            </div>
+            <p class="testi-text">Metode pengajarannya sangat baik. Anakku umur 3 tahun ikut kelas phonics-nya dan enjoy sekali. Terima kasih Bestkids Galaxy.</p>
+            <div class="testi-person">
+              <img class="testi-avatar" src="assets\testimoni-bestkids\Clara Andyna.png" alt="Clara Andyna" loading="lazy">
+              <div>
+                <strong>Clara Andyna</strong>
+                <small>Ulasan Google</small>
+              </div>
+              <span class="age-tag tag-blue testi-program">Phonics</span>
+            </div>
+          </article>
+
+          <!-- Testimoni 9 -->
+          <article class="testi-card">
+            <div class="testi-top">
+              <span class="testi-stars" aria-label="Rating 5 dari 5">★★★★★</span>
+            </div>
+            <p class="testi-text">I like their method. Only 5 kids in a class with 2 teachers. They give extra class to students who need more lessons. Teachers are polite, cheerful, kind and pay attention to our son.</p>
+            <div class="testi-person">
+              <img class="testi-avatar" src="assets\testimoni-bestkids\Yara Destani.png" alt="Yara Destani" loading="lazy">
+              <div>
+                <strong>Yara Destani</strong>
+                <small>Ulasan Google</small>
               </div>
             </div>
           </article>
+
+          <!-- Testimoni 10 -->
+          <article class="testi-card">
+            <div class="testi-top">
+              <span class="testi-stars" aria-label="Rating 5 dari 5">★★★★★</span>
+            </div>
+            <p class="testi-text">Anak ku disini ambil les phonics, dengan miss2 yang sangat berpengalaman dan perlengkapan lengkap yang menunjang proses pembelajaran menurutku ini tempat yang tepat untuk anak 3-8tahun belajar membaca dan nulis dalam bahasa inggris dengan fun learning tetapi tetap fokus. Tempatnya nyaman dan lokasi sangat strategis 👍🏻</p>
+            <div class="testi-person">
+              <img class="testi-avatar" src="assets\testimoni-bestkids\Kenneth Daniel Prasetya.png" alt="Kenneth Daniel Prasetya" loading="lazy">
+              <div>
+                <strong>Kenneth Daniel Prasetya</strong>
+                <small>Ulasan Google</small>
+              </div>
+              <span class="age-tag tag-blue testi-program">Phonics</span>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Titik indikator (dibuat otomatis oleh JavaScript, tampil di HP) -->
+        <div class="testi-dots" aria-hidden="true"></div>
+
+        <div class="testi-more">
+          <a class="btn btn-pink" href="https://maps.app.goo.gl/WuajGMSbwLb1ixey8" target="_blank" rel="noopener noreferrer">Lihat Ulasan di Google →</a>
         </div>
       </div>
     </section>
+
 
    <!-- SECTION FAQ -->
     <section class="section" id="faq">
@@ -398,6 +542,13 @@
 
   <div id="footer"></div>
 
+  <!-- TOMBOL WHATSAPP MENGAMBANG -->
+  <a class="wa-float" href="https://wa.me/6281383001823?text=Halo%20BESTKIDS%2C%20saya%20ingin%20bertanya%20tentang%20program%20belajar%20untuk%20anak%20saya."
+    target="_blank" rel="noopener noreferrer" aria-label="Chat WhatsApp BESTKIDS">
+    <img src="assets/whatsapp.png" alt="" aria-hidden="true">
+    <span class="wa-float-label">Chat Kami</span>
+  </a>
+
   <script src="js/script.js"></script>
   <script>
     Promise.all([
@@ -407,6 +558,48 @@
       document.querySelector('#header').innerHTML = h;
       document.querySelector('#footer').innerHTML = f;
     });
+  </script>
+
+    <script>
+    // Carousel Testimoni
+    (function () {
+      const track = document.querySelector('.testi-track');
+      if (!track) return;
+      const cards = track.querySelectorAll('.testi-card');
+      const arrows = document.querySelectorAll('.testi-arrow');
+      const dotsWrap = document.querySelector('.testi-dots');
+
+      // Buat titik indikator sesuai jumlah kartu
+      cards.forEach((card, i) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.addEventListener('click', () => {
+          track.scrollTo({ left: card.offsetLeft - track.offsetLeft - 2 });
+        });
+        dotsWrap.appendChild(dot);
+      });
+      const dots = dotsWrap.querySelectorAll('button');
+
+      // Geser satu kartu saat panah diklik
+      const step = () => cards[0].offsetWidth + parseFloat(getComputedStyle(track).columnGap);
+      arrows.forEach(btn => {
+        btn.addEventListener('click', () => {
+          track.scrollBy({ left: step() * Number(btn.dataset.dir) });
+        });
+      });
+
+      // Perbarui status panah & titik saat digeser
+      function update() {
+        const max = track.scrollWidth - track.clientWidth;
+        arrows[0].disabled = track.scrollLeft <= 2;
+        arrows[1].disabled = track.scrollLeft >= max - 2;
+        const index = Math.min(cards.length - 1, Math.round(track.scrollLeft / step()));
+        dots.forEach((d, i) => d.classList.toggle('active', i === index));
+      }
+      track.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
   </script>
 </body>
 </html>

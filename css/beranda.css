@@ -100,7 +100,7 @@
   right: auto !important;
   bottom: auto !important;
   width: 100%;
-  max-width: 480px;
+  max-width: 580px;
   height: auto;
   object-fit: contain;
   border-radius: 24px;
@@ -379,42 +379,239 @@
   }
 }
 
-.testimonial {
-  border: 1px solid #E7EAF2;
-  border-radius: 22px;
-  padding: 22px;
-  background: #fff;
-  box-shadow: 0 6px 20px rgba(43, 58, 122, 0.04);
+/* ==========================================================================
+   TESTIMONI BERANDA — CAROUSEL GESER (SCROLL-SNAP)
+   ========================================================================== */
+.testi-section {
+  --testi-gap: 24px;
 }
 
-.testimonial-head {
+/* Tombol panah di kanan judul */
+.testi-nav {
   display: flex;
-  gap: 12px;
-  align-items: center;
-  margin-top: 14px;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
-.testimonial-head img {
-  width: 54px;
-  height: 54px;
+.testi-arrow {
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  object-fit: cover;
+  border: 1px solid #F3C6D6;
+  background: #FFFFFF;
+  color: var(--pink);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 3px;
+  box-shadow: 0 4px 12px rgba(215, 70, 117, 0.10);
+  transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
 }
 
-.stars {
+.testi-arrow:hover:not(:disabled) {
+  background: var(--pink);
+  color: #FFFFFF;
+}
+
+.testi-arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+/* Jalur kartu yang bisa digeser */
+.testi-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 2 * var(--testi-gap)) / 3);   /* 3 kartu */
+  gap: var(--testi-gap);
+  margin-top: 30px;
+  padding: 6px 2px 18px;          /* ruang untuk bayangan kartu */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;          /* sembunyikan scrollbar (Firefox) */
+}
+
+.testi-track::-webkit-scrollbar {
+  display: none;                  /* sembunyikan scrollbar (Chrome/Safari) */
+}
+
+.testi-track:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 4px;
+  border-radius: 24px;
+}
+
+/* Kartu testimoni */
+.testi-card {
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border: 1px solid #F1E6EA;
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: 0 6px 20px rgba(43, 58, 122, 0.05);
+}
+
+.testi-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.testi-quote {
+  font-family: 'Baloo 2', cursive, sans-serif;
+  font-size: 56px;
+  line-height: 0.6;
+  height: 24px;
+  color: var(--pink);
+}
+
+.testi-stars {
   color: #F7B81B;
   letter-spacing: 2px;
-  font-size: 14px;
+  font-size: 15px;
 }
 
-.testimonial p {
+.testi-text {
   font-style: italic;
   color: #5C637F;
-  margin: 10px 0;
+  line-height: 1.65;
+  margin: 14px 0 20px;
 }
 
-.testimonial strong { color: var(--navy); }
-.testimonial small { color: #8A90AD; display: block; }
+/* Bagian nama orang tua — selalu menempel di bawah kartu */
+.testi-person {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px dashed #EDE3E7;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testi-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Avatar inisial (jika tidak ada foto) */
+.testi-initial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Baloo 2', cursive, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--navy);
+}
+
+.testi-person strong {
+  display: block;
+  color: var(--navy);
+  font-size: 14.5px;
+  line-height: 1.3;
+}
+
+.testi-person small {
+  display: block;
+  color: #8A90AD;
+  font-size: 12.5px;
+}
+
+.testi-program {
+  margin-left: auto;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Titik indikator (hanya tampil di HP) */
+.testi-dots {
+  display: none;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.testi-dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: #E9CFD9;
+  cursor: pointer;
+  transition: width 0.25s ease, background-color 0.25s ease;
+}
+
+.testi-dots button.active {
+  width: 22px;
+  background: var(--pink);
+}
+
+.testi-more {
+  text-align: center;
+  margin-top: 22px;
+}
+
+/* ---------- Tablet: 2 kartu ---------- */
+@media (max-width: 992px) {
+  .testi-section {
+    --testi-gap: 18px;
+  }
+  .testi-track {
+    grid-auto-columns: calc((100% - var(--testi-gap)) / 2);
+  }
+  .testi-section .section-header-flex {
+    flex-direction: row;          /* panah tetap di kanan judul */
+    align-items: flex-end;
+    gap: 20px;
+  }
+}
+
+/* ---------- HP: 1 kartu + kartu berikutnya mengintip ---------- */
+@media (max-width: 640px) {
+  .testi-section {
+    --testi-gap: 14px;
+  }
+  .testi-nav {
+    display: none;
+  }
+  .testi-section .section-header-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .testi-track {
+    grid-auto-columns: 86%;
+    margin-top: 20px;
+  }
+  .testi-card {
+    padding: 20px;
+  }
+  .testi-person {
+    flex-wrap: wrap;
+  }
+  .testi-program {
+    margin-left: 60px;            /* sejajar dengan nama, di bawahnya */
+  }
+  .testi-dots {
+    display: flex;
+  }
+}
+
+/* Hormati pengaturan "kurangi animasi" di perangkat pengunjung */
+@media (prefers-reduced-motion: reduce) {
+  .testi-track {
+    scroll-behavior: auto;
+  }
+}
 
 /* ==========================================================================
    PERBAIKAN FAQ & OVERLAPPING CTA BANNER (PERSIS GAMBAR ACUAN)
@@ -657,4 +854,117 @@
   .hero h1 { font-size: 40px; }
   .hero-kids { max-width: 300px; }
   .actions .btn { width: 100%; }
+}
+
+/* ==========================================================================
+   HERO SECTION DECORATIVE ORNAMENTS (BACKGROUND LEVEL)
+   ========================================================================== */
+
+/* 1. Pastikan section hero menjadi acuan koordinat (relative) & overflow aman */
+.hero, .hero-about, .detail-hero, .program-hero, .gallery-hero, .contact-hero-section {
+  position: relative !important;
+  overflow: hidden; /* Mencegah ornamen keluar dari batas layar */
+}
+
+/* 2. Pastikan Konten Utama (Teks, Tombol, Gambar Utama) Berada DI ATAS Ornamen */
+.hero .container,
+.hero-text-side,
+.hero-art-side,
+.hero-grid {
+  position: relative;
+  z-index: 2; /* Layer Konten Utama */
+}
+
+/* 3. Container Khusus Ornamen Background */
+.hero-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Layer Background di Bawah Konten */
+  pointer-events: none; /* Agar ornamen tidak menghalangi klik kursor/mouse */
+}
+
+/* 4. Base Class Semua Ornamen */
+.decor-item {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.85; /* Transparansi lembut agar terlihat seperti elemen background */
+}
+
+/* ==========================================================================
+   TATA LETAK MASING-MASING ORNAMEN (CONPOSING & POSISIONING)
+   ========================================================================== */
+
+/* Splatter/Bercak Cat (Cat Spill) - Pojok Kiri Atas */
+.decor-cat-spill {
+  top: -20px;
+  left: -30px;
+  width: 280px;
+  height: auto;
+  transform: rotate(-15deg);
+}
+
+/* Bintang Berkilau (Blink Stars) - Kiri Tengah Samping Teks */
+.decor-blink-star {
+  top: 45%;
+  left: 3%;
+  width: 155px;
+  height: auto;
+}
+
+/* Deretan 5 Bintang (5Star) - Kanan Atas di Belakang Gambar Utama */
+.decor-5star {
+  top: 10px;
+  right: 2%;
+  width: 210px;
+  height: auto;
+}
+
+/* Garis Gelombang (Wavy Line) - Bawah Kiri Dekat Tombol */
+.decor-wavy {
+  bottom: 25px;
+  right: 35%;
+  width: 250px;
+  height: auto;
+}
+
+/* Garis Setengah Lingkaran (Half Circle Line) - Kanan Bawah */
+.decor-half-circle {
+  bottom: -10px;
+  right: 2%;
+  width: 400px;
+  height: auto;
+}
+
+/* Ikon Hati / Heart - Melayang di Tengah */
+.decor-heart {
+  top: 18%;
+  left: 45%;
+  width: 155px;
+  height: auto;
+  transform: rotate(12deg);
+}
+
+/* Ikon Bintang / Star - Melayang di Kanan Atas */
+.decor-star {
+  top: 5%;
+  right: 55%;
+  width: 300px;
+  height: auto;
+  transform: rotate(5deg);
+}
+
+/* ==========================================================================
+   RESPONSIF MOBILE (<768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Di HP ukuran ornamen disesuaikan agar layar tidak terasa sempit */
+  .decor-cat-spill { width: 110px; top: -10px; left: -15px; }
+  .decor-5star { width: 75px; }
+  .decor-wavy { width: 85px; }
+  .decor-half-circle { width: 90px; }
+  .decor-blink-star, .decor-heart { opacity: 0.5; }
 }

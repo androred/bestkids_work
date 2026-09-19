@@ -194,7 +194,7 @@
 
 /* Brand & Logo */
 .footer-logo-img {
-  height: 52px; /* Logo sedikit dinaikkan ukurannya */
+  height: 90px; /* Logo sedikit dinaikkan ukurannya */
   width: auto;
   margin-bottom: 10px;
 }
@@ -205,6 +205,7 @@
   line-height: 1.5;
   margin: 0;
   max-width: 270px;
+  font-weight: bold;
 }
 
 /* Menu & Navigasi */
@@ -409,3 +410,77 @@
 .nav-links a.active::after {
   background: var(--pink) !important;
 }
+
+
+/* ==========================================================================
+   TOMBOL WHATSAPP MENGAMBANG (SEMUA HALAMAN)
+   ========================================================================== */
+.wa-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9998;              /* di bawah header (9999), di atas konten */
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: #25D366;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.38);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.wa-float img {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.wa-float-label {
+  padding: 0;
+  white-space: nowrap;
+  max-width: 0;               /* teks tersembunyi, muncul saat disentuh kursor */
+  overflow: hidden;
+  opacity: 0;
+  transition: max-width 0.3s ease, padding 0.3s ease, opacity 0.25s ease;
+}
+
+.wa-float:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgba(37, 211, 102, 0.45);
+}
+
+.wa-float:hover .wa-float-label,
+.wa-float:focus-visible .wa-float-label {
+  max-width: 160px;
+  padding: 0 12px 0 8px;
+  opacity: 1;
+}
+
+.wa-float:focus-visible {
+  outline: 3px solid #0A244E;
+  outline-offset: 3px;
+}
+
+/* HP: tombol lebih kecil, teks tidak ditampilkan */
+@media (max-width: 640px) {
+  .wa-float {
+    right: 16px;
+    bottom: 16px;
+    height: 54px;
+    padding: 0 6px;
+  }
+  .wa-float img {
+    width: 42px;
+    height: 42px;
+  }
+  .wa-float-label {
+    display: none;
+  }
+}
+

@@ -10,7 +10,7 @@
   --orange: #E89743;
   --purple : #6D4BD8;
   --green: #71AB53;
-  --bg-main: #fffde0;
+  --bg-main: #fff5db;
   
   /* Latar Soft Pastel Turunan */
   --bg-pink-light: #FDF0F4;
@@ -50,6 +50,10 @@ body {
   font-family: "Nunito", sans-serif;
   font-size: 15px;
   line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Baloo 2", cursive, sans-serif;
 }
 
 a {
@@ -267,7 +271,7 @@ body {
   --pink: #D74675;
   --orange: #E89743;
   --green: #71AB53;
-  --bg-main: #F6F5E4;
+
 
   /* Latar Soft Pastel Turunan */
   --bg-pink-light: #FDF0F4;

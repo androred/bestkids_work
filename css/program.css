@@ -25,123 +25,86 @@
 }
 
 /* ==========================================================================
-   PROGRAM HERO (ENLARGED & FULLY RESPONSIVE CROP)
+   PERBAIKAN ORNAMEN HERO PROGRAM (STACKING LAYER FIX)
    ========================================================================== */
 .program-hero {
-  padding: 32px 0 16px;
+  position: relative !important;
+  padding: 50px 0 30px;
+  background-color: var(--bg-main, #F6F5E4);
+  overflow: hidden;
 }
 
+/* 1. Latar Belakang Kartu (Layer Paling Bawah di Dalam Hero) */
 .program-hero-wrapper {
   position: relative;
+  z-index: 1; /* Diubah ke z-index: 1 agar berada di bawah ornamen */
   width: 100%;
-  max-width: 1520px; /* Ukuran diperbesar mendekati batas maksimal container */
+  max-width: 100%;
   margin: 0 auto;
-  background: #FFFBF3;
-  border-radius: 28px;
-  padding: 28px 36px; /* Padding ditingkatkan agar area terasa lebih lega */
+  background: var(--bg-orange-light, #FFFBF3);
+  border: 1px solid #FDF0ED;
+  border-radius: 32px;
+  padding: 48px 40px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  overflow: hidden;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(232, 151, 67, 0.06);
   box-sizing: border-box;
 }
 
-/* Potongan Kiri (Diperbesar) */
-.hero-crop-left {
-  width: 320px; /* Diperbesar dari 260px */
-  height: 210px; /* Diperbesar dari 170px */
-  flex-shrink: 0;
-  overflow: hidden;
-}
-
-.hero-crop-left img {
+/* 2. Container Ornamen (Layer Tengah: Di atas background kartu, di bawah teks) */
+.program-hero .hero-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: left center;
+  z-index: 2 !important; /* Dinaikkan ke z-index: 2 agar berada di ATAS background wrapper */
+  pointer-events: none; /* Agar klik kursor tetap menembus ke tombol/teks */
 }
 
-/* Teks Tengah (Diperbesar) */
+/* 3. Teks Utama (Layer Paling Atas) */
 .program-hero-text {
+  position: relative;
+  z-index: 3; /* Dinaikkan ke z-index: 3 agar teks berada di ATAS ornamen */
   flex-grow: 1;
-  max-width: 680px;
-  padding: 0 12px;
+  max-width: 720px;
+  padding: 0;
+  text-align: center;
 }
 
 .program-hero-text .page-title {
   font-family: "Baloo 2", cursive, sans-serif;
-  font-size: 50px; /* Judul lebih menonjol */
-  line-height: 1.12;
-  margin-bottom: 8px;
+  font-size: 52px;
+  line-height: 1.1;
+  margin-bottom: 12px;
   color: var(--navy);
 }
 
 .program-hero-text .page-lead {
-  font-size: 17px;
-  color: var(--muted);
+  font-size: 17.5px;
+  color: var(--text-muted);
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-/* Potongan Kanan (Diperbesar) */
-.hero-crop-right {
-  width: 320px; /* Diperbesar dari 260px */
-  height: 210px; /* Diperbesar dari 170px */
-  flex-shrink: 0;
-  overflow: hidden;
-}
-
-.hero-crop-right img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: right center;
-}
-
-/* ==========================================================================
-   BREAKPOINTS RESPONSIF
-   ========================================================================== */
-
-@media (max-width: 1200px) {
-  .hero-crop-left, .hero-crop-right {
-    width: 240px;
-    height: 160px;
+/* Responsif Layar Tablet & HP */
+@media (max-width: 768px) {
+  .program-hero {
+    padding: 30px 0 20px;
+  }
+  .program-hero-wrapper {
+    padding: 32px 20px;
+    border-radius: 24px;
   }
   .program-hero-text .page-title {
-    font-size: 40px;
+    font-size: 36px;
   }
   .program-hero-text .page-lead {
-    font-size: 15.5px;
+    font-size: 15px;
   }
 }
 
-@media (max-width: 900px) {
-  .program-hero-wrapper {
-    padding: 24px 20px;
-    gap: 12px;
-  }
-  .hero-crop-left, .hero-crop-right {
-    width: 180px;
-    height: 130px;
-  }
-  .program-hero-text .page-title {
-    font-size: 32px;
-  }
-}
-
-@media (max-width: 680px) {
-  .program-hero-wrapper {
-    flex-direction: column;
-    padding: 32px 20px;
-  }
-  .hero-crop-left, .hero-crop-right {
-    display: none; /* Otomatis disembunyikan di HP agar tidak memakan ruang vertical */
-  }
-  .program-hero-text {
-    max-width: 100%;
-  }
-}
 
 .hero-bubble-left {
   position: absolute;
@@ -305,4 +268,224 @@
 
 @media (max-width: 576px) {
   .program-catalog-grid { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   HERO SECTION DECORATIVE ORNAMENTS (BACKGROUND LEVEL)
+   ========================================================================== */
+
+/* 1. Pastikan section hero menjadi acuan koordinat (relative) & overflow aman */
+.hero, .hero-about, .detail-hero, .program-hero, .gallery-hero, .contact-hero-section {
+  position: relative !important;
+  overflow: hidden; /* Mencegah ornamen keluar dari batas layar */
+}
+
+/* 2. Pastikan Konten Utama (Teks, Tombol, Gambar Utama) Berada DI ATAS Ornamen */
+.hero .container,
+.hero-text-side,
+.hero-art-side,
+.hero-grid {
+  position: relative;
+  z-index: 2; /* Layer Konten Utama */
+}
+
+/* 3. Container Khusus Ornamen Background */
+.hero-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Layer Background di Bawah Konten */
+  pointer-events: none; /* Agar ornamen tidak menghalangi klik kursor/mouse */
+}
+
+/* 4. Base Class Semua Ornamen */
+.decor-item {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.85; /* Transparansi lembut agar terlihat seperti elemen background */
+}
+
+/* ==========================================================================
+   TATA LETAK MASING-MASING ORNAMEN (CONPOSING & POSISIONING)
+   ========================================================================== */
+
+/* Splatter/Bercak Cat (Cat Spill) - Pojok Kiri Atas */
+.decor-cat-spill {
+  top: -20px;
+  left: 40px;
+  width: 280px;
+  height: auto;
+  transform: rotate(-15deg);
+}
+
+/* Bintang Berkilau (Blink Stars) - Kiri Tengah Samping Teks */
+.decor-blink-star {
+  top: 60%;
+  left: 10%;
+  width: 155px;
+  height: auto;
+}
+
+/* Deretan 5 Bintang (5Star) - Kanan Atas di Belakang Gambar Utama */
+.decor-5star {
+  top: 5px;
+  right: 2%;
+  width: 210px;
+  height: auto;
+}
+
+/* Garis Gelombang (Wavy Line) - Bawah Kiri Dekat Tombol */
+.decor-wavy {
+  bottom: 0px;
+  right: 35%;
+  width: 250px;
+  height: auto;
+}
+
+/* Garis Setengah Lingkaran (Half Circle Line) - Kanan Bawah */
+.decor-half-circle {
+  Top : 70px;
+  right: 2%;
+  width: 400px;
+  height: auto;
+}
+
+/* Ikon Hati / Heart - Melayang di Tengah */
+.decor-heart {
+  top: 13%;
+  left: 45%;
+  width: 155px;
+  height: auto;
+  transform: rotate(12deg);
+}
+
+/* Ikon Bintang / Star - Melayang di Kanan Atas */
+.decor-star {
+  top: 5%;
+  right: 55%;
+  width: 300px;
+  height: auto;
+  transform: rotate(5deg);
+}
+
+/* ==========================================================================
+   RESPONSIF MOBILE (<768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Di HP ukuran ornamen disesuaikan agar layar tidak terasa sempit */
+  .decor-cat-spill { width: 110px; top: -10px; left: -15px; }
+  .decor-5star { width: 75px; }
+  .decor-wavy { width: 85px; }
+  .decor-half-circle { width: 90px; }
+  .decor-blink-star, .decor-heart { opacity: 0.5; }
+}
+
+
+/* ==========================================================================
+   REBUILD BANNER CTA PROGRAM (POPPING OUT IMAGE FIX)
+   ========================================================================== */
+
+/* 1. Mencegah pemotongan gambar keluar banner */
+.cta-banner-program {
+  position: relative;
+  overflow: visible !important; /* WAJIB visible agar gambar anak bisa menembus keluar ke atas */
+  margin-top: 50px;             /* Memberi ruang di atas banner agar gambar anak tidak menutupi elemen di atasnya */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* 2. Container Frame Foto */
+.cta-program-avatar {
+  position: relative;
+  width: 170px;                /* Ruang horizontal untuk gambar */
+  min-height: 100px;
+  align-self: stretch;
+  flex-shrink: 0;
+  margin: 0px 15px;
+}
+
+/* 3. Styling Gambar Anak Keluar dari Banner */
+.cta-program-avatar img {
+  position: absolute;
+  left: 50%;
+  bottom: -24px;              /* Menempel di tepi bawah banner */
+  height: 200px;              /* Ukuran lebih tinggi dari banner sehingga menembus ke atas */
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 10px 16px rgba(10, 36, 78, 0.18));
+  pointer-events: none;
+  z-index: 10;                /* Memastikan gambar berada di atas background banner */
+}
+
+/* 4. Area Teks & Tombol */
+.cta-program-content {
+  flex-grow: 1;
+}
+
+.cta-program-action {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-top: 12px;
+}
+
+/* 5. Ornaments Roket Melayang */
+.cta-rocket-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.rocket-icon {
+  width: 60px;
+  height: 60px;
+  transform: rotate(15deg);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   RESPONSIF MOBILE (<768px) UNTUK CTA PROGRAM
+   ========================================================================== */
+@media (max-width: 768px) {
+  .cta-banner-program {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 16px;
+    gap: 16px;
+  }
+
+  .cta-program-avatar {
+    width: 85px;
+    height: 85px;
+    min-height: 0;
+    align-self: center;
+    margin: 0 auto;
+  }
+
+  .cta-program-avatar img {
+    height: 150px;
+    bottom: 0; /* di HP gambar muncul di atas banner */
+  }
+
+  .cta-program-action {
+    width: 100%;
+    margin-right: 0; /* agar tombol tetap di tengah di HP */
+    justify-content: center;
+  }
+
+  .cta-program-action .btn {
+    width: 100%;
+  }
+
+  .cta-rocket-wrapper,
+  .rocket-icon {
+    display: none;
+  }
 }

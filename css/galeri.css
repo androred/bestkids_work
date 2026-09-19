@@ -98,6 +98,119 @@
   }
 }
 
+/* ==========================================================================
+   HERO SECTION DECORATIVE ORNAMENTS (BACKGROUND LEVEL)
+   ========================================================================== */
+
+/* 1. Pastikan section hero menjadi acuan koordinat (relative) & overflow aman */
+.hero, .hero-about, .detail-hero, .program-hero, .gallery-hero, .contact-hero-section {
+  position: relative !important;
+  overflow: hidden; /* Mencegah ornamen keluar dari batas layar */
+}
+
+/* 2. Pastikan Konten Utama (Teks, Tombol, Gambar Utama) Berada DI ATAS Ornamen */
+.hero .container,
+.hero-text-side,
+.hero-art-side,
+.hero-grid {
+  position: relative;
+  z-index: 2; /* Layer Konten Utama */
+}
+
+/* 3. Container Khusus Ornamen Background */
+.hero-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Layer Background di Bawah Konten */
+  pointer-events: none; /* Agar ornamen tidak menghalangi klik kursor/mouse */
+}
+
+/* 4. Base Class Semua Ornamen */
+.decor-item {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.85; /* Transparansi lembut agar terlihat seperti elemen background */
+}
+
+/* ==========================================================================
+   TATA LETAK MASING-MASING ORNAMEN (CONPOSING & POSISIONING)
+   ========================================================================== */
+
+/* Splatter/Bercak Cat (Cat Spill) - Pojok Kiri Atas */
+.decor-cat-spill {
+  top: -20px;
+  left: -30px;
+  width: 280px;
+  height: auto;
+  transform: rotate(-15deg);
+}
+
+/* Bintang Berkilau (Blink Stars) - Kiri Tengah Samping Teks */
+.decor-blink-star {
+  top: 70%;
+  left: 3%;
+  width: 155px;
+  height: auto;
+}
+
+/* Deretan 5 Bintang (5Star) - Kanan Atas di Belakang Gambar Utama */
+.decor-5star {
+  top: 10px;
+  right: 2%;
+  width: 210px;
+  height: auto;
+}
+
+/* Garis Gelombang (Wavy Line) - Bawah Kiri Dekat Tombol */
+.decor-wavy {
+  bottom: -25px;
+  right: 20%;
+  width: 250px;
+  height: auto;
+}
+
+/* Garis Setengah Lingkaran (Half Circle Line) - Kanan Bawah */
+.decor-half-circle {
+  bottom: -80px;
+  right: -3%;
+  width: 350px;
+  height: auto;
+}
+
+/* Ikon Hati / Heart - Melayang di Tengah */
+.decor-heart {
+  top: 7%;
+  left: 45%;
+  width: 155px;
+  height: auto;
+  transform: rotate(12deg);
+}
+
+/* Ikon Bintang / Star - Melayang di Kanan Atas */
+.decor-star {
+  top: 5%;
+  right: 60%;
+  width: 300px;
+  height: auto;
+  transform: rotate(5deg);
+}
+
+/* ==========================================================================
+   RESPONSIF MOBILE (<768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Di HP ukuran ornamen disesuaikan agar layar tidak terasa sempit */
+  .decor-cat-spill { width: 110px; top: -10px; left: -15px; }
+  .decor-5star { width: 75px; }
+  .decor-wavy { width: 85px; }
+  .decor-half-circle { width: 90px; }
+  .decor-blink-star, .decor-heart { opacity: 0.5; }
+}
+
 .gallery-tabs {
   flex-wrap: wrap;
   margin: 10px 0 32px;
@@ -172,4 +285,110 @@
   .gallery-grid { grid-template-columns: 1fr; }
   .gallery-tabs { gap: 8px; }
   .gallery-tabs .tab-btn { padding: 8px 16px; font-size: 14px; }
+}
+
+/* ==========================================================================
+   REBUILD BANNER CTA PROGRAM (POPPING OUT IMAGE FIX)
+   ========================================================================== */
+
+/* 1. Mencegah pemotongan gambar keluar banner */
+.cta-banner-program {
+  position: relative;
+  overflow: visible !important; /* WAJIB visible agar gambar anak bisa menembus keluar ke atas */
+  margin-top: 50px;             /* Memberi ruang di atas banner agar gambar anak tidak menutupi elemen di atasnya */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* 2. Container Frame Foto */
+.cta-program-avatar {
+  position: relative;
+  width: 170px;                /* Ruang horizontal untuk gambar */
+  min-height: 100px;
+  align-self: stretch;
+  flex-shrink: 0;
+  margin: 0px 15px;
+}
+
+/* 3. Styling Gambar Anak Keluar dari Banner */
+.cta-program-avatar img {
+  position: absolute;
+  left: 50%;
+  bottom: -24px;              /* Menempel di tepi bawah banner */
+  height: 200px;              /* Ukuran lebih tinggi dari banner sehingga menembus ke atas */
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 10px 16px rgba(10, 36, 78, 0.18));
+  pointer-events: none;
+  z-index: 10;                /* Memastikan gambar berada di atas background banner */
+}
+
+/* 4. Area Teks & Tombol */
+.cta-program-content {
+  flex-grow: 1;
+}
+
+.cta-program-action {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-top: 12px;
+}
+
+/* 5. Ornaments Roket Melayang */
+.cta-rocket-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.rocket-icon {
+  width: 60px;
+  height: 60px;
+  transform: rotate(15deg);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   RESPONSIF MOBILE (<768px) UNTUK CTA PROGRAM
+   ========================================================================== */
+@media (max-width: 768px) {
+  .cta-banner-program {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 16px;
+    gap: 16px;
+  }
+
+  .cta-program-avatar {
+    width: 85px;
+    height: 85px;
+    min-height: 0;
+    align-self: center;
+    margin: 0 auto;
+  }
+
+  .cta-program-avatar img {
+    height: 150px;
+    bottom: 0; /* di HP gambar muncul di atas banner */
+  }
+
+  .cta-program-action {
+    width: 100%;
+    margin-right: 0; /* agar tombol tetap di tengah di HP */
+    justify-content: center;
+  }
+
+  .cta-program-action .btn {
+    width: 100%;
+  }
+
+  .cta-rocket-wrapper,
+  .rocket-icon {
+    display: none;
+  }
 }

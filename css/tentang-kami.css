@@ -13,7 +13,7 @@
    HERO TENTANG KAMI (FULL IMAGE STYLE)
    ========================================== */
 .hero-about {
-  background-color: #FFFFFF;
+  background-color: #FFF8E9;
   padding: 40px 0 60px 0;
 }
 
@@ -94,6 +94,120 @@
     height: 300px;
   }
 }
+
+/* ==========================================================================
+   HERO SECTION DECORATIVE ORNAMENTS (BACKGROUND LEVEL)
+   ========================================================================== */
+
+/* 1. Pastikan section hero menjadi acuan koordinat (relative) & overflow aman */
+.hero, .hero-about, .detail-hero, .program-hero, .gallery-hero, .contact-hero-section {
+  position: relative !important;
+  overflow: hidden; /* Mencegah ornamen keluar dari batas layar */
+}
+
+/* 2. Pastikan Konten Utama (Teks, Tombol, Gambar Utama) Berada DI ATAS Ornamen */
+.hero .container,
+.hero-text-side,
+.hero-art-side,
+.hero-grid {
+  position: relative;
+  z-index: 2; /* Layer Konten Utama */
+}
+
+/* 3. Container Khusus Ornamen Background */
+.hero-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Layer Background di Bawah Konten */
+  pointer-events: none; /* Agar ornamen tidak menghalangi klik kursor/mouse */
+}
+
+/* 4. Base Class Semua Ornamen */
+.decor-item {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.85; /* Transparansi lembut agar terlihat seperti elemen background */
+}
+
+/* ==========================================================================
+   TATA LETAK MASING-MASING ORNAMEN (CONPOSING & POSISIONING)
+   ========================================================================== */
+
+/* Splatter/Bercak Cat (Cat Spill) - Pojok Kiri Atas */
+.decor-cat-spill {
+  top: -20px;
+  left: -30px;
+  width: 280px;
+  height: auto;
+  transform: rotate(-15deg);
+}
+
+/* Bintang Berkilau (Blink Stars) - Kiri Tengah Samping Teks */
+.decor-blink-star {
+  top: 75%;
+  left: 3%;
+  width: 155px;
+  height: auto;
+}
+
+/* Deretan 5 Bintang (5Star) - Kanan Atas di Belakang Gambar Utama */
+.decor-5star {
+  top: 10px;
+  right: 2%;
+  width: 210px;
+  height: auto;
+}
+
+/* Garis Gelombang (Wavy Line) - Bawah Kiri Dekat Tombol */
+.decor-wavy {
+  bottom: 25px;
+  right: 35%;
+  width: 250px;
+  height: auto;
+}
+
+/* Garis Setengah Lingkaran (Half Circle Line) - Kanan Bawah */
+.decor-half-circle {
+  bottom: -70px;
+  right: -3%;
+  width: 400px;
+  height: auto;
+}
+
+/* Ikon Hati / Heart - Melayang di Tengah */
+.decor-heart {
+  top: 18%;
+  left: 45%;
+  width: 155px;
+  height: auto;
+  transform: rotate(12deg);
+}
+
+/* Ikon Bintang / Star - Melayang di Kanan Atas */
+.decor-star {
+  top: 5%;
+  right: 55%;
+  width: 300px;
+  height: auto;
+  transform: rotate(5deg);
+}
+
+/* ==========================================================================
+   RESPONSIF MOBILE (<768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Di HP ukuran ornamen disesuaikan agar layar tidak terasa sempit */
+  .decor-cat-spill { width: 110px; top: -10px; left: -15px; }
+  .decor-5star { width: 75px; }
+  .decor-wavy { width: 85px; }
+  .decor-half-circle { width: 90px; }
+  .decor-blink-star, .decor-heart { opacity: 0.5; }
+}
+
 
 /* ==========================================
    PERJALANAN KAMI (TIMELINE HORIZONTAL)
