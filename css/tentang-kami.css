@@ -199,6 +199,16 @@
 /* ==========================================================================
    RESPONSIF MOBILE (<768px)
    ========================================================================== */
+@media (max-width: 1440px) {
+  .decor-half-circle { bottom: 2%;   right: -2%;   width: 300px; }
+  .decor-wavy        { bottom: 6px; right: 50%;  width: 150px; }
+  
+}
+
+@media (max-width: 1024px) {
+  .decor-half-circle { bottom: 1%;   right: -4%;   width: 250px; }
+}
+
 @media (max-width: 768px) {
   /* Di HP ukuran ornamen disesuaikan agar layar tidak terasa sempit */
   .decor-cat-spill { width: 110px; top: -10px; left: -15px; }
@@ -559,6 +569,9 @@
 
 @media (max-width: 991px) {
   /* Responsive Fixes */
+  .hero-full-img-card {
+    margin: 0 auto;
+  }
   .owner-card-wrapper {
     grid-template-columns: 1fr;
     text-align: center;

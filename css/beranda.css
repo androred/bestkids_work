@@ -960,6 +960,15 @@
 /* ==========================================================================
    RESPONSIF MOBILE (<768px)
    ========================================================================== */
+@media (max-width: 1024px) {
+  /* Di tablet ukuran ornamen disesuaikan agar tidak terlalu besar */
+  .decor-cat-spill { width: 180px; top: -15px; left: -20px; }
+  .decor-5star { width: 150px; }
+  .decor-wavy { width: 200px; }
+  .decor-half-circle { width: 250px; }
+  .decor-blink-star, .decor-heart { opacity: 0.7; }
+}
+
 @media (max-width: 768px) {
   /* Di HP ukuran ornamen disesuaikan agar layar tidak terasa sempit */
   .decor-cat-spill { width: 110px; top: -10px; left: -15px; }
@@ -968,3 +977,5 @@
   .decor-half-circle { width: 90px; }
   .decor-blink-star, .decor-heart { opacity: 0.5; }
 }
+
+

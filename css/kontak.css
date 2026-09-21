@@ -96,8 +96,6 @@
 }
 
 /* Icon Colors */
-.bg-wa { background-color: #25D366; color: white; }
-.bg-ig { background-color: #E1306C; color: white; }
 .bg-location { background-color: #2B59C3; color: white; }
 
 .contact-info-text h3 {
@@ -241,8 +239,6 @@
   box-shadow: 0 12px 30px rgba(77, 177, 211, 0.15) !important;
 }
 
-.bg-wa { background-color: var(--green) !important; }
-.bg-ig { background-color: var(--pink) !important; }
 .bg-location { background-color: var(--blue) !important; }
 
 .form-group input:focus,
@@ -351,7 +347,7 @@
 /* Ikon Bintang / Star - Melayang di Kanan Atas */
 .decor-star {
   top: 5%;
-  right: 55%;
+ left: 30%;
   width: 250px;
   height: auto;
   transform: rotate(5deg);
@@ -360,11 +356,30 @@
 /* ==========================================================================
    RESPONSIF MOBILE (<768px)
    ========================================================================== */
+@media (max-width: 1440px){
+  .decor-star { left: 25%; width: 200px; }
+}
+
+@media (max-width: 1024px) {
+  .decor-heart { top: 10%; left: 40%; width: 140px; }
+  .decor-half-circle { top: 52%;   right: -4%;   width: 250px; }
+  .decor-wavy        { bottom: 1px; right: 23%;  width: 150px; }
+  .decor-star { left: 20%; width: 180px; }
+}
+
 @media (max-width: 768px) {
   /* Di HP ukuran ornamen disesuaikan agar layar tidak terasa sempit */
   .decor-cat-spill { width: 110px; top: -10px; left: -15px; }
   .decor-5star { width: 75px; }
-  .decor-wavy { width: 85px; }
-  .decor-half-circle { width: 90px; }
+  .decor-wavy { right: 20% ; width: 90px; }
+  .decor-half-circle { width: 130px; }
   .decor-blink-star, .decor-heart { opacity: 0.5; }
+  .decor-star { width: 150px; left: 15%; }
+}
+
+@media (max-width: 425px) {
+  .decor-blink-star{ left: 1%; width: 100px; }
+  .decor-half-circle { top: 67% ; width: 120px; }
+  .decor-heart { width: 125px; }
+  .decor-wavy { display: none}
 }

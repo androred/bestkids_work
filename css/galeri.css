@@ -202,13 +202,25 @@
 /* ==========================================================================
    RESPONSIF MOBILE (<768px)
    ========================================================================== */
+   
+@media (max-width: 1024px) {
+  .decor-half-circle { top: 52%;   right: -4%;   width: 250px; }
+  .decor-wavy        { bottom: 1px; right: 23%;  width: 150px; }
+}
+
 @media (max-width: 768px) {
   /* Di HP ukuran ornamen disesuaikan agar layar tidak terasa sempit */
   .decor-cat-spill { width: 110px; top: -10px; left: -15px; }
   .decor-5star { width: 75px; }
-  .decor-wavy { width: 85px; }
-  .decor-half-circle { width: 90px; }
+  .decor-wavy { right: 40%; width: 85px; }
+  .decor-half-circle { top: 50% ; width: 150px; }
   .decor-blink-star, .decor-heart { opacity: 0.5; }
+  .decor-star { width: 150px;}
+}
+
+@media (max-width: 425px) {
+  .decor-half-circle { top: 67% ; width: 120px; }
+  .decor-heart { width: 125px; }
 }
 
 .gallery-tabs {

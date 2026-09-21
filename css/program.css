@@ -340,7 +340,7 @@
 /* Garis Gelombang (Wavy Line) - Bawah Kiri Dekat Tombol */
 .decor-wavy {
   bottom: 0px;
-  right: 35%;
+  right: 25%;
   width: 250px;
   height: auto;
 }
@@ -348,7 +348,7 @@
 /* Garis Setengah Lingkaran (Half Circle Line) - Kanan Bawah */
 .decor-half-circle {
   Top : 70px;
-  right: 2%;
+  right: 3%;
   width: 400px;
   height: auto;
 }
@@ -372,17 +372,71 @@
 }
 
 /* ==========================================================================
-   RESPONSIF MOBILE (<768px)
+   RESPONSIF ORNAMEN HERO
+   Semua ornamen tetap tampil di semua ukuran layar. Yang disesuaikan hanya
+   ukuran dan letaknya: makin kecil layar, ornamen makin kecil dan makin
+   dirapatkan ke tepi kartu agar tidak mendekati teks.
+   Tata letak & ukuran default (di atas 1200px) tidak diubah.
    ========================================================================== */
-@media (max-width: 768px) {
-  /* Di HP ukuran ornamen disesuaikan agar layar tidak terasa sempit */
-  .decor-cat-spill { width: 110px; top: -10px; left: -15px; }
-  .decor-5star { width: 75px; }
-  .decor-wavy { width: 85px; }
-  .decor-half-circle { width: 90px; }
-  .decor-blink-star, .decor-heart { opacity: 0.5; }
+
+   @media (max-width: 1440px) {
+  .decor-half-circle { top: 50%;   right: 1%;   width: 250px; }
+}  
+
+/* --- Laptop kecil (≤ 1200px) --- */
+@media (max-width: 1200px) {
+  .decor-cat-spill   { top: -14px; left: 0;     width: 170px; }
+  .decor-blink-star  { top: 36%;   left: 2%;    width: 70px; }
+  .decor-star        { top: auto; bottom: 10px; left: 3%; right: auto; width: 140px; }
+  .decor-5star       { top: 10px;  right: 2%;   width: 150px; }
+  .decor-heart       { top: 20%;    right: 22%;  width: 110px; }
+  .decor-half-circle { top: 50%;   right: 1%;   width: 230px; }
+  .decor-wavy        { bottom: 12px; right: 26%; width: 150px; }
 }
 
+/* --- Tablet (≤ 992px) --- */
+@media (max-width: 992px) {
+  .decor-cat-spill   { top: -12px; left: -8px;  width: 140px; }
+  .decor-blink-star  { top: 38%;   left: 1%;    width: 58px; }
+  .decor-star        { bottom: 8px; left: 2%;   width: 110px; }
+  .decor-5star       { top: 10px;  right: 1%;   width: 115px; }
+  .decor-heart       { top: 20%;   right: 2%;   width: 70px; }
+  .decor-half-circle { top: 48%;   right: 0;    width: 170px; }
+  .decor-wavy        { bottom: 10px; right: 28%; width: 115px; }
+}
+
+/* --- Tablet kecil & HP besar (≤ 768px) --- */
+@media (max-width: 768px) {
+  .decor-cat-spill   { top: -10px; left: -12px; width: 110px; }
+  .decor-blink-star  { top: 35%;   left: 5%;    width: 66px; }
+  .decor-star        { bottom: 8px; left: 2%;   width: 86px; }
+  .decor-5star       { top: 8px;   right: 2%;   width: 92px; }
+  .decor-heart       { top: 10%;    right: 45%;  width: 100px; }
+  .decor-half-circle { top: 55%;   right: 1%;   width: 130px; }
+  .decor-wavy        { bottom: 8px; right: 30%;  width: 90px; }
+}
+
+/* --- HP (≤ 600px) --- */
+@media (max-width: 600px) {
+  .decor-cat-spill   { top: -8px;  left: -14px; width: 88px; }
+  .decor-blink-star  { top: 44%;   left: 1%;    width: 56px; }
+  .decor-star        { bottom: 6px; left: 2%;   width: 66px; }
+  .decor-5star       { top: 6px;   right: 2%;   width: 72px; }
+  .decor-heart       { top: 20%;   right: 45%;   width: 62px; }
+  .decor-half-circle { top: 58%;   right: 1%;   width: 100px; }
+  .decor-wavy        { bottom: 6px; right: 30%;  width: 72px; }
+}
+
+/* --- HP kecil (≤ 430px) --- */
+@media (max-width: 430px) {
+  .decor-cat-spill   { top: -6px;  left: -12px; width: 70px; }
+  .decor-blink-star  { top: 46%;   left: 5%;    width: 38px; }
+  .decor-star        { bottom: 5px; left: 1%;   width: 72px; }
+  .decor-5star       { top: 5px;   right: 1%;   width: 58px; }
+  .decor-heart       { top: 19%;   right: 41%;   width: 52px; }
+  .decor-half-circle { top: 68%;   right: -2%;   width: 80px; }
+  .decor-wavy        { bottom: 10px; right: 30%;  width: 76px; }
+}
 
 /* ==========================================================================
    REBUILD BANNER CTA PROGRAM (POPPING OUT IMAGE FIX)

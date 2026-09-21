@@ -138,6 +138,7 @@
   }
 }
 
+
 /* HP: slogan & tombol disembunyikan, diganti ikon menu ☰ */
 @media (max-width: 760px) {
   .header-actions {
@@ -364,7 +365,7 @@
    ========================================================================== */
 
 @media (max-width: 980px) {
-  .nav-links { gap: 17px; }
+  .nav-links { gap: 16px; }
 }
 
 @media (max-width: 760px) {
