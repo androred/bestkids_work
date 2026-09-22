@@ -253,7 +253,7 @@
 .gallery-img-wrapper {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 300px;
   overflow: hidden;
   background: #F7F9FD;
 }
@@ -286,6 +286,10 @@
   font-size: 13px;
   color: var(--muted);
   margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .gallery-img-wrapper { height: 200px; }
 }
 
 @media (max-width: 980px) {

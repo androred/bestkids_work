@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   
   <!-- CSS: urutan jangan diubah -->
   <link rel="stylesheet" href="css/base.css">
@@ -85,61 +86,7 @@
           <p>Berbagai program belajar menarik untuk mendukung perkembangan akademik dan non-akademik anak.</p>
         </div>
 
-        <div class="program-6-grid">
-          <!-- Card 1: Sensory Phonics -->
-          <article class="program-col-card bg-pink">
-            <img src="assets/program_sensory_phonics.png" alt="Sensory Phonics" loading="lazy">
-            <h3>Sensory Phonics</h3>
-            <span class="age-tag tag-pink">Usia 3 – 4 tahun</span>
-            <p>Program pre-reading dan pre-writing berbasis phonics dengan pendekatan multi-sensory untuk usia dini..</p>
-            <a class="btn btn-pink btn-sm btn-block" href="detail-sensory-phonics.html">Lihat Detail →</a>
-          </article>
-
-          <!-- Card 2: Phonics -->
-          <article class="program-col-card bg-blue">
-            <img src="assets/program_phonics.png" alt="Phonics" loading="lazy">
-            <h3>Phonics</h3>
-            <span class="age-tag tag-blue">Usia 4 – 8 tahun</span>
-            <p>Program reading dan writing berbasis phonics untuk membangun kesiapan anak memasuki jenjang SD.</p>
-            <a class="btn btn-blue btn-sm btn-block" href="detail-phonics.html">Lihat Detail →</a>
-          </article>
-
-          <!-- Card 3: Calistung -->
-          <article class="program-col-card bg-yellow">
-            <img src="assets/program_calistung.png" alt="Calistung" loading="lazy">
-            <h3>Calistung</h3>
-            <span class="age-tag tag-yellow">Usia 5 – 8 tahun</span>
-            <p>Program belajar membaca, menulis dan berhitung dalam bahasa Indonesia untuk membangun kesiapan anak memasuki jenjang SD.</p>
-            <a class="btn btn-yellow btn-sm btn-block" href="detail-calistung.html">Lihat Detail →</a>
-          </article>
-
-          <!-- Card 4: Pre-Math -->
-          <article class="program-col-card bg-green">
-            <img src="assets/program_pre_math.png" alt="Pre-Math" loading="lazy">
-            <h3>Pre-Math</h3>
-            <span class="age-tag tag-green">Usia 4 – 6 tahun</span>
-            <p>Program basic math skills untuk membangun kesiapan anak memasuki jenjang SD.</p>
-            <a class="btn btn-green btn-sm btn-block" href="detail-pre-math.html">Lihat Detail →</a>
-          </article>
-
-          <!-- Card 5: Math Class -->
-          <article class="program-col-card bg-purple">
-            <img src="assets/program_math_class.png" alt="Math Class" loading="lazy">
-            <h3>Math Class</h3>
-            <span class="age-tag tag-purple">Primary 1 – 6</span>
-            <p>Program bimbingan belajar matematika dengan pendekatan yang mudah dipahami.</p>
-            <a class="btn btn-purple btn-sm btn-block" href="detail-math-class.html">Lihat Detail →</a>
-          </article>
-
-          <!-- Card 6: English for Young Learners -->
-          <article class="program-col-card bg-pink">
-            <img src="assets/program_eanglish.png" alt="English for Young Learners" loading="lazy">
-            <h3>English for Young Learners</h3>
-            <span class="age-tag tag-pink">Kids – Teens</span>
-            <p>Program bahasa Inggris berbasis kurikulum Cambridge.</p>
-            <a class="btn btn-pink btn-sm btn-block" href="detail-english.html">Lihat Detail →</a>
-          </article>
-        </div>
+        <div class="program-6-grid" id="programGridHome"></div>
       </div>
     </section>
 
@@ -198,300 +145,49 @@
 
     <!-- TESTIMONI -->
     <section class="section testi-section" id="testimoni">
-      <div class="container">
-        <div class="section-header-flex">
-          <div>
-            <h2>Cerita Mereka di <span class="pink">BESTKIDS</span></h2>
-            <p>Pengalaman nyata dari orang tua yang telah merasakan perubahan positif pada anak mereka.</p>
-          </div>
-          <div class="testi-nav">
-            <button class="testi-arrow" data-dir="-1" aria-label="Testimoni sebelumnya">‹</button>
-            <button class="testi-arrow" data-dir="1" aria-label="Testimoni berikutnya">›</button>
-          </div>
-        </div>
-
-        <div class="testi-track" tabindex="0" aria-label="Daftar testimoni orang tua">
-
-          <!-- Testimoni 1 -->
-          <article class="testi-card">
-            <div class="testi-top">
-              <span class="testi-stars" aria-label="Rating 5 dari 5">★★★★★</span>
-            </div>
-            <p class="testi-text">Akhirnya kami menemukan bimbel yang concern belajar math dan phonics dalam materi bahasa Inggris. Suka dengan cara mengajar gurunya yang detail dan personal approach, serta memastikan setiap anak tidak tertinggal teman sekelasnya.</p>
-            <div class="testi-person">
-              <img class="testi-avatar" src="assets\testimoni-bestkids\Angeli Gavriel.png" alt="Angeli Gavriel" loading="lazy">
-              <div>
-                <strong>Angeli Gavriel</strong>
-                <small>Ulasan Google</small>
-              </div>
-              <span class="age-tag tag-purple testi-program">Math & Phonics</span>
-            </div>
-          </article>
-
-          <!-- Testimoni 2 -->
-          <article class="testi-card">
-            <div class="testi-top"> 
-              <span class="testi-stars" aria-label="Rating 5 dari 5">★★★★★</span>
-            </div>
-            <p class="testi-text">Anak saya sebelumnya sempat ditolak di beberapa tempat les lain dengan alasan terlalu aktif. Hanya Best Kids yang berani menerima tantangan dan memberikan solusi. Hasilnya di luar ekspektasi, anak saya berkembang dengan sangat cepat.</p>
-            <div class="testi-person">
-              <img class="testi-avatar" src="assets\testimoni-bestkids\Christy Travis.png" alt="Christy Travis" loading="lazy">
-              <div>
-                <strong>Christy Travis</strong>
-                <small>Ulasan Google</small>
-              </div>
-            </div>
-          </article>
-
-          <!-- Testimoni 3 -->
-          <article class="testi-card">
-            <div class="testi-top">
-              <span class="testi-stars" aria-label="Rating 5 dari 5">★★★★★</span>
-            </div>
-            <p class="testi-text">Anakku les Phonics di sini. Sudah berjalan lebih dari 3 bulan dan progressnya sudah terlihat. Miss-nya juga mengajar dengan sabar dan penjelasannya mudah dimengerti. Yang paling penting, anaknya happy belajar di sini.</p>
-            <div class="testi-person">
-              <img class="testi-avatar" src="assets\testimoni-bestkids\Ayu Indriani.png" alt="Ayu Indriani" loading="lazy">
-              <div>
-                <strong>Ayu Indriani</strong>
-                <small>Ulasan Google</small>
-              </div>
-              <span class="age-tag tag-blue testi-program">Phonics</span>
-            </div>
-          </article>
-
-          <!-- Testimoni 4 -->
-          <article class="testi-card">
-            <div class="testi-top">
-              <span class="testi-stars" aria-label="Rating 5 dari 5">★★★★★</span>
-            </div>
-            <p class="testi-text">Anak ku les phonics disini setelah mencari cari dan cocok disini. Saat trial class anak ku merasa happy , dengan miss miss yang berpengalaman serta ramah dan sabar saat mengajar. Tempatnya juga bersih mendukung banget dalam kegiatan mengajar dikelas dan lokasi nya juga strategis ! Sukses selalu bestkids !</p>
-            <div class="testi-person">
-              <img class="testi-avatar" src="assets\testimoni-bestkids\nylla allyn.png" alt="Nylla Allyn" loading="lazy">
-              <div>
-                <strong>Nylla Allyn</strong>
-                <small>Ulasan Google</small>
-              </div>
-              <span class="age-tag tag-blue testi-program">Phonics</span>
-            </div>
-            
-          </article>
-
-          <!-- Testimoni 5 -->
-          <article class="testi-card">
-            <div class="testi-top">
-              <span class="testi-stars" aria-label="Rating 5 dari 5">★★★★★</span>
-            </div>
-            <p class="testi-text">The instructors are not only highly qualified but also incredibly patient and engaging, which really helps in building children's confidence in speaking English. The classes are tailored according to age and skill level, so every child can progress at their own pace.</p>
-            <div class="testi-person">
-              <img class="testi-avatar" src="assets\testimoni-bestkids\Achmad Faizal Reza.png" alt="Achmad Faizal Reza" loading="lazy">
-              <div>
-                <strong>Achmad Faizal Reza</strong>
-                <small>Ulasan Google</small>
-              </div>
-              <span class="age-tag tag-pink testi-program">English</span>
-            </div>
-          </article>
-
-          <!-- Testimoni 6 -->
-          <article class="testi-card">
-            <div class="testi-top">
-              <span class="testi-stars" aria-label="Rating 5 dari 5">★★★★★</span>
-            </div>
-            <p class="testi-text">Tempat les rasa sekolah, karena sangat terstruktur dan terorganisir dengan baik. Ada aplikasi khusus yang menghubungkan orang tua dengan tempat les, dan ada pertemuan private antara orang tua dan teacher untuk membahas perkembangan akademis anak.</p>
-            <div class="testi-person">
-              <img class="testi-avatar" src="assets\testimoni-bestkids\Lilian Daniella.png" alt="Lilian Daniella" loading="lazy">
-              <div>
-                <strong>Lilian Daniella</strong>
-                <small>Ulasan Google</small>
-              </div>
-            </div>
-          </article>
-
-          <!-- Testimoni 7 -->
-          <article class="testi-card">
-            <div class="testi-top">
-              <span class="testi-stars" aria-label="Rating 5 dari 5">★★★★★</span>
-            </div>
-            <p class="testi-text">Program phonics-nya sangat membantu anak saya dalam meningkatkan kemampuan membaca dan mengenal bunyi huruf. Teachers di sini sangat kreatif dan membuat pembelajaran jadi menyenangkan.</p>
-            <div class="testi-person">
-              <img class="testi-avatar" src="assets\testimoni-bestkids\Melvina Karina.png" alt="Melvina Karina" loading="lazy">
-              <div>
-                <strong>Melvina Karina</strong>
-                <small>Ulasan Google</small>
-              </div>
-              <span class="age-tag tag-blue testi-program">Phonics</span>
-            </div>
-          </article>
-
-          <!-- Testimoni 8 -->
-          <article class="testi-card">
-            <div class="testi-top">
-              <span class="testi-stars" aria-label="Rating 5 dari 5">★★★★★</span>
-            </div>
-            <p class="testi-text">Metode pengajarannya sangat baik. Anakku umur 3 tahun ikut kelas phonics-nya dan enjoy sekali. Terima kasih Bestkids Galaxy.</p>
-            <div class="testi-person">
-              <img class="testi-avatar" src="assets\testimoni-bestkids\Clara Andyna.png" alt="Clara Andyna" loading="lazy">
-              <div>
-                <strong>Clara Andyna</strong>
-                <small>Ulasan Google</small>
-              </div>
-              <span class="age-tag tag-blue testi-program">Phonics</span>
-            </div>
-          </article>
-
-          <!-- Testimoni 9 -->
-          <article class="testi-card">
-            <div class="testi-top">
-              <span class="testi-stars" aria-label="Rating 5 dari 5">★★★★★</span>
-            </div>
-            <p class="testi-text">I like their method. Only 5 kids in a class with 2 teachers. They give extra class to students who need more lessons. Teachers are polite, cheerful, kind and pay attention to our son.</p>
-            <div class="testi-person">
-              <img class="testi-avatar" src="assets\testimoni-bestkids\Yara Destani.png" alt="Yara Destani" loading="lazy">
-              <div>
-                <strong>Yara Destani</strong>
-                <small>Ulasan Google</small>
-              </div>
-            </div>
-          </article>
-
-          <!-- Testimoni 10 -->
-          <article class="testi-card">
-            <div class="testi-top">
-              <span class="testi-stars" aria-label="Rating 5 dari 5">★★★★★</span>
-            </div>
-            <p class="testi-text">Anak ku disini ambil les phonics, dengan miss2 yang sangat berpengalaman dan perlengkapan lengkap yang menunjang proses pembelajaran menurutku ini tempat yang tepat untuk anak 3-8tahun belajar membaca dan nulis dalam bahasa inggris dengan fun learning tetapi tetap fokus. Tempatnya nyaman dan lokasi sangat strategis 👍🏻</p>
-            <div class="testi-person">
-              <img class="testi-avatar" src="assets\testimoni-bestkids\Kenneth Daniel Prasetya.png" alt="Kenneth Daniel Prasetya" loading="lazy">
-              <div>
-                <strong>Kenneth Daniel Prasetya</strong>
-                <small>Ulasan Google</small>
-              </div>
-              <span class="age-tag tag-blue testi-program">Phonics</span>
-            </div>
-          </article>
-
-        </div>
-
-        <!-- Titik indikator (dibuat otomatis oleh JavaScript, tampil di HP) -->
-        <div class="testi-dots" aria-hidden="true"></div>
-
-        <div class="testi-more">
-          <a class="btn btn-pink" href="https://maps.app.goo.gl/WuajGMSbwLb1ixey8" target="_blank" rel="noopener noreferrer">Lihat Ulasan di Google →</a>
-        </div>
+  <div class="container">
+    <div class="section-header-flex">
+      <div>
+        <h2>Cerita Mereka di <span class="pink">BESTKIDS</span></h2>
+        <p>Pengalaman nyata dari orang tua yang telah merasakan perubahan positif pada anak mereka.</p>
       </div>
+      <div class="testi-nav">
+        <button class="testi-arrow" data-dir="-1" aria-label="Testimoni sebelumnya">‹</button>
+        <button class="testi-arrow" data-dir="1" aria-label="Testimoni berikutnya">›</button>
+      </div>
+    </div>
+
+    <div class="testi-track" id="testimoniTrack" tabindex="0" aria-label="Daftar testimoni orang tua"></div>
+
+    <!-- Titik indikator (dibuat otomatis oleh JavaScript, tampil di HP) -->
+    <div class="testi-dots" aria-hidden="true"></div>
+
+    <div class="testi-more">
+      <a class="btn btn-pink" href="https://maps.app.goo.gl/WuajGMSbwLb1ixey8" target="_blank" rel="noopener noreferrer">Lihat Ulasan di Google →</a>
+    </div>
+  </div>
     </section>
 
 
    <!-- SECTION FAQ -->
-    <section class="section" id="faq">
-      <div class="container">
-        <div class="section-header text-center">
-          <h2> <span class="pink">FAQ</span> </h2>
-          <p>Pertanyaan yang sering diajukan oleh orang tua.<br>Temukan jawaban untuk membantu Anda mengenal BESTKIDS lebih dekat.</p>
-        </div>
-
-        <div class="faq-wrapper">
-          <!-- Sisi Kiri: Gambar Art FAQ -->
-          <div class="faq-side-art">
-            <img src="assets/background_beranda(option).png" alt="FAQ BESTKIDS" loading="lazy">
-          </div>
-
-          <!-- Sisi Kanan: Accordion List (Total 7 FAQ) -->
-          <div class="faq-list">
-            <!-- Q1 -->
-            <details class="faq-item" open>
-              <summary>
-                <span class="faq-num num-pink">01</span>
-                <strong>Apa saja program yang ada di Bestkids Galaxy Learning Center?</strong>
-                <span class="arrow">▾</span>
-              </summary>
-              <div class="faq-answer">
-                Saat ini kami memiliki program untuk anak usia mulai dari 3 tahun - 18 tahun: Sensory Phonics, Phonics, Calistung, Pre-Math, Math Class, dan English For Young Learners.
-              </div>
-            </details>
-
-            <!-- Q2 -->
-            <details class="faq-item">
-              <summary>
-                <span class="faq-num num-blue">02</span>
-                <strong>Bagaimana metode belajar yang digunakan di Bestkids Galaxy Learning Center?</strong>
-                <span class="arrow">▾</span>
-              </summary>
-              <div class="faq-answer">
-                Kami menggunakan metode pembelajaran yang <em>fun</em>, interaktif, dan sesuai dengan kebutuhan serta tahap perkembangan anak melalui <em>games, hands-on activities, movement, challenges</em>.
-              </div>
-            </details>
-
-            <!-- Q3 -->
-            <details class="faq-item">
-              <summary>
-                <span class="faq-num num-yellow">03</span>
-                <strong>Berapa jumlah anak dalam satu kelas?</strong>
-                <span class="arrow">▾</span>
-              </summary>
-              <div class="faq-answer">
-                Kelas kami menggunakan sistem <em>semi-private</em> dengan jumlah murid dalam satu kelas terbatas <strong>hanya 5 anak saja</strong>.
-              </div>
-            </details>
-
-            <!-- Q4 (Hidden Default) -->
-            <details class="faq-item faq-more-item">
-              <summary>
-                <span class="faq-num num-pink">04</span>
-                <strong>Berapa lama durasi di setiap pertemuan?</strong>
-                <span class="arrow">▾</span>
-              </summary>
-              <div class="faq-answer">
-                Untuk kelas <em>weekday</em>, pembelajaran berlangsung 2 kali seminggu dengan durasi 1 jam. Untuk kelas <em>weekend</em>, 1 kali seminggu dengan durasi 2 jam.
-              </div>
-            </details>
-
-            <!-- Q5 (Hidden Default) -->
-            <details class="faq-item faq-more-item">
-              <summary>
-                <span class="faq-num num-blue">05</span>
-                <strong>Bagaimana cara mendaftarkan anak di Bestkids Galaxy Learning Center?</strong>
-                <span class="arrow">▾</span>
-              </summary>
-              <div class="faq-answer">
-                Orang tua dapat langsung menghubungi admin Bestkids via WhatsApp / Kontak Kami untuk informasi program, jadwal, biaya, dan pendaftaran.
-              </div>
-            </details>
-
-            <!-- Q6 (Hidden Default) -->
-            <details class="faq-item faq-more-item">
-              <summary>
-                <span class="faq-num num-yellow">06</span>
-                <strong>Ada promo apa di Bestkids Galaxy Learning Center?</strong>
-                <span class="arrow">▾</span>
-              </summary>
-              <div class="faq-answer">
-                <strong>Spesial Promo Trial Class:</strong> Diskonto s.d 20% dan Gratis Biaya Pendaftaran.
-              </div>
-            </details>
-
-            <!-- Q7 (Hidden Default) -->
-            <details class="faq-item faq-more-item">
-              <summary>
-                <span class="faq-num num-pink">07</span>
-                <strong>Apa perbedaan program Phonics, Calistung dan Pre-Math untuk persiapan masuk SD?</strong>
-                <span class="arrow">▾</span>
-              </summary>
-              <div class="faq-answer">
-                <strong>Phonics:</strong> Program membaca dan menulis dalam Bahasa Inggris, mulai dari mengenal bunyi huruf, blending, membaca kata, menulis kalimat, hingga membaca buku cerita.<br>
-                <strong>Calistung:</strong> Program membaca, menulis, dan berhitung dalam Bahasa Indonesia, dari mengenal huruf dan angka hingga membaca, menulis kalimat, dan berhitung.<br>
-                <strong>Pre-Math:</strong> Program berhitung dengan Bahasa Inggris untuk mempersiapkan anak masuk SD, mulai dari mengenal angka hingga penjumlahan dan konsep matematika dasar lainnya.<br>
-                <p>Ketiganya menggunakan metode pembelajaran yang sama, dengan perbedaan utama pada bahasa pengantar dan fokus pembelajarannya.</p>
-              </div>
-            </details>
-
-            <div class="faq-more text-center" style="margin-top:16px">
-              <button id="toggleFaqBtn" class="link-blue-underline" style="background:none; border:none; cursor:pointer;">Lihat Semua Pertanyaan →</button>
-            </div>
-          </div>
-        </div>
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2> <span class="pink">FAQ</span> </h2>
+        <p>Pertanyaan yang sering diajukan oleh orang tua.<br>Temukan jawaban untuk membantu Anda mengenal BESTKIDS lebih dekat.</p>
       </div>
-    </section>
+
+      <div class="faq-wrapper">
+        <!-- Sisi Kiri: Gambar Art FAQ -->
+        <div class="faq-side-art">
+          <img src="assets/background_beranda(option).png" alt="FAQ BESTKIDS" loading="lazy">
+        </div>
+
+        <!-- Sisi Kanan: Accordion List -->
+        <div class="faq-list" id="faqList"></div>
+      </div>
+    </div>
+  </section>
 
     <!-- BANNER CTA BOTTOM -->
     <section class="container cta-section-wrapper">
@@ -521,25 +217,6 @@
     </section>
   </main>
 
-  <script>
-    // Toggle FAQ 04 - 07
-    document.getElementById('toggleFaqBtn').addEventListener('click', function() {
-      const moreItems = document.querySelectorAll('.faq-more-item');
-      let isHidden = false;
-      
-      moreItems.forEach(item => {
-        if (item.style.display === 'none' || item.style.display === '') {
-          item.style.display = 'block';
-          isHidden = true;
-        } else {
-          item.style.display = 'none';
-        }
-      });
-
-      this.textContent = isHidden ? 'Sembunyikan Pertanyaan ↑' : 'Lihat Semua Pertanyaan →';
-    });
-  </script>
-
   <div id="footer"></div>
 
   <!-- TOMBOL WHATSAPP MENGAMBANG -->
@@ -549,6 +226,8 @@
     <span class="wa-float-label">Chat Kami</span>
   </a>
 
+  <script src="js/data.js"></script>
+  <script src="js/render.js"></script>
   <script src="js/script.js"></script>
   <script>
     Promise.all([
