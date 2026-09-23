@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Galeri Kegiatan — BESTKIDS</title>
+  <link rel="icon" type="image/png" href="assets\logo_footer.png">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,9 +55,9 @@
       </div>
     </section>
 
-    <!-- FILTER & GRID GALERI -->
+<!-- FILTER & GRID GALERI -->
     <section class="container section-sm">
-      
+
       <!-- Filter Category Buttons -->
       <div class="level-tabs gallery-tabs">
         <button class="tab-btn active" data-filter="all">Semua Momen</button>
@@ -67,81 +68,7 @@
       </div>
 
       <!-- Gallery Grid -->
-      <div class="gallery-grid">
-        
-        <!-- Item 1 -->
-        <article class="gallery-card" data-category="belajar">
-          <div class="gallery-img-wrapper">
-            <img src="assets\galeri\calistung1.webp" alt="Belajar Calistung Interaktif" loading="lazy">
-            <span class="gallery-tag tag-pink">Kegiatan Belajar</span>
-          </div>
-          <div class="gallery-info">
-            <h3>Belajar Calistung</h3>
-            <p>Anak-anak antusias mengenal huruf menggunakan media kancing warna-warni.</p>
-          </div>
-        </article>
-
-        <!-- Item 2 -->
-        <article class="gallery-card" data-category="event">
-          <div class="gallery-img-wrapper">
-            <img src="assets\galeri\phonics5.webp" alt="Lomba Mewarnai" loading="lazy">
-            <span class="gallery-tag tag-yellow">Event & Lomba</span>
-          </div>
-          <div class="gallery-info">
-            <h3>Celebration Day & Lomba Mewarnai</h3>
-            <p>Keseruan unjuk kreativitas dan pembagian apresiasi untuk seluruh murid.</p>
-          </div>
-        </article>
-
-        <!-- Item 3 -->
-        <article class="gallery-card" data-category="belajar">
-          <div class="gallery-img-wrapper">
-            <img src="assets\galeri\phonics8.webp" alt="Sesi Phonics Games" loading="lazy">
-            <span class="gallery-tag tag-blue">Kegiatan Belajar</span>
-          </div>
-          <div class="gallery-info">
-            <h3>Fun Phonics Word Games</h3>
-            <p>Melatih kefasihan membaca kata Bahasa Inggris lewat peragaan kartu bergambar.</p>
-          </div>
-        </article>
-
-        <!-- Item 4 -->
-        <article class="gallery-card" data-category="fasilitas">
-          <div class="gallery-img-wrapper">
-            <img src="assets\galeri\sensory2.webp" alt="Ruang Kelas Semi Private" loading="lazy">
-            <span class="gallery-tag tag-green">Fasilitas Kelas</span>
-          </div>
-          <div class="gallery-info">
-            <h3>Ruang Kelas Semi-Private</h3>
-            <p>Ruangan bersih, aman, ber-AC, dan didesain ramah anak (max 5 murid/kelas).</p>
-          </div>
-        </article>
-
-        <!-- Item 5 -->
-        <article class="gallery-card" data-category="karya">
-          <div class="gallery-img-wrapper">
-            <img src="assets\galeri\sensory3.webp" alt="Hasil Karya Menulis" loading="lazy">
-            <span class="gallery-tag tag-purple">Hasil Karya</span>
-          </div>
-          <div class="gallery-info">
-            <h3>Crafting & Math Origami</h3>
-            <p>Menggabungkan konsep dasar geometri dengan seni lipat kertas yang seru.</p>
-          </div>
-        </article>
-
-        <!-- Item 6 -->
-        <article class="gallery-card" data-category="event">
-          <div class="gallery-img-wrapper">
-            <img src="assets\galeri\premath1.webp" alt="Pentas Seni BESTKIDS" loading="lazy">
-            <span class="gallery-tag tag-pink">Event & Lomba</span>
-          </div>
-          <div class="gallery-info">
-            <h3>Parent Teacher Conference</h3>
-            <p>Momen diskusi hangat perkembangan anak bersama orang tua murid.</p>
-          </div>
-        </article>
-
-      </div>
+      <div class="gallery-grid" id="galeriGrid"></div>
     </section>
 
     <!-- BANNER CTA PROGRAM (REFERENSI ROKET + TOMBOL KUNING) -->
@@ -186,6 +113,8 @@
   </a>
 
 
+  <script src="js/data.js"></script>
+  <script src="js/render.js"></script>
   <script src="js/script.js"></script>
   <script>
     // Header & Footer Loader

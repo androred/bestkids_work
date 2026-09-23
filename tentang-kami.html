@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tentang Kami — BESTKIDS Galaxy</title>
+  <link rel="icon" type="image/png" href="assets\logo_footer.png">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -100,7 +101,7 @@
           <!-- Item 3 -->
           <div class="about-timeline-item">
             <div class="timeline-dot dot-green"></div>
-            <span class="timeline-year">150+ Students</span>
+            <span class="timeline-year">300+ Students</span>
             <h3 class="blue">Hingga Saat Ini</h3>
             <p>Telah dipercaya oleh banyak keluarga untuk mendampingi perkembangan anak.</p>
           </div>
@@ -166,61 +167,7 @@
         <p>Kami berkomitmen memberikan pengalaman belajar terbaik untuk setiap anak, dengan fokus pada kualitas, kebahagiaan, dan perkembangan mereka.</p>
       </div>
 
-      <div class="why-bestkids-grid">
-        <!-- Card 1: Pengajar Berpengalaman -->
-        <div class="why-card bg-pink-light">
-          <div class="why-icon-wrap">
-            <img src="assets/hands-on materials.png" alt="Pengajar Berpengalaman" onerror="this.src='assets/program_phonics.png'">
-          </div>
-          <h3 class="blue">Pengajar Berpengalaman</h3>
-          <p>Didukung oleh tenaga pengajar profesional, ramah, dan berpengalaman di bidangnya.</p>
-        </div>
-
-        <!-- Card 2: Metode Belajar Menyenangkan -->
-        <div class="why-card bg-blue-light">
-          <div class="why-icon-wrap">
-            <img src="assets/fun&engagingactivities.png" alt="Metode Belajar Menyenangkan" onerror="this.src='assets/program_calistung.png'">
-          </div>
-          <h3 class="blue">Metode Belajar Menyenangkan</h3>
-          <p>Belajar jadi lebih seru dengan metode interaktif, kreatif, dan sesuai dengan gaya belajar anak.</p>
-        </div>
-
-        <!-- Card 3: Program Sesuai Usia & Level -->
-        <div class="why-card bg-yellow-light">
-          <div class="why-icon-wrap">
-            <img src="assets/program_pre_math.png" alt="Program Sesuai Usia & Level">
-          </div>
-          <h3 class="blue">Program Sesuai Usia &amp; Level</h3>
-          <p>Materi disesuaikan dengan usia, kemampuan, dan kebutuhan setiap anak.</p>
-        </div>
-
-        <!-- Card 4: Kelas Interaktif -->
-        <div class="why-card bg-green-light">
-          <div class="why-icon-wrap">
-            <img src="assets/personal_aproach.png" alt="Kelas Interaktif" onerror="this.src='assets/program_eanglish.png'">
-          </div>
-          <h3 class="blue">Kelas Interaktif</h3>
-          <p>Kelas yang aktif, komunikatif, dan penuh keceriaan agar anak lebih percaya diri.</p>
-        </div>
-
-        <!-- Card 5: Pendampingan Perkembangan Anak -->
-        <div class="why-card bg-purple-light">
-          <div class="why-icon-wrap">
-            <img src="assets/resault_oriented.png" alt="Pendampingan Perkembangan Anak">
-          </div>
-          <h3 class="blue">Pendampingan Perkembangan Anak</h3>
-          <p>Kami memantau dan mendukung perkembangan anak secara berkala, baik akademik maupun non-akademik.</p>
-        </div>
-
-        <!-- Card 6: Lingkungan Belajar Nyaman -->
-        <div class="why-card bg-pink-light">
-          <div class="why-icon-wrap">
-            <img src="assets/idea.png" alt="Lingkungan Belajar Nyaman">
-          </div>
-          <h3 class="blue">Lingkungan Belajar Nyaman</h3>
-          <p>Ruang kelas yang aman, bersih, nyaman, dan penuh semangat untuk tumbuh kembang anak.</p>
-        </div>
-      </div>
+      <div class="why-choose-grid" id="keunggulanGrid"></div>
     </section>
 
     <!-- SECTION OWNER & FOUNDER -->
@@ -279,9 +226,30 @@
     </section>
   </main>
 
-  <div id="footer"></div>
+  <!-- TOMBOL WHATSAPP MENGAMBANG -->
+  <a class="wa-float" href="https://wa.me/6281383001823?text=Halo%20BESTKIDS%2C%20saya%20ingin%20bertanya%20tentang%20program%20belajar%20untuk%20anak%20saya."
+    target="_blank" rel="noopener noreferrer" aria-label="Chat WhatsApp BESTKIDS">
+    <img src="assets/whatsapp.png" alt="" aria-hidden="true">
+    <span class="wa-float-label">Chat Kami</span>
+  </a>
 
+  <script src="js/data.js"></script>
+  <script src="js/render.js"></script>
   <script src="js/script.js"></script>
+  <script>
+    Promise.all([
+      fetch('header.html').then(r => r.text()),
+      fetch('footer.html').then(r => r.text())
+    ]).then(([h, f]) => {
+      document.querySelector('#header').innerHTML = h;
+      document.querySelector('#footer').innerHTML = f;
+    });
+  </script>
+
+  <div id="footer"></div>
+    <script src="js/data.js"></script>
+    <script src="js/render.js"></script>
+    <script src="js/script.js"></script>
   <script>
     Promise.all([
       fetch('header.html').then(r => r.text()),

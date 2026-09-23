@@ -324,3 +324,47 @@ var DATA_FAQ = [
       "<p>Ketiganya menggunakan metode pembelajaran yang sama, dengan perbedaan utama pada bahasa pengantar dan fokus pembelajarannya.</p>"
   }
 ];
+
+/* --------------------------------------------------------------------------
+   5. KEUNGGULAN ("Kenapa Memilih BESTKIDS")
+   Dipakai di: index.html (versi ringkas) dan tentang-kami.html (versi lengkap)
+ 
+   warna   : blue | pink | yellow | green | purple
+             menentukan warna kartu (class card-*)
+   ikon    : path gambar ikon. Ingat pakai garis miring biasa ( / )
+   ringkas : satu kalimat, dipakai di beranda
+   lengkap : penjelasan lebih panjang, dipakai di halaman Tentang Kami.
+             Kalau dikosongkan (""), otomatis memakai isi "ringkas".
+   -------------------------------------------------------------------------- */
+var DATA_KEUNGGULAN = [
+  {
+    judul: "Unlimited Free Extra Class",
+    warna: "blue",
+    ikon: "assets/Unlimited Free Extra Class.png",
+    teks: "Jika anak membutuhkan waktu lebih untuk memahami materi kami menyediakan extra class yang dapat diikuti tanpa batas dan tanpa biaya tambahan"
+  },
+  {
+    judul: "Semi-Private Class",
+    warna: "pink",
+    ikon: "assets/Semi-Private Class.png",
+    teks: "Hanya 3 sampai 5 anak per kelas agar pembelajaran lebih fokus, efektif, nyaman dan kondusif."
+  },
+  {
+    judul: "Result-Oriented",
+    warna: "yellow",
+    ikon: "assets/resault_oriented.png",
+    teks: "Setiap kelas memiliki target pembelajaran yang jelas, sehingga orang tua dapat melihat perkembangan belajar anak secara berkala."
+  },
+  {
+    judul: "Personal Approach",
+    warna: "green",
+    ikon: "assets/Personal Approach.png",
+    teks: "Anak didampingi dengan pendekatan personal dan observasi intensif untuk memenuhi kebutuhan belajarnya secara optimal."
+  },
+  {
+    judul: "Brain Boosting Activity",
+    warna: "purple",
+    ikon: "assets/Brain Boosting Activity.png",
+    teks: "Kelas selalu diawali dengan fun games untuk membangun fokus, konsentrasi, kemampuan kognitif dan kesiapan belajar anak."
+  }
+];

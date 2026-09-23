@@ -9,6 +9,7 @@
      #programGridHome  -> program unggulan     (index.html)
      #galeriGrid       -> galeri kegiatan      (galeri.html)
      #testimoniTrack   -> testimoni            (index.html)
+     #keunggulanGrid   -> kenapa memilih       (index.html + tentang-kami.html)
      #faqList          -> daftar FAQ           (index.html)
 
    PENTING: urutan script sebelum </body> harus seperti ini
@@ -111,6 +112,23 @@
           label +
         '</div>' +
       '</article>'
+    );
+  });
+
+  /* ---------- Keunggulan "Kenapa Memilih BESTKIDS" ----------
+     Wadah #keunggulanGrid ada di index.html DAN tentang-kami.html.
+     Karena keduanya halaman terpisah, id yang sama boleh dipakai di
+     keduanya — hasilnya sama persis di kedua halaman. */
+  isi("keunggulanGrid", window.DATA_KEUNGGULAN, function (k) {
+    return (
+      '<div class="why-choose-card card-' + aman(k.warna) + '">' +
+        '<div class="why-icon-wrapper">' +
+          '<img src="' + aman(k.ikon) + '" alt="' + aman(k.judul) + '" ' +
+            'style="width: 32px; height: 32px; object-fit: contain;" loading="lazy">' +
+        '</div>' +
+        '<h3>' + aman(k.judul) + '</h3>' +
+        '<p>' + aman(k.teks) + '</p>' +
+      '</div>'
     );
   });
 
