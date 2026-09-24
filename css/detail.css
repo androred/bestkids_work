@@ -268,16 +268,22 @@
 }
 
 /* ==========================================================================
-   SECTION FOKUS & METODOLOGI (4 KARTU HORIZONTAL)
+   FLEXIBLE CENTERED GRID (POLA RESPONTIF 5 & 6 KARTU)
    ========================================================================== */
-.focus-grid-4 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+.focus-grid-4, 
+.focus-grid-5, 
+.focus-grid-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Menjaga baris terakhir yang tersisa berada di tengah */
   gap: 20px;
-  margin-top: 20px;
+  margin-top: 24px;
 }
 
+/* 1. LAYAR FULL DESKTOP (> 1200px): Semua Kartu 1 Baris Penuh */
 .focus-card {
+  flex: 1 1 0px; /* Lebar otomatis terbagi rata sesuai jumlah kartu (1 baris penuh) */
+  min-width: 170px;
   border-radius: 22px;
   padding: 28px 20px 24px;
   text-align: center;
@@ -286,11 +292,73 @@
   align-items: center;
   box-shadow: 0 6px 18px rgba(43, 58, 122, 0.04);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+  box-sizing: border-box;
 }
 
 .focus-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 24px rgba(43, 58, 122, 0.08);
+}
+
+.focus-card p {
+  margin-top: auto;
+}
+
+/* ==========================================================================
+   BREAKPOINT RESPONSIONAL BERDASARKAN JUMLAH KARTU
+   ========================================================================== */
+
+/* 2. LAYAR LAPTOP / TABLET LANDSCAPE (< 1200px) */
+@media (max-width: 1200px) {
+  /* Khusus Jika Ada 5 Kartu -> 3 Di Atas, 2 Di Bawah (Tengah) */
+  .focus-grid-5 .focus-card {
+    flex: 0 0 calc(33.333% - 14px);
+    max-width: calc(33.333% - 14px);
+  }
+
+  /* Khusus Jika Ada 6 Kartu -> 4 Di Atas, 2 Di Bawah (Tengah) */
+  .focus-grid-4 .focus-card,
+  .focus-grid-flex .focus-card {
+    flex: 0 0 calc(25% - 15px);
+    max-width: calc(25% - 15px);
+  }
+}
+
+/* 3. LAYAR TABLET PORTRAIT (< 900px) */
+@media (max-width: 900px) {
+  /* 5 Kartu -> Tetap 3 di atas, 2 di bawah */
+  .focus-grid-5 .focus-card {
+    flex: 0 0 calc(33.333% - 14px);
+    max-width: calc(33.333% - 14px);
+  }
+
+  /* 6 Kartu -> Menjadi 3 Di Atas, 3 Di Bawah */
+  .focus-grid-4 .focus-card,
+  .focus-grid-flex .focus-card {
+    flex: 0 0 calc(33.333% - 14px);
+    max-width: calc(33.333% - 14px);
+  }
+}
+
+/* 4. LAYAR MOBILE SEDANG (< 700px): 2 Kolom Rata Tengah */
+@media (max-width: 700px) {
+  .focus-grid-5 .focus-card,
+  .focus-grid-4 .focus-card,
+  .focus-grid-flex .focus-card {
+    flex: 0 0 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+  }
+}
+
+/* 5. LAYAR MOBILE KECIL (< 480px): 1 Kolom Full */
+@media (max-width: 480px) {
+  .focus-grid-5 .focus-card,
+  .focus-grid-4 .focus-card,
+  .focus-grid-flex .focus-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 
 /* Pembungkus Ikon */
@@ -413,63 +481,27 @@
 }
 
 /* ==========================================================================
-   SECTION METODE BELAJAR KAMI (4 PILAR CARDS)
+   PENYESUAIAN JARAK TIMELINE CARD
    ========================================================================== */
-.method-grid-4 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-top: 32px;
+
+/* 1. Kurangi padding bawah pada header kartu */
+.timeline-card-header {
+  padding-bottom: 4px; /* Sebelumnya default 12px */
 }
 
-.method-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 28px rgba(43, 58, 122, 0.08);
+/* 2. Perkecil jarak kelas utility margin-top-12 */
+.margin-top-12 {
+  margin-top: 4px !important; /* Diperkecil dari 12px menjadi 6px */
 }
 
-.method-icon-wrap {
-  width: 64px;
-  height: 64px;
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* 3. Kurangi padding dalam learning-box agar lebih ringkas */
+.learning-box {
+  padding: 10px 14px; /* Sebelumnya 16px */
 }
 
-.method-icon-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.method-card h3 {
-  font-family: "Baloo 2", cursive, sans-serif;
-  font-size: 20px;
-  color: var(--navy);
-  margin: 0 0 10px;
-  line-height: 1.2;
-}
-
-.method-card p {
-  font-size: 13.5px;
-  color: #64748B;
-  line-height: 1.45;
-  margin: 0;
-}
-
-@media (max-width: 980px) {
-  /* Responsive Grid */
-  .method-grid-4 {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-  }
-}
-
-@media (max-width: 540px) {
-  .method-grid-4 {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
+/* 4. Kurangi jarak judul h4 ke daftar list (ul) di dalamnya */
+.learning-box h4 {
+  margin: 0 0 4px; /* Sebelumnya margin-bottom 8px */
 }
 
 .duration-pill {

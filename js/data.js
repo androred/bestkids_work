@@ -16,6 +16,10 @@
    warna : pink | blue | yellow | green | purple
            (menentukan warna kartu, badge, dan tombol — memakai class yang
            sudah ada di CSS, jadi jangan diisi selain 5 kata itu)
+
+   hargaCoret : OPSIONAL. Harga normal yang ditampilkan dicoret di atas
+                harga promo. Kalau tidak ada promo, hapus saja barisnya
+                (atau isi "") — nanti hanya "harga" yang tampil.
    -------------------------------------------------------------------------- */
 var DATA_PROGRAM = [
   {
@@ -24,8 +28,9 @@ var DATA_PROGRAM = [
     warna: "pink",
     ikon: "assets/program_sensory_phonics.png",
     deskripsi: "Program pre-reading dan pre-writing berbasis phonics dengan pendekatan multi-sensory untuk usia dini.",
-    durasi: "60 menit/sesi, 2x/minggu",
-    harga: "Rp [PERLU DATA HARGA]",
+    durasi: "120 menit/minggu",
+    hargaCoret: "Rp 100.000-an/sesi",
+    harga: "Rp 80.000-an/sesi",
     link: "detail-sensory-phonics.html"
   },
   {
@@ -34,19 +39,10 @@ var DATA_PROGRAM = [
     warna: "blue",
     ikon: "assets/program_phonics.png",
     deskripsi: "Program reading dan writing berbasis phonics untuk membangun kesiapan anak memasuki jenjang SD.",
-    durasi: "Mengikuti level",
-    harga: "Rp [PERLU DATA HARGA]",
+    durasi: "120 menit/minggu",
+    hargaCoret: "Rp 100.000-an/sesi",
+    harga: "Rp 80.000-an/sesi",
     link: "detail-phonics.html"
-  },
-  {
-    nama: "Calistung",
-    usia: "Usia 5 – 8 tahun",
-    warna: "yellow",
-    ikon: "assets/program_calistung.png",
-    deskripsi: "Program belajar membaca, menulis dan berhitung dalam bahasa Indonesia untuk membangun kesiapan anak memasuki jenjang SD.",
-    durasi: "± 5 – 6 bulan/level",
-    harga: "Rp [PERLU DATA HARGA]",
-    link: "detail-calistung.html"
   },
   {
     nama: "Pre-Math",
@@ -54,9 +50,21 @@ var DATA_PROGRAM = [
     warna: "green",
     ikon: "assets/program_pre_math.png",
     deskripsi: "Program basic math skills untuk membangun kesiapan anak memasuki jenjang SD.",
-    durasi: "± 6 bulan/level",
-    harga: "Rp [PERLU DATA HARGA]",
+    durasi: "120 menit/minggu",
+    hargaCoret: "Rp 100.000-an/sesi",
+    harga: "Rp 80.000-an/sesi",
     link: "detail-pre-math.html"
+  },
+  {
+    nama: "Calistung",
+    usia: "Usia 5 – 8 tahun",
+    warna: "yellow",
+    ikon: "assets/program_calistung.png",
+    deskripsi: "Program belajar membaca, menulis dan berhitung dalam bahasa Indonesia untuk membangun kesiapan anak memasuki jenjang SD.",
+    durasi: "120 menit/minggu",
+    hargaCoret: "Rp 90.000-an/sesi",
+    harga: "Rp 80.000-an/sesi",
+    link: "detail-calistung.html"
   },
   {
     nama: "Math Class",
@@ -64,8 +72,9 @@ var DATA_PROGRAM = [
     warna: "purple",
     ikon: "assets/program_math_class.png",
     deskripsi: "Program bimbingan belajar matematika dengan pendekatan yang mudah dipahami.",
-    durasi: "90 menit/sesi, 2x/minggu",
-    harga: "Rp [PERLU DATA HARGA]",
+    durasi: "180 menit/minggu",
+    hargaCoret: "Rp 120.000-an/sesi",
+    harga: "Rp 90.000-an/sesi",
     link: "detail-math-class.html"
   },
   {
@@ -74,8 +83,9 @@ var DATA_PROGRAM = [
     warna: "pink",
     ikon: "assets/program_eanglish.png",
     deskripsi: "Program bahasa Inggris berbasis kurikulum Cambridge.",
-    durasi: "Mengikuti level",
-    harga: "Rp [PERLU DATA HARGA]",
+    durasi: "120 menit/sesi",
+    hargaCoret: "Rp 120.000-an/sesi",
+    harga: "Rp 90.000-an/sesi",
     link: "detail-english.html"
   }
 ];
@@ -327,14 +337,12 @@ var DATA_FAQ = [
 
 /* --------------------------------------------------------------------------
    5. KEUNGGULAN ("Kenapa Memilih BESTKIDS")
-   Dipakai di: index.html (versi ringkas) dan tentang-kami.html (versi lengkap)
- 
-   warna   : blue | pink | yellow | green | purple
-             menentukan warna kartu (class card-*)
-   ikon    : path gambar ikon. Ingat pakai garis miring biasa ( / )
-   ringkas : satu kalimat, dipakai di beranda
-   lengkap : penjelasan lebih panjang, dipakai di halaman Tentang Kami.
-             Kalau dikosongkan (""), otomatis memakai isi "ringkas".
+   Dipakai di: index.html dan tentang-kami.html — isinya sama persis.
+   Mengubah satu poin di sini akan berubah di kedua halaman sekaligus.
+
+   warna : blue | pink | yellow | green | purple
+           menentukan warna kartu (class card-*)
+   ikon  : path gambar ikon. Ingat pakai garis miring biasa ( / )
    -------------------------------------------------------------------------- */
 var DATA_KEUNGGULAN = [
   {

@@ -38,6 +38,12 @@
 
   /* ---------- Katalog program (program.html) ---------- */
   isi("programGrid", window.DATA_PROGRAM, function (p) {
+    // Kalau ada hargaCoret, harga normal ditampilkan dicoret di atas harga promo
+    var blokHarga = p.hargaCoret
+      ? '<span class="price-old">' + aman(p.hargaCoret) + '</span>' +
+        '<span class="price-text">' + aman(p.harga) + '</span>'
+      : '<span class="price-text">' + aman(p.harga) + '</span>';
+
     return (
       '<article class="program-card-new bg-' + aman(p.warna) + '">' +
         '<div class="card-icon-floating">' +
@@ -53,7 +59,7 @@
           '</div>' +
           '<div class="meta-item">' +
             '<img src="assets/harga_promo.png" alt="Harga">' +
-            '<span class="price-text">' + aman(p.harga) + '</span>' +
+            '<span class="price-wrap">' + blokHarga + '</span>' +
           '</div>' +
         '</div>' +
         '<a href="' + aman(p.link) + '" class="btn btn-' + aman(p.warna) + ' btn-block">Lihat Detail →</a>' +
