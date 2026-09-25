@@ -400,3 +400,95 @@
   .decor-heart { width: 125px; }
   .decor-wavy { display: none}
 }
+
+/* ==========================================================================
+   PERBAIKAN KHUSUS RESPONSIF MOBILE (< 425PX)
+   ========================================================================== */
+@media (max-width: 425px) {
+  /* Ornamen dekorasi disesuaikan */
+  .decor-blink-star { left: 1%; width: 100px; }
+  .decor-half-circle { top: 67%; width: 120px; }
+  .decor-heart { width: 125px; }
+  .decor-wavy { display: none; }
+
+  /* Mencegah overflow horizontal pada container */
+  .contact-page-wrapper,
+  .contact-content-section,
+  .container {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden;
+  }
+
+  /* Main Title & Lead Text */
+  .main-contact-title {
+    font-size: 1.8rem !important;
+    line-height: 1.2;
+  }
+
+  .contact-lead-desc {
+    font-size: 0.95rem !important;
+  }
+
+  /* Kolom Kiri: Mencegah Kartu Info Terpotong */
+  .contact-info-col {
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .contact-info-card {
+    padding: 14px 16px !important; /* Diperkecil dari 24px ke 16px agar muat */
+    gap: 12px !important;          /* Diperkecil dari 20px ke 12px */
+    border-radius: 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .contact-icon-box {
+    width: 44px !important;        /* Diperkecil dari 56px ke 44px */
+    height: 44px !important;
+    border-radius: 12px !important;
+    flex-shrink: 0 !important;     /* Mencegah ikon ciut/tergepeng */
+  }
+
+  .contact-icon-box .info-icon {
+    font-size: 1.25rem !important;
+  }
+
+  .contact-info-text h3 {
+    font-size: 1.05rem !important;
+    margin-bottom: 2px !important;
+  }
+
+  .contact-info-text p {
+    font-size: 0.82rem !important;
+    line-height: 1.4;
+    word-break: break-word;        /* Mencegah teks/URL panjang merusak batas kartu */
+  }
+
+  /* Kolom Kanan: Form Card */
+  .contact-form-card {
+    padding: 20px 16px !important; /* Diperkecil dari 40px ke 16px agar seimbang */
+    border-radius: 20px !important;
+    gap: 14px !important;
+  }
+
+  .form-group label {
+    font-size: 0.88rem !important;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 10px 14px !important;
+    font-size: 0.88rem !important;
+    border-radius: 10px !important;
+  }
+
+  .btn-send-message {
+    padding: 12px 20px !important;
+    font-size: 0.95rem !important;
+  }
+}
