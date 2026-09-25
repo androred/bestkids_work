@@ -247,6 +247,23 @@
   box-shadow: 0 0 0 3px rgba(77, 177, 211, 0.15) !important;
 }
 
+.form-group select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--ink);
+  outline: none;
+  box-sizing: border-box;
+}
+
+.form-group select:focus {
+  border-color: var(--pink-main);
+}
+
 .btn-send-message:hover {
   background-color: #c23864 !important;
 }

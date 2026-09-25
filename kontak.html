@@ -84,37 +84,80 @@
           </a>
         </div>
 
-        <!-- KOLOM KANAN: FORMULIR PESAN -->
-        <form class="contact-form-card" action="https://formspree.io/f/xwlpeoag" method="POST">
+<!-- KOLOM KANAN: FORMULIR PESAN INTEGRASI WHATSAPP -->
+<form class="contact-form-card" id="whatsappContactForm">
+
+  <div class="form-group">
+    <label for="nama">Nama Orang Tua</label>
+    <input type="text" id="nama" placeholder="Masukkan nama lengkap" required>
+  </div>
+
+  <div class="form-group">
+    <label for="whatsapp">Nomor WhatsApp Pengirim</label>
+    <input type="tel" id="whatsapp" placeholder="Masukkan nomor WhatsApp Anda" required>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="Masukkan email" required>
+  </div>
+
+  <div class="form-group">
+    <label for="umur">Umur Anak (Tahun)</label>
+    <input type="number" id="umur" min="1" max="18" placeholder="Contoh: 5" required>
+  </div>
+
+  <div class="form-group">
+    <label for="program">Pilihan Program</label>
+    <select id="program" required>
+      <option value="" disabled selected>-- Pilih Program --</option>
+      <option value="Sensory Phonics">Sensory Phonics</option>
+      <option value="Phonics">Phonics</option>
+      <option value="Pre-Math">Pre-Math</option>
+      <option value="Calistung">Calistung</option>
+      <option value="Math Class">Math Class</option>
+      <option value="English for Young Learners">English for Young Learners</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="pesan">Pesan</label>
+    <textarea id="pesan" rows="4" placeholder="Tulis pesan Anda di sini..." required></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-pink btn-send-message">
+    <span>Kirim Pesan via WhatsApp →</span>
+  </button>
+</form>
+
+<!-- SCRIPT OTOMATISASI WHATSAPP -->
+<script>
+document.getElementById('whatsappContactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
   
-          <div class="form-group">
-            <label for="nama">Nama Lengkap</label>
-            <input type="text" id="nama" name="name" placeholder="Masukkan nama lengkap" required>
-          </div>
+  // ⚠️ GANTI NOMOR INI dengan nomor WhatsApp resmi admin Bestkids (Gunakan kode negara 62)
+  const adminPhone = "6285795207491"; 
+  
+  const nama = document.getElementById('nama').value;
+  const whatsapp = document.getElementById('whatsapp').value;
+  const email = document.getElementById('email').value;
+  const umur = document.getElementById('umur').value;
+  const program = document.getElementById('program').value;
+  const pesan = document.getElementById('pesan').value;
 
-          <div class="form-group">
-            <label for="whatsapp">Nomor WhatsApp</label>
-            <input type="tel" id="whatsapp" name="whatsapp" placeholder="Masukkan nomor WhatsApp" required>
-          </div>
+  // Menyusun teks pesan terformat
+  const formattedText = `Halo Admin Bestkids,%0A%0ASaya ingin bertanya mengenai informasi program belajar:%0A%0A` +
+                        `• *Nama Orang Tua:* ${encodeURIComponent(nama)}%0A` +
+                        `• *No. WA Pengirim:* ${encodeURIComponent(whatsapp)}%0A` +
+                        `• *Email:* ${encodeURIComponent(email)}%0A` +
+                        `• *Umur Anak:* ${encodeURIComponent(umur)} tahun%0A` +
+                        `• *Pilihan Program:* ${encodeURIComponent(program)}%0A` +
+                        `• *Pesan:* ${encodeURIComponent(pesan)}`;
 
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="_replyto" placeholder="Masukkan email" required>
-          </div>
-
-          <div class="form-group">
-            <label for="pesan">Pesan</label>
-            <textarea id="pesan" name="message" rows="4" placeholder="Tulis pesan Anda di sini..." required></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-pink btn-send-message">
-            <span>Kirim Pesan →</span>
-          </button>
-        </form>
-
-      </div>
-    </section>
-  </main>
+  // Buka tab / aplikasi WhatsApp
+  window.open(`https://wa.me/${adminPhone}?text=${formattedText}`, '_blank');
+});
+</script>
 
   <div id="footer"></div>
 

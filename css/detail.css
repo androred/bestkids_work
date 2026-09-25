@@ -536,6 +536,121 @@
 }
 
 /* ==========================================================================
+   LAYOUT WHAT WE LEARN - CLEAN HEADER CARDS
+   ========================================================================== */
+.curriculum-grid-modern {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.curriculum-card-clean {
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: 0 6px 20px rgba(43, 58, 122, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.curriculum-card-clean:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+/* Header Pill (Background Warna untuk Judul) */
+.card-header-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  border-radius: 16px;
+  margin-bottom: 18px;
+}
+
+.card-header-pill h3 {
+  font-family: "Baloo 2", cursive, sans-serif;
+  font-size: 19px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.pill-icon {
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+/* Warna Soft Pastel untuk Header */
+.bg-purple-soft { background: #F3E8FF; color: #6B21A8; }
+.bg-pink-soft   { background: #FFE4E6; color: #BE123C; }
+.bg-blue-soft   { background: #E0F2FE; color: #0369A1; }
+.bg-yellow-soft { background: #FEF3C7; color: #B45309; }
+.bg-green-soft  { background: #DCFCE7; color: #15803D; }
+.bg-coral-soft  { background: #FFEDD5; color: #C2410C; }
+
+/* Custom Check List */
+.clean-check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.clean-check-list li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.clean-check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.list-purple li::before { color: #8B5CF6; }
+.list-pink li::before   { color: #FB7185; }
+.list-blue li::before   { color: #38BDF8; }
+.list-yellow li::before { color: #F59E0B; }
+.list-green li::before  { color: #22C55E; }
+.list-coral li::before  { color: #F97316; }
+
+/* Responsif Mobile & Tablet */
+@media (max-width: 860px) {
+  .curriculum-grid-modern {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Menempatkan kartu ganjil terakhir tepat di tengah 2-kolom grid */
+@media (min-width: 861px) {
+  .curriculum-card-clean.card-last-center {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 100%;
+    max-width: 540px; /* Lebar simetris agar serasi dengan kartu lainnya */
+  }
+}
+
+/* Khusus Kartu Tunggal Agar Rapi di Tengah */
+.card-single-center {
+  max-width: 700px;
+  margin: 0 auto;
+  grid-column: 1 / -1; /* Mengisi posisi tengah jika berada dalam grid */
+}
+
+/* ==========================================================================
    HERO DETAIL KELAS REDESIGN (PROFESIONAL & MODERN)
    ========================================================================== */
 .hero-detail-redesign {
