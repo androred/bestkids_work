@@ -380,6 +380,8 @@
 
    @media (max-width: 1440px) {
   .decor-half-circle { top: 50%;   right: 1%;   width: 250px; }
+  .decor-cat-spill   { top: -14px; left: -25px; }
+  .decor-wavy        { bottom: 1px; right: 30%;  width: 200px; }
 }  
 
 /* --- Laptop kecil (≤ 1200px) --- */
@@ -428,7 +430,7 @@
 
 /* --- HP kecil (≤ 430px) --- */
 @media (max-width: 430px) {
-  .decor-cat-spill   { top: -6px;  left: -12px; width: 70px; }
+  .decor-cat-spill   { top: 12px;  left: -12px; width: 70px; }
   .decor-blink-star  { top: 46%;   left: 5%;    width: 38px; }
   .decor-star        { bottom: 5px; left: 1%;   width: 72px; }
   .decor-5star       { top: 5px;   right: 1%;   width: 58px; }

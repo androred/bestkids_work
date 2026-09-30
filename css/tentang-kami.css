@@ -218,6 +218,12 @@
   .decor-blink-star, .decor-heart { opacity: 0.5; }
 }
 
+@media (max-width: 480px) {
+  /* Di HP kecil ukuran ornamen disesuaikan agar layar tidak terasa sempit */ 
+  .decor-wavy { display: none; }
+  .decor-half-circle { display: none;  }
+  .decor-blink-star,.decor-star ,.decor-heart { opacity: 0.4; }
+}
 
 /* ==========================================
    PERJALANAN KAMI (TIMELINE HORIZONTAL)

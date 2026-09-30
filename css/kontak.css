@@ -397,8 +397,9 @@
 @media (max-width: 425px) {
   .decor-blink-star{ left: 1%; width: 100px; }
   .decor-half-circle { top: 67% ; width: 120px; }
-  .decor-heart { width: 125px; }
+  .decor-heart { width: 125px; opacity: 0.4; }
   .decor-wavy { display: none}
+  .decor-star { opacity: 0.4; }
 }
 
 /* ==========================================================================

@@ -874,22 +874,35 @@
 /* ==========================================================================
    RESPONSIF MOBILE (<768px)
    ========================================================================== */
+@media (max-width: 1440px) {
+  .decor-cat-spill { width: 220px; left:-3%}  
+  .decor-blink-star { left: -3%; }
+  .decor-half-circle { width: 300px; right: -5%; }
+  .decor-5star { top: -40px; right: -2%;}
+}
 @media (max-width: 1024px) {
   /* Di tablet ukuran ornamen disesuaikan agar tidak terlalu besar */
-  .decor-cat-spill { width: 180px; top: -15px; left: -20px; }
+  .decor-cat-spill { opacity: 0.7; width: 180px; top: -25px; left: -40px; }
   .decor-5star { width: 150px; }
   .decor-wavy { width: 200px; }
   .decor-half-circle { width: 250px; }
-  .decor-blink-star, .decor-heart { opacity: 0.7; }
+  .decor-blink-star { left: -5%; }
+  .decor-blink-star, .decor-star, .decor-heart { opacity: 0.7; }
 }
 
 @media (max-width: 768px) {
   /* Di HP ukuran ornamen disesuaikan agar layar tidak terasa sempit */
   .decor-cat-spill { width: 110px; top: -10px; left: -15px; }
   .decor-5star { width: 75px; }
-  .decor-wavy { width: 85px; }
-  .decor-half-circle { width: 90px; }
+  .decor-wavy, .decor-blink-star { display: none; }
+  .decor-half-circle { width: 150px; top: 55% ;}
   .decor-blink-star, .decor-heart { opacity: 0.5; }
+}
+
+@media (max-width: 480px) {
+  /* Di HP kecil ukuran ornamen disesuaikan agar layar tidak terasa sempit */ 
+  .decor-half-circle { display: none;  }
+  .decor-blink-star, .decor-heart { opacity: 0.4; }
 }
 
 

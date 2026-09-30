@@ -218,10 +218,13 @@
   .decor-star { width: 150px;}
 }
 
-@media (max-width: 425px) {
-  .decor-half-circle { top: 67% ; width: 120px; }
-  .decor-heart { width: 125px; }
+@media (max-width: 480px) {
+  /* Di HP kecil ukuran ornamen disesuaikan agar layar tidak terasa sempit */ 
+  .decor-wavy { display: none; }
+  .decor-half-circle { display: none;  }
+  .decor-blink-star, .decor-heart { opacity: 0.4; }
 }
+
 
 .gallery-tabs {
   flex-wrap: wrap;
