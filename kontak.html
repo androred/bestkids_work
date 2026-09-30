@@ -84,7 +84,7 @@
           </a>
         </div>
 
-  <!-- KOLOM KANAN: FORMULIR PESAN INTEGRASI WHATSAPP -->
+        <!-- KOLOM KANAN: FORMULIR PESAN INTEGRASI WHATSAPP & GOOGLE SHEETS -->
   <form class="contact-form-card" id="whatsappContactForm">
 
     <div class="form-group">
@@ -125,10 +125,67 @@
       <textarea id="pesan" rows="4" placeholder="Tulis pesan Anda di sini..." required></textarea>
     </div>
 
-    <button type="submit" class="btn btn-pink btn-send-message">
+    <button type="submit" class="btn btn-pink btn-send-message" id="btnSubmit">
       <span>Kirim Pesan via WhatsApp →</span>
     </button>
   </form>
+
+  <!-- SCRIPT PENGHUBUNG GOOGLE SHEETS & WHATSAPP -->
+  <script>
+  document.getElementById('whatsappContactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // 1. URL Apps Script dari Google Sheets
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyyc7471vX99hXYamw4A0WeiAiY75AwApXFrhPMUj2Is6upWttIW4dgOKq5ib54AdrG/exec'; 
+
+    // 2. Nomor WhatsApp Resmi Admin Bestkids (Gunakan awalan 62)
+    const adminPhone = "6285795207491"; // 👈 Ganti dengan nomor WA Bestkids
+
+    const btnSubmit = document.getElementById('btnSubmit');
+    btnSubmit.disabled = true;
+    btnSubmit.innerText = 'Memproses...';
+
+    const formData = {
+      nama: document.getElementById('nama').value,
+      whatsapp: document.getElementById('whatsapp').value,
+      email: document.getElementById('email').value,
+      umur: document.getElementById('umur').value,
+      program: document.getElementById('program').value,
+      pesan: document.getElementById('pesan').value
+    };
+
+    // Format Pesan WhatsApp
+    const formattedText = `Halo Admin Bestkids,%0A%0ASaya ingin bertanya mengenai informasi program belajar:%0A%0A` +
+                          `• *Nama Orang Tua:* ${encodeURIComponent(formData.nama)}%0A` +
+                          `• *No. WA Pengirim:* ${encodeURIComponent(formData.whatsapp)}%0A` +
+                          `• *Email:* ${encodeURIComponent(formData.email)}%0A` +
+                          `• *Umur Anak:* ${encodeURIComponent(formData.umur)} tahun%0A` +
+                          `• *Pilihan Program:* ${encodeURIComponent(formData.program)}%0A` +
+                          `• *Pesan:* ${encodeURIComponent(formData.pesan)}`;
+
+    // Kirim data ke Google Sheets via Fetch API
+    fetch(scriptURL, {
+      method: 'POST',
+      mode: 'no-cors', // Mencegah kendala aturan CORS browser
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    })
+    .then(() => {
+      // Buka WhatsApp setelah simpan ke Spreadsheet berhasil/terkirim
+      window.open(`https://wa.me/${adminPhone}?text=${formattedText}`, '_blank');
+      btnSubmit.disabled = false;
+      btnSubmit.innerHTML = '<span>Kirim Pesan via WhatsApp →</span>';
+    })
+    .catch(error => {
+      console.error('Error!', error.message);
+      // Jika ganti koneksi/error, tetap buka WA agar pengunjung tidak kecewa
+      window.open(`https://wa.me/${adminPhone}?text=${formattedText}`, '_blank');
+      btnSubmit.disabled = false;
+      btnSubmit.innerHTML = '<span>Kirim Pesan via WhatsApp →</span>';
+    });
+  });
+  </script>
+
   </main>
 
 <!-- SCRIPT OTOMATISASI WHATSAPP -->
