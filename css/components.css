@@ -438,16 +438,34 @@
   margin: 0;
 }
 
-@media (max-width: 992px) {
-  /* Responsif Layar Tablet dan HP */
+@media (max-width: 1024px) {
+  /* Ubah ke Flexbox agar baris gantung (2 kartu di bawah) otomatis berada di tengah */
   .why-choose-grid {
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  /* Set lebar setiap kartu agar mengisi 3 kolom di baris pertama dan 2 di baris kedua */
+  .why-choose-card {
+    width: calc(33.333% - 14px); /* Mengisi 1/3 lebar container dikurangi gap */
+    box-sizing: border-box;
   }
 }
 
+@media (max-width: 768px) {
+  /* Tampilan 2 kolom di tablet */
+  .why-choose-card {
+    width: calc(50% - 10px); /* Mengisi 1/2 lebar container dikurangi gap */
+  }
+  
+}
+
 @media (max-width: 576px) {
-  .why-choose-grid {
-    grid-template-columns: 1fr;
+  /* Tampilan 1 kolom penuh di smartphone */
+  .why-choose-card {
+    width: 100%;
   }
 }
 

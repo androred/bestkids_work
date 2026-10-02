@@ -169,7 +169,7 @@
    ========================================================================== */
 .program-6-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   margin-top: 28px;
 }
@@ -226,16 +226,9 @@
    RESPONSIF MOBILE (<1024px & <768px)
    ========================================================================== */
 
-@media (max-width: 1024px) {
-  .program-6-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-  }
-}
-
 @media (max-width: 768px) {
   .program-6-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 16px;
   }
   .cta-avatar-square {
