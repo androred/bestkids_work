@@ -109,7 +109,7 @@ var DATA_GALERI = [
     warna: "pink"
   },
   {
-    foto: "assets/galeri/phonics5.webp",
+    foto: "assets/galeri/lomba.jpeg",
     alt: "Lomba Mewarnai",
     judul: "Celebration Day & Lomba Mewarnai",
     keterangan: "Keseruan unjuk kreativitas dan pembagian apresiasi untuk seluruh murid.",
@@ -136,21 +136,21 @@ var DATA_GALERI = [
     warna: "green"
   },
   {
-    foto: "assets/galeri/sensory3.webp",
+    foto: "assets/galeri/hasil_karya.jpeg",
     alt: "Hasil Karya Menulis",
-    judul: "Crafting & Math Origami",
-    keterangan: "Menggabungkan konsep dasar geometri dengan seni lipat kertas yang seru.",
+    judul: "Coloring and Creating Magic",
+    keterangan: "Para seniman cilik menghidupkan imajinasi mereka. Mewarnai dan Menciptakan Keajaiban dalam lomba menggambar hari ini!",
     kategori: "karya",
     label: "Hasil Karya",
     warna: "purple"
   },
   {
     foto: "assets/galeri/premath1.webp",
-    alt: "Pentas Seni BESTKIDS",
-    judul: "Parent Teacher Conference",
-    keterangan: "Momen diskusi hangat perkembangan anak bersama orang tua murid.",
-    kategori: "event",
-    label: "Event & Lomba",
+    alt: "Pembelajaran Kelas Pre-Math",
+    judul: "Pembelajaran Kelas Pre-Math",
+    keterangan: "Momen belajar intensif dan menyenangkan untuk anak-anak usia 4-6 tahun.",
+    kategori: "belajar",
+    label: "Kegiatan Belajar",
     warna: "pink"
   }
 ];
