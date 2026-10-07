@@ -2,13 +2,6 @@
    HALAMAN GALERI (galeri.html)
    ========================================================================== */
 /* ==========================================================================
-   PERLEBAR CONTAINER & RUANG HALAMAN (MORE WIDESCREEN & FILLING)
-   ========================================================================== */
-.gallery-grid {
-  gap: 30px; /* Jarak antar kartu lebih proporsional */
-}
-
-/* ==========================================================================
    5. DETAIL KELAS (`detail-kelas.html`)
    ========================================================================== */
 .level-tabs {
@@ -48,7 +41,7 @@
   
   max-width: 1600px;
   width: 100%;
-  margin: 0 auto 40px auto;
+  margin: 0 auto 10px auto;
   padding: 30px 20px 50px 20px;
   min-height: 260px;
   
@@ -231,12 +224,6 @@
   margin: 10px 0 32px;
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
 .gallery-card {
   background: #fff;
   border: 1px solid var(--line);
@@ -295,14 +282,136 @@
   .gallery-img-wrapper { height: 200px; }
 }
 
-@media (max-width: 980px) {
-  /* Responsif Mobile Galeri */
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
 @media (max-width: 576px) {
-  .gallery-grid { grid-template-columns: 1fr; }
   .gallery-tabs { gap: 8px; }
   .gallery-tabs .tab-btn { padding: 8px 16px; font-size: 14px; }
 }
 
+/* ==========================================================================
+   GALERI — CAROUSEL
+   Menggantikan tampilan grid pada #galeriGrid.
+
+   Cara kerjanya memakai scroll asli browser (scroll-snap), bukan hitungan
+   posisi lewat JavaScript. Keuntungannya: geser dengan jari di HP, scroll
+   mendatar dengan trackpad, dan tombol panah keyboard semuanya langsung
+   jalan tanpa kode tambahan.
+
+   Jumlah kartu yang terlihat diatur lewat satu variabel: --tampil.
+   ========================================================================== */
+.galeri-carousel {
+  position: relative;
+  --tampil: 3;              /* jumlah kartu yang terlihat sekaligus */
+  --jarak: 24px;            /* jarak antar kartu */
+}
+
+/* -- Rel tempat kartu berbaris ------------------------------------------- */
+#galeriGrid {
+  display: flex;
+  gap: var(--jarak);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scroll-padding-left: 4px;      /* = padding kiri, agar kartu pertama berhenti tepat di 0 */
+  padding: 4px 4px 12px;    /* ruang agar bayangan kartu tidak terpotong */
+  margin: 0 -4px;
+
+  /* Menyembunyikan batang scroll, tapi scroll-nya tetap berfungsi */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#galeriGrid::-webkit-scrollbar {
+  display: none;
+}
+
+/* -- Lebar kartu dihitung dari jumlah yang ingin ditampilkan ------------- */
+#galeriGrid .gallery-card {
+  flex: 0 0 calc((100% - (var(--tampil) - 1) * var(--jarak)) / var(--tampil));
+  scroll-snap-align: start;
+  min-width: 0;             /* wajib, agar judul panjang tidak melebarkan kartu */
+}
+
+/* -- Tombol panah -------------------------------------------------------- */
+.galeri-nav {
+  position: absolute;
+  top: 38%;                 /* sejajar bagian gambar, bukan tengah kartu */
+  transform: translateY(-50%);
+  z-index: 5;
+
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(10, 36, 78, 0.16);
+  color: var(--pink, #F4437F);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s, transform 0.2s;
+}
+
+.galeri-nav:hover {
+  background: #FFF0F5;
+}
+
+.galeri-nav:active {
+  transform: translateY(-50%) scale(0.94);
+}
+
+.galeri-nav svg {
+  width: 20px;
+  height: 20px;
+}
+
+.galeri-prev { left: -18px; }
+.galeri-next { right: -18px; }
+
+/* Tombol diredupkan dan dimatikan saat sudah di ujung rel */
+.galeri-nav[disabled] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* -- Titik penanda halaman ----------------------------------------------- */
+.galeri-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.galeri-dots button {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #D8DCEA;
+  cursor: pointer;
+  transition: width 0.25s, background 0.25s;
+}
+
+.galeri-dots button[aria-current="true"] {
+  width: 26px;
+  border-radius: 99px;
+  background: var(--pink, #F4437F);
+}
+
+/* ==========================================================================
+   RESPONSIF — cukup ubah angka --tampil
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .galeri-carousel { --tampil: 2.3; --jarak: 20px; }
+}
+
+@media (max-width: 768px) {
+  .galeri-carousel { --tampil: 1.6; --jarak: 16px; }
+  .galeri-nav { display: none; }   /* di HP cukup digeser dengan jari */
+}
+
+@media (max-width: 480px) {
+  .galeri-carousel { --tampil: 1.15; --jarak: 14px; }
+}

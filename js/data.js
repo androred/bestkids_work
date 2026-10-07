@@ -105,7 +105,7 @@ var DATA_GALERI = [
     judul: "Belajar Calistung",
     keterangan: "Anak-anak antusias mengenal huruf menggunakan media kancing warna-warni.",
     kategori: "belajar",
-    label: "Kegiatan Belajar",
+    label: "Teaching and Learning Activities",
     warna: "pink"
   },
   {
@@ -114,7 +114,7 @@ var DATA_GALERI = [
     judul: "Celebration Day & Lomba Mewarnai",
     keterangan: "Keseruan unjuk kreativitas dan pembagian apresiasi untuk seluruh murid.",
     kategori: "event",
-    label: "Event & Lomba",
+    label: "Events and Competitions",
     warna: "yellow"
   },
   {
@@ -123,7 +123,7 @@ var DATA_GALERI = [
     judul: "Fun Phonics Word Games",
     keterangan: "Melatih kefasihan membaca kata Bahasa Inggris lewat peragaan kartu bergambar.",
     kategori: "belajar",
-    label: "Kegiatan Belajar",
+    label: "Teaching and Learning Activities",
     warna: "blue"
   },
   {
@@ -132,7 +132,7 @@ var DATA_GALERI = [
     judul: "Ruang Kelas Semi-Private",
     keterangan: "Ruangan bersih, aman, ber-AC, dan didesain ramah anak (max 5 murid/kelas).",
     kategori: "fasilitas",
-    label: "Fasilitas Kelas",
+    label: "Educational Display",
     warna: "green"
   },
   {
@@ -141,7 +141,7 @@ var DATA_GALERI = [
     judul: "Coloring and Creating Magic",
     keterangan: "Para seniman cilik menghidupkan imajinasi mereka. Mewarnai dan Menciptakan Keajaiban dalam lomba menggambar hari ini!",
     kategori: "karya",
-    label: "Hasil Karya",
+    label: "Student Projects",
     warna: "purple"
   },
   {
@@ -150,7 +150,7 @@ var DATA_GALERI = [
     judul: "Pembelajaran Kelas Pre-Math",
     keterangan: "Momen belajar intensif dan menyenangkan untuk anak-anak usia 4-6 tahun.",
     kategori: "belajar",
-    label: "Kegiatan Belajar",
+    label: "Teaching and Learning Activities",
     warna: "pink"
   }
 ];

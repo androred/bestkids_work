@@ -645,9 +645,78 @@
   margin: 0 auto;
 }
 
+/* ==========================================================================
+   RESPONSIF FAQ 768PX (H2 CENTER, GAMBAR KIRI & TEKS P KANAN)
+   ========================================================================== */
 @media (max-width: 768px) {
-  .faq-side-art img {
-    max-width: 280px !important; /* Dikecilkan lagi di HP */
+  /* 1. Atur container internal FAQ dengan CSS Grid */
+  #faq .container {
+    display: grid;
+    grid-template-areas:
+      "title title"
+      "art lead"
+      "list list";
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 16px;
+  }
+
+  /* 2. Judul H2 Tetap di Atas & Rata Tengah */
+  #faq .section-header {
+    display: contents; /* Menguraikan elemen header ke grid container */
+  }
+
+  #faq .section-header h2 {
+    grid-area: title;
+    text-align: center !important;
+    margin-bottom: 8px !important;
+    font-size: 1.8rem;
+  }
+
+  /* 3. Teks Deskripsi P Berada di Sebelah Kanan Gambar */
+  #faq .faq-lead {
+    grid-area: lead;
+    text-align: left !important;
+    font-size: 0.85rem;
+    line-height: 1.35;
+    margin: 0;
+  }
+
+  /* 4. Gambar Diposisikan di Sebelah Kiri */
+  #faq .faq-wrapper {
+    display: contents; /* Menghilangkan pembatas wrapper agar gambar & list masuk grid */
+  }
+
+  #faq .faq-side-art {
+    grid-area: art;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  #faq .faq-side-art img {
+    width: 380px; /* Ukuran gambar yang pas disandingkan dengan teks P */
+    height: auto;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  /* 5. List Accordion FAQ Membentang Penuh di Bawahnya */
+  #faq .faq-list {
+    grid-area: list;
+    width: 100%;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 425px) {
+  #faq .faq-side-art img {
+    width: 180px; /* Gambar menyesuaikan lebar layar HP */
+  }
+}
+
+@media (max-width: 320px) {
+  #faq .faq-side-art img {
+    width: 150px; /* Gambar menyesuaikan lebar layar HP */
   }
 }
 
@@ -766,9 +835,10 @@
 }
 
 @media (max-width: 760px) {
-  .hero { padding: 35px 0 10px; }
-  .hero-grid { grid-template-columns: 1fr; text-align: center; }
-  .hero-kids { max-width: 360px; margin: 0 auto; }
+  .hero { padding: 25px 0 10px;overflow: visible; }
+  .hero-grid { grid-template-columns: 1fr; text-align: center; padding: 0 10px;}
+  .hero-art-side { width: 100%; display: flex; justify-content: center;}
+  .hero-kids { width: 100%; max-width: 520px !important; height: auto; margin: 0 auto; transform: scale(1.05); }
   .hero h1 { font-size: 46px; }
   .hero-subtitle { font-size: 26px; }
   .speech-bubble { position: static; margin: 0 auto 15px; }
@@ -779,10 +849,50 @@
   .home-stats-grid { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 430px) {
-  .hero h1 { font-size: 40px; }
-  .hero-kids { max-width: 300px; }
-  .actions .btn { width: 100%; }
+/* ==========================================================================
+   FIX URUTAN HERO BANNER KHUSUS MOBILE (< 425PX)
+   ========================================================================== */
+@media (max-width: 425px) {
+  /* 1. Ubah container utama menjadi CSS Grid 1 Kolom */
+  .hero-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+    gap: 16px !important;
+  }
+
+  /* 2. Bongkar pembungkus .hero-text-side agar anak-anaknya sejajar dengan .hero-art-side */
+  .hero-text-side {
+    display: contents !important;
+  }
+
+  /* 3. Atur urutan tampilan secara presisi */
+  .hero-text-side .eyebrow { order: 1 !important; justify-self: center; }
+  .hero-text-side h1      { order: 2 !important; font-size: 36px !important; line-height: 1.05 !important; }
+  .hero-text-side p       { order: 3 !important; font-size: 13.5px !important; margin-bottom: 8px !important; }
+  
+  /* GAMBAR HERO (Posisi ke-4) */
+  .hero-art-side          { order: 4 !important; width: 100%!important; height: 150px; margin: 8px 0 !important; }
+  
+  /* TOMBOL ACTION (Posisi ke-5: Di bawah Gambar) */
+  .hero-text-side .actions {
+    order: 5 !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  /* Rapikan tombol dan gambar */
+  .hero-text-side .actions .btn {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-kids {
+    max-width: 350px !important;
+    margin: 0 auto !important;
+  }
 }
 
 /* ==========================================================================

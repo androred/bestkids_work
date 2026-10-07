@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Galeri Kegiatan — BESTKIDS</title>
-  <link rel="icon" type="image/png" href="assets\logo_footer.png">
+  <link rel="icon" type="image/png" href="assets/logo_footer.png">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,8 +67,24 @@
         <button class="tab-btn" data-filter="karya">Student Projects</button>
       </div>
 
-      <!-- Gallery Grid -->
-      <div class="gallery-grid" id="galeriGrid"></div>
+      <!-- Gallery Carousel -->
+      <div class="galeri-carousel">
+        <button class="galeri-nav galeri-prev" type="button" aria-label="Foto sebelumnya">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 18L9 12l6-6"/>
+          </svg>
+        </button>
+
+        <div class="gallery-grid" id="galeriGrid"></div>
+
+        <button class="galeri-nav galeri-next" type="button" aria-label="Foto berikutnya">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+
+        <div class="galeri-dots" aria-label="Penanda halaman galeri"></div>
+      </div>
     </section>
 
   <!-- BANNER CTA PROGRAM -->
@@ -115,6 +131,7 @@
 
   <script src="js/data.js"></script>
   <script src="js/render.js"></script>
+  <script src="js/galeri-carousel.js"></script>
   <script src="js/script.js"></script>
   <script>
     // Header & Footer Loader
@@ -126,29 +143,6 @@
       document.querySelector('#footer').innerHTML = f;
     });
 
-    // Filtering Gallery Logic
-    document.addEventListener('DOMContentLoaded', () => {
-      const tabBtns = document.querySelectorAll('.gallery-tabs .tab-btn');
-      const galleryCards = document.querySelectorAll('.gallery-card');
-
-      tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          // Reset active class
-          tabBtns.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-
-          const filterValue = btn.getAttribute('data-filter');
-
-          galleryCards.forEach(card => {
-            if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-              card.style.display = 'flex';
-            } else {
-              card.style.display = 'none';
-            }
-          });
-        });
-      });
-    });
   </script>
 </body>
 </html>
