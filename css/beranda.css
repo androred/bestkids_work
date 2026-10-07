@@ -31,7 +31,7 @@
    4. BERANDA (`index.html`)
    ========================================================================== */
 .hero {
-  padding: 48px 0 65px;
+  padding: 48px 0 5px;
   overflow: hidden;
 }
 
@@ -100,7 +100,7 @@
   right: auto !important;
   bottom: auto !important;
   width: 100%;
-  max-width: 580px;
+  max-width: 1000px;
   height: auto;
   object-fit: contain;
   border-radius: 24px;
@@ -234,6 +234,21 @@
   .cta-avatar-square {
     width: 90px;
     height: 90px;
+    margin: 0 auto;
+  }
+  .cta-action-wrapper, .cta-action-wrapper .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .program-6-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+  .cta-avatar-square {
+    width: 80px;
+    height: 80px;
     margin: 0 auto;
   }
   .cta-action-wrapper, .cta-action-wrapper .btn {
@@ -630,6 +645,12 @@
   margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+  .faq-side-art img {
+    max-width: 280px !important; /* Dikecilkan lagi di HP */
+  }
+}
+
 /* ==========================================================================
    REBUILD BANNER CTA (BOX FRAME & PAPER PLANE ORNAMENT)
    ========================================================================== */
@@ -699,6 +720,7 @@
   }
 }
 
+
 @media (max-width: 1024px) {
   .program-6-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -744,7 +766,7 @@
 }
 
 @media (max-width: 760px) {
-  .hero { padding: 35px 0 50px; }
+  .hero { padding: 35px 0 10px; }
   .hero-grid { grid-template-columns: 1fr; text-align: center; }
   .hero-kids { max-width: 360px; margin: 0 auto; }
   .hero h1 { font-size: 46px; }
@@ -896,6 +918,7 @@
   /* Di HP kecil ukuran ornamen disesuaikan agar layar tidak terasa sempit */ 
   .decor-half-circle { display: none;  }
   .decor-blink-star, .decor-heart { opacity: 0.4; }
+  .decor-5star { top:1% }
 }
 
 

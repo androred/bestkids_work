@@ -51,6 +51,7 @@
 
 /* ==========================================================================
    REBUILD BANNER CTA (BOX FRAME & PAPER PLANE ORNAMENT)
+   Banner CTA beranda: foto anak keluar dari banner + ornamen pesawat kertas.
    ========================================================================== */
 .cta-section-wrapper {
   position: relative;
@@ -69,9 +70,39 @@
   justify-content: space-between;
   gap: 24px;
   box-shadow: 0 10px 30px rgba(10, 36, 78, 0.08);
+
+  /* WAJIB visible agar gambar anak bisa menembus keluar banner.
+     Tanpa ini, bagian gambar yang di luar banner akan terpotong. */
+  overflow: visible;
 }
 
-/* Teks Utama CTA */
+/* --------------------------------------------------------------------------
+   Frame Foto: gambar anak keluar dari banner
+   -------------------------------------------------------------------------- */
+.cta-avatar-square {
+  position: relative;
+  width: 240px;              /* ruang untuk gambar, teks dimulai setelah lebar ini */
+  min-height: 100px;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+
+.cta-avatar-square img {
+  position: absolute;
+  left: 35%;
+  bottom: -24px;             /* menempel di tepi bawah banner */
+  height: 210px;             /* lebih tinggi dari banner, jadi keluar ke atas */
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  transform: translateX(-40%);
+  filter: drop-shadow(0 10px 16px rgba(10, 36, 78, 0.18));
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Teks Utama CTA
+   -------------------------------------------------------------------------- */
 .cta-text {
   flex-grow: 1;
 }
@@ -90,17 +121,89 @@
   margin: 0;
 }
 
+/* --------------------------------------------------------------------------
+   Tombol & Ornamen Pesawat Kertas
+   -------------------------------------------------------------------------- */
+.cta-action-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: 40px;        /* memberi ruang untuk pesawat kertas di kanannya */
+}
+
+.paper-plane-icon {
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  right: -36px;
+  top: -24px;
+  transform: rotate(15deg);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   RESPONSIF MOBILE (< 768px)
+   Dua blok @media 768px yang tadinya terpisah disatukan di sini.
+   ========================================================================== */
 @media (max-width: 768px) {
-  /* Responsif Mobile (<768px) */
   .cta-section-wrapper {
     margin-bottom: 0 !important;
     padding: 16px 0 !important;
   }
+
   .cta-banner {
     flex-direction: column;
     text-align: center;
     padding: 20px 16px;
     gap: 16px;
+  }
+
+  .cta-avatar-square {
+    width: 85px;
+    height: 85px;
+    min-height: 0;
+    align-self: center;
+    margin: 0 auto;
+  }
+
+  .cta-avatar-square img {
+    height: 150px;
+    bottom: 0;               /* di HP gambar muncul di atas banner */
+  }
+
+  .cta-action-wrapper {
+    width: 100%;
+    margin-right: 0;         /* agar tombol tetap di tengah di HP */
+  }
+
+  .cta-action-wrapper .btn {
+    width: 100%;
+  }
+
+  .paper-plane-icon {
+    display: none;
+  }
+}
+
+.cta-rocket-wrapper {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.rocket-icon {
+  width: 60px;
+  height: 60px;
+  transform: rotate(15deg);
+  pointer-events: none;
+}
+ 
+@media (max-width: 768px) {
+  .cta-rocket-wrapper {
+    display: none;
   }
 }
 
