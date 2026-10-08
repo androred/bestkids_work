@@ -21,6 +21,7 @@
                 harga promo. Kalau tidak ada promo, hapus saja barisnya
                 (atau isi "") — nanti hanya "harga" yang tampil.
    -------------------------------------------------------------------------- */
+
 var DATA_PROGRAM = [
   {
     nama: "Sensory Phonics",
@@ -90,32 +91,97 @@ var DATA_PROGRAM = [
   }
 ];
 
-/* --------------------------------------------------------------------------
-   2. GALERI
-   Dipakai di: galeri.html
-   kategori : belajar | event | fasilitas | karya
-              (harus sama dengan data-filter pada tombol filter)
-   warna    : warna label di atas foto
-   alt      : boleh dikosongkan — kalau kosong dipakai judul
-   -------------------------------------------------------------------------- */
+
 var DATA_GALERI = [
   {
     foto: "assets/galeri/calistung1.webp",
     alt: "Belajar Calistung Interaktif",
-    judul: "Belajar Calistung",
+    judul: "Interactive Calistung Learning",
     keterangan: "Anak-anak antusias mengenal huruf menggunakan media kancing warna-warni.",
     kategori: "belajar",
     label: "Teaching and Learning Activities",
     warna: "pink"
   },
   {
+    foto: "assets/galeri/calistung2.jpeg",
+    alt: "Aktivitas Membaca dan Menulis",
+    judul: "Reading & Writing Practice",
+    keterangan: "Pendampingan privat untuk memperlancar kemampuan calistung anak.",
+    kategori: "belajar",
+    label: "Teaching and Learning Activities",
+    warna: "blue"
+  },
+  {
+    foto: "assets/galeri/calistung3.webp",
+    alt: "Eksplorasi Angka dan Huruf",
+    judul: "Numbers & Words Exploration",
+    keterangan: "Sesi belajar berhitung dasar dan menyusun kata dengan kartu interaktif.",
+    kategori: "belajar",
+    label: "Teaching and Learning Activities",
+    warna: "yellow"
+  },
+  {
+    foto: "assets/galeri/display1.webp",
+    alt: "Pajangan Hasil Karya Edukatif",
+    judul: "Educational Display Wall",
+    keterangan: "Area sudut kelas yang dihiasi media pembelajaran interaktif dan ramah anak.",
+    kategori: "fasilitas",
+    label: "Educational Display",
+    warna: "green"
+  },
+  {
+    foto: "assets/galeri/english1.webp",
+    alt: "Sesi Pembelajaran English for Young Learners",
+    judul: "English Practice Session",
+    keterangan: "Melatih kepercayaan diri berbicara Bahasa Inggris lewat aktivitas kelompok.",
+    kategori: "belajar",
+    label: "Teaching and Learning Activities",
+    warna: "purple"
+  },
+  {
+    foto: "assets/galeri/hasil_karya.jpeg",
+    alt: "Hasil Karya Menulis",
+    judul: "Coloring and Creating Magic",
+    keterangan: "Para seniman cilik menghidupkan imajinasi mereka. Mewarnai dan Menciptakan Keajaiban dalam lomba menggambar hari ini!",
+    kategori: "karya",
+    label: "Student Projects",
+    warna: "pink"
+  },
+  {
     foto: "assets/galeri/lomba.jpeg",
     alt: "Lomba Mewarnai",
-    judul: "Celebration Day & Lomba Mewarnai",
+    judul: "Celebration Day & Coloring Contest",
     keterangan: "Keseruan unjuk kreativitas dan pembagian apresiasi untuk seluruh murid.",
     kategori: "event",
     label: "Events and Competitions",
     warna: "yellow"
+  },
+  {
+    foto: "assets/galeri/mathclass1.webp",
+    alt: "Suasana Kelas Math Class",
+    judul: "Math Class Problem Solving",
+    keterangan: "Bimbingan matematika dengan metode visual yang mudah dipahami anak.",
+    kategori: "belajar",
+    label: "Teaching and Learning Activities",
+    warna: "blue"
+  },
+  {
+    foto: "assets/galeri/phonics1.webp",
+    alt: "Mengenal Bunyi Huruf Phonics",
+    judul: "Phonics Sound Recognition",
+    keterangan: "Latihan pengucapan bunyi huruf (letter sounds) dengan metode multisensori.",
+    kategori: "belajar",
+    label: "Teaching and Learning Activities",
+    warna: "green"
+  },
+  {
+    foto: "assets/galeri/phonics5.webp",
+    alt: "Latihan Membaca Kata Phonics",
+    judul: "Phonics Reading Time",
+    keterangan: "Anak-anak belajar merangkai bunyi huruf menjadi kata secara bertahap.",
+    kategori: "belajar",
+    label: "Teaching and Learning Activities",
+    warna: "purple"
   },
   {
     foto: "assets/galeri/phonics8.webp",
@@ -127,31 +193,58 @@ var DATA_GALERI = [
     warna: "blue"
   },
   {
+    foto: "assets/galeri/premath1.webp",
+    alt: "Pembelajaran Kelas Pre-Math",
+    judul: "Pre-Math Learning Session",
+    keterangan: "Momen belajar intensif dan menyenangkan untuk anak-anak usia 4-6 tahun.",
+    kategori: "belajar",
+    label: "Teaching and Learning Activities",
+    warna: "pink"
+  },
+  {
+    foto: "assets/galeri/sensory1.webp",
+    alt: "Aktivitas Motorik Sensory Phonics",
+    judul: "Sensory Motor Activity",
+    keterangan: "Latihan pembentukan huruf menggunakan media taktil dan aktivitas fisik.",
+    kategori: "belajar",
+    label: "Teaching and Learning Activities",
+    warna: "yellow"
+  },
+  {
     foto: "assets/galeri/sensory2.webp",
     alt: "Ruang Kelas Semi Private",
-    judul: "Ruang Kelas Semi-Private",
+    judul: "Semi-Private Classroom Experience",
     keterangan: "Ruangan bersih, aman, ber-AC, dan didesain ramah anak (max 5 murid/kelas).",
     kategori: "fasilitas",
     label: "Educational Display",
     warna: "green"
   },
   {
-    foto: "assets/galeri/hasil_karya.jpeg",
-    alt: "Hasil Karya Menulis",
-    judul: "Coloring and Creating Magic",
-    keterangan: "Para seniman cilik menghidupkan imajinasi mereka. Mewarnai dan Menciptakan Keajaiban dalam lomba menggambar hari ini!",
-    kategori: "karya",
-    label: "Student Projects",
-    warna: "purple"
+    foto: "assets/galeri/sensory3.webp",
+    alt: "Aktivitas Taktil Sensory",
+    judul: "Tactile Learning Experience",
+    keterangan: "Eksplorasi tekstur dan bentuk untuk merangsang memori sensorik anak.",
+    kategori: "belajar",
+    label: "Teaching and Learning Activities",
+    warna: "blue"
   },
   {
-    foto: "assets/galeri/premath1.webp",
-    alt: "Pembelajaran Kelas Pre-Math",
-    judul: "Pembelajaran Kelas Pre-Math",
-    keterangan: "Momen belajar intensif dan menyenangkan untuk anak-anak usia 4-6 tahun.",
+    foto: "assets/galeri/sensory4.webp",
+    alt: "Pencocokan Huruf Sensory",
+    judul: "Sensory Letter Matching",
+    keterangan: "Aktivitas permainan mencocokkan bentuk dan bunyi huruf usia dini.",
     kategori: "belajar",
     label: "Teaching and Learning Activities",
     warna: "pink"
+  },
+  {
+    foto: "assets/galeri/sensory5.webp",
+    alt: "Aktivitas Kreatif Sensory",
+    judul: "Sensory Fun & Play",
+    keterangan: "Fokus melatih kelenturan jemari (pencil grip) melalui bermain sambil belajar.",
+    kategori: "belajar",
+    label: "Teaching and Learning Activities",
+    warna: "purple"
   }
 ];
 

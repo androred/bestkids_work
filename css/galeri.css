@@ -232,7 +232,12 @@
   box-shadow: 0 6px 20px rgba(43, 58, 122, 0.04);
   display: flex;
   flex-direction: column;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  /* Hanya transform yang dianimasikan. Bayangan tetap berubah saat hover,
+     tapi tidak lagi dianimasikan — menganimasikan bayangan adalah salah
+     satu efek paling berat digambar ulang, dan itu terasa sekali saat
+     kursor melewati banyak kartu selama carousel digeser. */
+  transition: transform 0.25s ease;
 }
 
 .gallery-card:hover {
@@ -288,31 +293,60 @@
 }
 
 /* ==========================================================================
-   GALERI — CAROUSEL
-   Menggantikan tampilan grid pada #galeriGrid.
+   GALERI — CAROUSEL BEBERAPA BARIS
+   Blok ini MENGGANTIKAN blok "GALERI — CAROUSEL" di galeri.css.
 
-   Cara kerjanya memakai scroll asli browser (scroll-snap), bukan hitungan
-   posisi lewat JavaScript. Keuntungannya: geser dengan jari di HP, scroll
-   mendatar dengan trackpad, dan tombol panah keyboard semuanya langsung
-   jalan tanpa kode tambahan.
+   Bedanya dengan versi satu baris: rel-nya memakai grid dengan
+   grid-auto-flow: column. Kartu diisi ke bawah dulu, baru pindah ke kolom
+   berikutnya — jadi satu "langkah geser" memindahkan satu kolom berisi
+   beberapa kartu sekaligus.
 
-   Jumlah kartu yang terlihat diatur lewat satu variabel: --tampil.
+     --baris: 2            --baris: 3
+     +---+---+---+         +---+---+
+     | 1 | 3 | 5 |         | 1 | 4 |
+     +---+---+---+         +---+---+
+     | 2 | 4 | 6 |         | 2 | 5 |
+     +---+---+---+         +---+---+
+                           | 3 | 6 |
+                           +---+---+
+
+   Dua angka yang Anda atur:
+     --baris  = berapa baris
+     --tampil = berapa kolom yang terlihat sekaligus
    ========================================================================== */
 .galeri-carousel {
   position: relative;
-  --tampil: 3;              /* jumlah kartu yang terlihat sekaligus */
+  --baris: 2;               /* jumlah baris */
+  --tampil: 3;              /* jumlah kolom yang terlihat sekaligus */
   --jarak: 24px;            /* jarak antar kartu */
 }
 
 /* -- Rel tempat kartu berbaris ------------------------------------------- */
 #galeriGrid {
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(var(--baris), 1fr);
+  grid-auto-columns: calc((100% - (var(--tampil) - 1) * var(--jarak)) / var(--tampil));
   gap: var(--jarak);
+
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
+
+  /* "proximity", BUKAN "mandatory". "mandatory" memaksa rel selalu berhenti
+     tepat di tepi kolom, jadi saat digeser bebas dengan trackpad atau jari,
+     browser terus menarik rel ke titik terdekat sementara jari masih
+     bergerak. Dua gerakan yang saling melawan itulah rasa patah-patah.
+     "proximity" hanya menarik kalau geserannya memang sudah dekat. */
+  scroll-snap-type: x proximity;
+
   scroll-behavior: smooth;
-  scroll-padding-left: 4px;      /* = padding kiri, agar kartu pertama berhenti tepat di 0 */
-  padding: 4px 4px 12px;    /* ruang agar bayangan kartu tidak terpotong */
+
+  /* Mencegah geseran rel merembet jadi scroll halaman saat sudah di ujung */
+  overscroll-behavior-x: contain;
+
+  /* Memberi tahu browser bahwa yang berubah hanya posisi scroll */
+  will-change: scroll-position;
+  scroll-padding-left: 4px;      /* = padding kiri, agar kolom pertama berhenti tepat di 0 */
+  padding: 4px 4px 12px;         /* ruang agar bayangan kartu tidak terpotong */
   margin: 0 -4px;
 
   /* Menyembunyikan batang scroll, tapi scroll-nya tetap berfungsi */
@@ -324,17 +358,39 @@
   display: none;
 }
 
-/* -- Lebar kartu dihitung dari jumlah yang ingin ditampilkan ------------- */
 #galeriGrid .gallery-card {
-  flex: 0 0 calc((100% - (var(--tampil) - 1) * var(--jarak)) / var(--tampil));
   scroll-snap-align: start;
   min-width: 0;             /* wajib, agar judul panjang tidak melebarkan kartu */
+
+  /* Kartu yang belum terlihat tidak ikut digambar. Terasa sekali saat
+     jumlah fotonya belasan.
+     contain-intrinsic-size WAJIB diisi — itu tinggi perkiraan kartu,
+     dipakai agar tata letak tidak melompat saat kartu mulai digambar.
+     420px = tinggi gambar 200px + bagian teks. Sesuaikan kalau tinggi
+     kartu Anda berbeda. */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 420px;
+}
+
+/* Selama rel bergeser, JavaScript memasang kelas .sedang-geser di
+   .galeri-carousel, dan efek hover kartu dimatikan. Tanpa ini, setiap kartu
+   yang terlewati kursor menjalankan animasi naik + bayangan, dan geseran
+   jadi tersendat saat kartunya banyak. */
+.galeri-carousel.sedang-geser .gallery-card,
+.galeri-carousel.sedang-geser .gallery-card:hover {
+  transform: none;
+  transition: none;
+}
+
+.galeri-carousel.sedang-geser .gallery-card:hover .gallery-img-wrapper img {
+  transform: none;
+  transition: none;
 }
 
 /* -- Tombol panah -------------------------------------------------------- */
 .galeri-nav {
   position: absolute;
-  top: 38%;                 /* sejajar bagian gambar, bukan tengah kartu */
+  top: 50%;                 /* di tengah tinggi rel, karena barisnya lebih dari satu */
   transform: translateY(-50%);
   z-index: 5;
 
@@ -369,7 +425,7 @@
 .galeri-prev { left: -18px; }
 .galeri-next { right: -18px; }
 
-/* Tombol diredupkan dan dimatikan saat sudah di ujung rel */
+/* Tombol disembunyikan saat sudah di ujung rel */
 .galeri-nav[disabled] {
   opacity: 0;
   pointer-events: none;
@@ -401,17 +457,25 @@
 }
 
 /* ==========================================================================
-   RESPONSIF — cukup ubah angka --tampil
+   RESPONSIF — cukup ubah --baris dan --tampil
+   Di layar sempit, 2 baris membuat kartu jadi terlalu kecil, jadi barisnya
+   dikembalikan ke 1.
    ========================================================================== */
 @media (max-width: 1024px) {
-  .galeri-carousel { --tampil: 2.3; --jarak: 20px; }
+  .galeri-carousel { --baris: 2; --tampil: 2.3; --jarak: 20px; }
 }
 
 @media (max-width: 768px) {
-  .galeri-carousel { --tampil: 1.6; --jarak: 16px; }
+  .galeri-carousel { --baris: 1; --tampil: 1.6; --jarak: 16px; }
   .galeri-nav { display: none; }   /* di HP cukup digeser dengan jari */
 }
 
 @media (max-width: 480px) {
-  .galeri-carousel { --tampil: 1.15; --jarak: 14px; }
+  .galeri-carousel { --baris: 1; --tampil: 1.15; --jarak: 14px; }
+}
+
+/* Di carousel 2 baris gambarnya dibuat lebih pendek supaya tinggi seluruh
+   rel tidak berlebihan. Hapus blok ini kalau ingin tetap 300px. */
+@media (min-width: 769px) {
+  .galeri-carousel #galeriGrid .gallery-img-wrapper { height: 200px; }
 }

@@ -95,6 +95,42 @@
   }
 }
 
+@media (max-width: 425px) {
+  .about-hero-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+ 
+  /* Kotak kolom teks dihapus, isinya naik jadi anak langsung grid.
+     GANTI nama class ini kalau di HTML Anda berbeda. */
+  .about-hero-text {
+    display: contents;
+  }
+ 
+  /* Judul & paragraf tetap di urutan awal (order bawaan 0) */
+ 
+  .about-hero-image-wrapper {
+    order: 2;
+    width: 100%;
+  }
+ 
+  .hero-action-row {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    margin-top: 0;            /* jarak sudah diatur oleh gap di atas */
+  }
+ 
+  .hero-full-img-card {
+    height: 220px;            /* di layar sekecil ini 300px terasa terlalu tinggi */
+    border-radius: 24px;
+  }
+}
+ 
+
 /* ==========================================================================
    HERO SECTION DECORATIVE ORNAMENTS (BACKGROUND LEVEL)
    ========================================================================== */
@@ -224,7 +260,9 @@
 @media (max-width: 480px) {
   /* Di HP kecil ukuran ornamen disesuaikan agar layar tidak terasa sempit */ 
 
-  .decor-blink-star,.decor-star ,.decor-heart { opacity: 0.4; }
+  .decor-blink-star {display: none; }
+  .decor-star ,.decor-heart { opacity: 0.4; }
+
 }
 
 /* ==========================================
