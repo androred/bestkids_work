@@ -511,3 +511,101 @@
   -webkit-mask-size: contain;
           mask-size: contain;
 }
+/* ==========================================================================
+   KOTAK PERSETUJUAN KEBIJAKAN & PRIVASI
+   Diletakkan di bagian paling bawah file supaya menang terhadap aturan
+   .form-group dan media query 425px di atasnya.
+
+   Selektornya sengaja ditulis panjang (.contact-form-card .form-consent ...)
+   bukan karena gaya, tapi karena harus mengalahkan tiga aturan yang sudah
+   ada di file ini:
+     1. .form-group        -> grid 140px 1fr (baris ini tidak boleh jadi grid)
+     2. .form-group label  -> font-weight 700 (teks persetujuan jangan tebal)
+     3. @media 425px .form-group input { ... !important }
+        -> memberi padding & radius 10px ke SEMUA input, termasuk kotak
+           centang. Karena pakai !important, lawannya juga harus !important.
+   ========================================================================== */
+.contact-form-card .form-consent {
+  /* block, bukan grid — kalau grid, labelnya terjepit di kolom 140px */
+  display: block;
+  margin-top: 2px;
+  margin-bottom: 4px;
+}
+
+/* Seluruh baris dibungkus <label>, jadi teksnya pun bisa diklik untuk
+   mencentang. Penting di layar sentuh: kotak 20px terlalu kecil kalau jadi
+   satu-satunya sasaran. */
+.contact-form-card .form-consent .consent-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  cursor: pointer;
+  font-weight: 400;        /* mengalahkan .form-group label */
+  margin: 0;
+}
+
+/* Kotak centangnya kotak asli browser, hanya tampilannya diganti. Dengan
+   begitu atribut "required" tetap bekerja, termasuk pesan bawaan browser
+   "Harap centang kotak ini" saat tombol kirim ditekan. */
+.contact-form-card .form-consent input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 20px !important;
+  height: 20px !important;
+  padding: 0 !important;
+  border-radius: 6px !important;
+  border: 2px solid #CBD5E1 !important;
+  background-color: #FFFFFF !important;
+
+  flex-shrink: 0;
+  margin: 2px 0 0;         /* mendudukkan kotak sejajar baris pertama teks */
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px 12px;
+
+  cursor: pointer;
+  box-shadow: none;
+  transition: background-color 0.18s, border-color 0.18s;
+}
+
+.contact-form-card .form-consent input[type="checkbox"]:hover {
+  border-color: var(--blue, #3BA7E8) !important;
+}
+
+.contact-form-card .form-consent input[type="checkbox"]:checked {
+  background-color: var(--blue, #3BA7E8) !important;
+  border-color: var(--blue, #3BA7E8) !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E");
+}
+
+/* Penanda fokus untuk pengguna keyboard */
+.contact-form-card .form-consent input[type="checkbox"]:focus-visible {
+  outline: 2px solid var(--blue, #3BA7E8);
+  outline-offset: 2px;
+}
+
+.contact-form-card .form-consent .consent-text {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #6B7280;
+  text-wrap: pretty;
+}
+
+.contact-form-card .form-consent .consent-text a {
+  color: var(--blue, #3BA7E8);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.contact-form-card .form-consent .consent-text a:hover {
+  color: #FF2A85;
+}
+
+@media (max-width: 425px) {
+  .contact-form-card .form-consent .consent-text {
+    font-size: 12.5px !important;
+    line-height: 1.5;
+  }
+}

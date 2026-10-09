@@ -248,7 +248,13 @@
 .gallery-img-wrapper {
   position: relative;
   width: 100%;
-  height: 300px;
+
+  /* Tinggi gambar diatur dari SATU tempat: --tinggi-gambar di
+     .galeri-carousel (lihat bagian carousel di bawah). Sebelumnya angka ini
+     tersebar di tiga aturan yang saling menimpa, sehingga mengubah salah
+     satunya sering tidak terasa apa-apa. */
+  height: var(--tinggi-gambar, 300px);
+
   overflow: hidden;
   background: #F7F9FD;
 }
@@ -283,10 +289,6 @@
   margin: 0;
 }
 
-@media (max-width: 1200px) {
-  .gallery-img-wrapper { height: 200px; }
-}
-
 @media (max-width: 576px) {
   .gallery-tabs { gap: 8px; }
   .gallery-tabs .tab-btn { padding: 8px 16px; font-size: 14px; }
@@ -294,31 +296,19 @@
 
 /* ==========================================================================
    GALERI — CAROUSEL BEBERAPA BARIS
-   Blok ini MENGGANTIKAN blok "GALERI — CAROUSEL" di galeri.css.
-
-   Bedanya dengan versi satu baris: rel-nya memakai grid dengan
-   grid-auto-flow: column. Kartu diisi ke bawah dulu, baru pindah ke kolom
-   berikutnya — jadi satu "langkah geser" memindahkan satu kolom berisi
-   beberapa kartu sekaligus.
-
-     --baris: 2            --baris: 3
-     +---+---+---+         +---+---+
-     | 1 | 3 | 5 |         | 1 | 4 |
-     +---+---+---+         +---+---+
-     | 2 | 4 | 6 |         | 2 | 5 |
-     +---+---+---+         +---+---+
-                           | 3 | 6 |
-                           +---+---+
-
-   Dua angka yang Anda atur:
-     --baris  = berapa baris
-     --tampil = berapa kolom yang terlihat sekaligus
    ========================================================================== */
 .galeri-carousel {
   position: relative;
   --baris: 2;               /* jumlah baris */
   --tampil: 3;              /* jumlah kolom yang terlihat sekaligus */
   --jarak: 24px;            /* jarak antar kartu */
+
+  /* TINGGI GAMBAR — ubah di sini saja.
+       240px = sedikit lebih tinggi dari sebelumnya
+       280px = terasa lega             <- dipakai sekarang
+       320px = besar, tinggi rel jadi ±820px di desktop
+     Tidak ada angka lain yang perlu ikut disesuaikan. */
+  --tinggi-gambar: 280px;
 }
 
 /* -- Rel tempat kartu berbaris ------------------------------------------- */
@@ -328,22 +318,10 @@
   grid-template-rows: repeat(var(--baris), 1fr);
   grid-auto-columns: calc((100% - (var(--tampil) - 1) * var(--jarak)) / var(--tampil));
   gap: var(--jarak);
-
   overflow-x: auto;
-
-  /* "proximity", BUKAN "mandatory". "mandatory" memaksa rel selalu berhenti
-     tepat di tepi kolom, jadi saat digeser bebas dengan trackpad atau jari,
-     browser terus menarik rel ke titik terdekat sementara jari masih
-     bergerak. Dua gerakan yang saling melawan itulah rasa patah-patah.
-     "proximity" hanya menarik kalau geserannya memang sudah dekat. */
   scroll-snap-type: x proximity;
-
   scroll-behavior: smooth;
-
-  /* Mencegah geseran rel merembet jadi scroll halaman saat sudah di ujung */
   overscroll-behavior-x: contain;
-
-  /* Memberi tahu browser bahwa yang berubah hanya posisi scroll */
   will-change: scroll-position;
   scroll-padding-left: 4px;      /* = padding kiri, agar kolom pertama berhenti tepat di 0 */
   padding: 4px 4px 12px;         /* ruang agar bayangan kartu tidak terpotong */
@@ -361,21 +339,21 @@
 #galeriGrid .gallery-card {
   scroll-snap-align: start;
   min-width: 0;             /* wajib, agar judul panjang tidak melebarkan kartu */
-
-  /* Kartu yang belum terlihat tidak ikut digambar. Terasa sekali saat
-     jumlah fotonya belasan.
-     contain-intrinsic-size WAJIB diisi — itu tinggi perkiraan kartu,
-     dipakai agar tata letak tidak melompat saat kartu mulai digambar.
-     420px = tinggi gambar 200px + bagian teks. Sesuaikan kalau tinggi
-     kartu Anda berbeda. */
-  content-visibility: auto;
-  contain-intrinsic-size: auto 420px;
 }
 
-/* Selama rel bergeser, JavaScript memasang kelas .sedang-geser di
-   .galeri-carousel, dan efek hover kartu dimatikan. Tanpa ini, setiap kartu
-   yang terlewati kursor menjalankan animasi naik + bayangan, dan geseran
-   jadi tersendat saat kartunya banyak. */
+/* Bagian gambar yang belum terlihat tidak ikut digambar — terasa sekali saat
+   jumlah fotonya belasan.
+
+   Ini sengaja dipasang di .gallery-img-wrapper, BUKAN di seluruh kartu.
+   Waktu dipasang di kartu, angka perkiraan tingginya ikut menentukan tinggi
+   baris grid, dan tinggi kartu jadi tidak konsisten (347px di satu lebar,
+   482px di lebar lain). Di sini tingginya sudah pasti, jadi perkiraannya
+   tepat dan tata letak tidak pernah melompat. */
+#galeriGrid .gallery-img-wrapper {
+  content-visibility: auto;
+  contain-intrinsic-size: auto var(--tinggi-gambar, 300px);
+}
+
 .galeri-carousel.sedang-geser .gallery-card,
 .galeri-carousel.sedang-geser .gallery-card:hover {
   transform: none;
@@ -462,20 +440,23 @@
    dikembalikan ke 1.
    ========================================================================== */
 @media (max-width: 1024px) {
-  .galeri-carousel { --baris: 2; --tampil: 2.3; --jarak: 20px; }
+  .galeri-carousel {
+    --baris: 2; --tampil: 2.3; --jarak: 20px;
+    --tinggi-gambar: 250px;
+  }
 }
 
 @media (max-width: 768px) {
-  .galeri-carousel { --baris: 1; --tampil: 1.6; --jarak: 16px; }
+  .galeri-carousel {
+    --baris: 1; --tampil: 1.6; --jarak: 16px;
+    --tinggi-gambar: 240px;
+  }
   .galeri-nav { display: none; }   /* di HP cukup digeser dengan jari */
 }
 
 @media (max-width: 480px) {
-  .galeri-carousel { --baris: 1; --tampil: 1.15; --jarak: 14px; }
-}
-
-/* Di carousel 2 baris gambarnya dibuat lebih pendek supaya tinggi seluruh
-   rel tidak berlebihan. Hapus blok ini kalau ingin tetap 300px. */
-@media (min-width: 769px) {
-  .galeri-carousel #galeriGrid .gallery-img-wrapper { height: 200px; }
+  .galeri-carousel {
+    --baris: 1; --tampil: 1.15; --jarak: 14px;
+    --tinggi-gambar: 220px;
+  }
 }
