@@ -62,7 +62,7 @@
             '<span class="price-wrap">' + blokHarga + '</span>' +
           '</div>' +
         '</div>' +
-        '<a href="' + aman(p.link) + '" class="btn btn-' + aman(p.warna) + ' btn-block">Lihat Detail →</a>' +
+        '<a href="' + aman(p.link) + '" class="btn btn-' + aman(p.warna) + ' btn-block">See Details →</a>' +
       '</article>'
     );
   });
@@ -75,7 +75,7 @@
         '<h3>' + aman(p.nama) + '</h3>' +
         '<span class="age-tag tag-' + aman(p.warna) + '">' + aman(p.usia) + '</span>' +
         '<p>' + aman(p.deskripsi) + '</p>' +
-        '<a class="btn btn-' + aman(p.warna) + ' btn-sm btn-block" href="' + aman(p.link) + '">Lihat Detail →</a>' +
+        '<a class="btn btn-' + aman(p.warna) + ' btn-sm btn-block" href="' + aman(p.link) + '">See Details →</a>' +
       '</article>'
     );
   });
