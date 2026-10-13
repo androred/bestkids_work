@@ -1,9 +1,6 @@
 /* ==========================================================================
    COMPONENTS — komponen yang dipakai di lebih dari satu halaman
    ========================================================================== */
-/* ==========================================================================
-   PERLEBAR CONTAINER & RUANG HALAMAN (MORE WIDESCREEN & FILLING)
-   ========================================================================== */
 .section-header.text-center {
   text-align: center;
   margin-bottom: 20px;
@@ -130,6 +127,7 @@
   align-items: center;
   flex-shrink: 0;
   margin-right: 40px;        /* memberi ruang untuk pesawat kertas di kanannya */
+  padding-top: 10px;                /* agar tombol tidak terlalu menempel ke atas */
 }
 
 .paper-plane-icon {
