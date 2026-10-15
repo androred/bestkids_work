@@ -94,7 +94,7 @@ var DATA_PROGRAM = [
 
 var DATA_GALERI = [
   {
-    foto: "assets/galeri/calistung1.webp",
+    foto: "assets/galeri/Calistung.jpg",
     alt: "Interactive Calistung Learning",
     judul: "Interactive Calistung Learning",
     keterangan: "Anak-anak antusias mengenal huruf menggunakan media kancing warna-warni.",
@@ -130,7 +130,7 @@ var DATA_GALERI = [
     warna: "green"
   },
   {
-    foto: "assets/galeri/English Practice Session.jpg",
+    foto: "assets/galeri/Eyl.jpg",
     alt: "English Practice Session",
     judul: "English Practice Session",
     keterangan: "Melatih kepercayaan diri berbicara Bahasa Inggris lewat aktivitas kelompok.",
@@ -157,7 +157,7 @@ var DATA_GALERI = [
     warna: "yellow"
   },
   {
-    foto: "assets/galeri/mathclass1.webp",
+    foto: "assets/galeri/Mathclass1.jpg",
     alt: "Math Class Problem Solving",
     judul: "Math Class Problem Solving",
     keterangan: "Bimbingan matematika dengan metode visual yang mudah dipahami anak.",

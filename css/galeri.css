@@ -434,6 +434,10 @@
   background: var(--pink, #F4437F);
 }
 
+.cta-section-wrapper {
+    padding-top: 15px !important;
+}
+
 /* ==========================================================================
    RESPONSIF — cukup ubah --baris dan --tampil
    Di layar sempit, 2 baris membuat kartu jadi terlalu kecil, jadi barisnya
